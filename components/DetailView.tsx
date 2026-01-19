@@ -141,37 +141,52 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
               <Flame className="w-5 h-5 mr-2" /> 核心技术库
             </h3>
             
-            {/* AI Generator Box */}
-            <div className={`p-4 rounded-xl border border-neutral-800 bg-neutral-900`}>
+            {/* Generator Box */}
+            <div className={`p-4 rounded-xl border border-neutral-800 bg-neutral-900 shadow-inner`}>
               <div className="flex justify-between items-center mb-2">
                 <h4 className="text-sm font-bold flex items-center text-gray-200">
                   <BrainCircuit className="w-4 h-4 mr-2 text-km-red" /> 
-                  AI 战术教官: 训练生成器
+                  KMCN 数字教官: 训练方案生成
                 </h4>
               </div>
               
               {!selectedTechnique && !loading && (
-                <p className="text-xs text-gray-500">点击下方技术旁边的 "生成训练" 按钮，获取该技术的专属训练方案。</p>
+                <p className="text-xs text-gray-500">点击下方技术旁边的 <span className="text-km-red font-bold">"生成训练"</span> 按钮，获取该技术的专属 Drill 训练方案。</p>
               )}
 
               {loading && (
-                <div className="animate-pulse flex space-x-4">
-                  <div className="flex-1 space-y-2 py-1">
-                    <div className="h-2 bg-neutral-700 rounded"></div>
-                    <div className="h-2 bg-neutral-700 rounded w-5/6"></div>
-                  </div>
+                <div className="animate-pulse flex flex-col space-y-3 py-2">
+                  <div className="h-2 bg-neutral-800 rounded w-1/3"></div>
+                  <div className="h-2 bg-neutral-800 rounded w-full"></div>
+                  <div className="h-2 bg-neutral-800 rounded w-5/6"></div>
                 </div>
               )}
 
               {aiDrill && !loading && (
-                <div className="text-sm">
-                  <p className="font-bold text-km-red mb-1">{aiDrill.drillName}</p>
-                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-300">
+                <div className="text-sm animate-in fade-in slide-in-from-bottom-2 duration-500">
+                  <div className="flex items-center justify-between mb-2 pb-2 border-b border-white/5">
+                     <p className="font-black text-white text-base">{aiDrill.drillName}</p>
+                     <span className="text-[10px] uppercase bg-white/10 px-2 py-0.5 rounded text-gray-400">Drill Module</span>
+                  </div>
+                  
+                  <div className="mb-3 text-xs text-gray-400 bg-black/20 p-2 rounded border border-white/5">
+                    <span className="font-bold text-gray-300">器材设置: </span>
+                    {aiDrill.setup}
+                  </div>
+
+                  <ul className="space-y-2 text-xs text-gray-300 mb-3">
                     {aiDrill.instructions.map((step: string, idx: number) => (
-                      <li key={idx}>{step}</li>
+                      <li key={idx} className="flex gap-2">
+                        <span className="text-km-red font-bold shrink-0">{idx + 1}.</span>
+                        <span>{step.replace(/^\d+\.\s*/, '')}</span> {/* Remove existing numbers if generic template adds them, to avoid double numbering */}
+                      </li>
                     ))}
-                    <li className="font-semibold text-white mt-2">压力因素: {aiDrill.stressFactor}</li>
                   </ul>
+                  
+                  <div className="text-xs flex items-center gap-2 text-red-400/80 font-bold bg-red-950/10 p-2 rounded border border-red-900/20">
+                    <Activity className="w-3 h-3" />
+                    压力因素: {aiDrill.stressFactor}
+                  </div>
                 </div>
               )}
             </div>
@@ -181,13 +196,13 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
               <table className="w-full text-sm text-left">
                 <tbody className="divide-y divide-neutral-800">
                   {theme.techniques.map((t, i) => (
-                    <tr key={i} className={`${rowHover} transition-colors`}>
-                      <td className="px-4 py-2 font-bold text-gray-200">{t.name}</td>
-                      <td className={`px-4 py-2 text-xs text-gray-500`}>{t.details}</td>
-                      <td className="px-4 py-2 text-right">
+                    <tr key={i} className={`${rowHover} transition-colors group`}>
+                      <td className="px-4 py-3 font-bold text-gray-200 w-1/3">{t.name}</td>
+                      <td className={`px-4 py-3 text-xs text-gray-500`}>{t.details}</td>
+                      <td className="px-4 py-3 text-right">
                         <button 
                           onClick={() => handleGenerateDrill(t)}
-                          className={`text-xs px-2 py-1 rounded border border-neutral-700 text-gray-400 hover:bg-km-red hover:text-white hover:border-km-red transition-all whitespace-nowrap`}
+                          className={`text-[10px] font-bold px-3 py-1.5 rounded border border-neutral-700 bg-neutral-800 text-gray-400 hover:bg-km-red hover:text-white hover:border-km-red transition-all whitespace-nowrap shadow-sm`}
                         >
                           生成训练
                         </button>
