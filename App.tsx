@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
   // ---------------------------------------------------------------------------
   // --- LOGO SETTING ---
-  // 请将您的 Logo 图片保存为 'logo.png' 并放置在项目根目录或 public 文件夹中。
+  // 请确保 'logo.png' 位于项目的 'public/' 文件夹中，否则打包后无法显示。
   // ---------------------------------------------------------------------------
   const logoUrl = "./logo.png";
   // ---------------------------------------------------------------------------
@@ -36,7 +36,7 @@ const App: React.FC = () => {
       <nav className={`sticky top-0 z-40 backdrop-blur-md border-b border-white/10 bg-black/90`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {/* Logo Section */}
               <div className="relative group shrink-0">
                 {/* Custom Glow: Red to Blue Gradient to match the Yin-Yang symbol in the logo */}
@@ -49,7 +49,8 @@ const App: React.FC = () => {
                     e.currentTarget.onerror = null; 
                   }}
                   alt="KMCN 深圳马伽术 Logo" 
-                  className="relative h-16 w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" 
+                  // Revised: h-12 on mobile, h-16 on desktop for better adaptiveness
+                  className="relative h-12 sm:h-16 w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" 
                 />
               </div>
 
@@ -116,16 +117,14 @@ const App: React.FC = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Background Image - Reduced Padding */}
+      {/* Hero Section with Background Image */}
       <div className="relative overflow-hidden py-16 sm:py-24">
-        {/* Background Image Layer */}
+        {/* Background Image Layer - Updated for better responsiveness (Adaptive) */}
         <div 
-          className="absolute inset-0 z-0 transition-opacity duration-700"
+          className="absolute inset-0 z-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('${bgImage}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.4 // Adjust visibility of the background image
+            opacity: 0.4
           }}
         />
         {/* Gradient Overlay for Text Readability */}

@@ -57,13 +57,11 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
         
         {/* Header with Background Image */}
         <div className="relative border-b border-neutral-800">
-          {/* Background Image */}
+          {/* Background Image - Adaptive Update */}
           <div 
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url('https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=2072&auto=format&fit=crop')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
               opacity: 0.25
             }}
           />
