@@ -24,9 +24,11 @@ const App: React.FC = () => {
 
   // ---------------------------------------------------------------------------
   // --- LOGO SETTING ---
-  // 请确保 'logo.png' 位于项目的 'public/' 文件夹中，否则打包后无法显示。
+  // 1. 图片必须放在项目的 'public/' 文件夹内。
+  // 2. 文件名必须完全小写：'logo.png' (Linux服务器区分大小写，Logo.png 不行)。
+  // 3. 使用绝对路径 '/logo.png' 确保从域名根目录加载。
   // ---------------------------------------------------------------------------
-  const logoUrl = "./logo.png";
+  const logoUrl = "/logo.png";
   // ---------------------------------------------------------------------------
 
   return (
@@ -45,8 +47,8 @@ const App: React.FC = () => {
                   src={logoUrl}
                   onError={(e) => {
                     // Fallback if image fails to load
-                    e.currentTarget.src = "https://placehold.co/150x80/000000/ffffff?text=KMCN+LOGO";
-                    e.currentTarget.onerror = null; 
+                    console.error("Logo load failed. Check if public/logo.png exists and is lowercase.");
+                    e.currentTarget.style.display = 'none'; // Hide broken image icon if fails
                   }}
                   alt="KMCN 深圳马伽术 Logo" 
                   // Revised: h-12 on mobile, h-16 on desktop for better adaptiveness
