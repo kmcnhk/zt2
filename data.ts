@@ -5,6 +5,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-1',
     category: 'CIVILIAN',
+    difficulty: 'BEGINNER',
     title: '街头格斗终结者：从被动挨打到瞬间反杀',
     hooks: ['街头生存法则：3秒结束战斗', '拒绝霸凌：弱者反击的必修课', '古流柔术的街头应用'],
     description: '针对生活中常见的推搡、挑衅及街头斗殴。不依赖力量，而是利用古流柔术的关节控制与人体结构弱点，结合马伽术的快速打击，实现瞬间制服。',
@@ -40,6 +41,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-2',
     category: 'CIVILIAN',
+    difficulty: 'BEGINNER',
     title: '女子防身特辑：反强暴与关节技逃脱',
     hooks: ['绝不成为受害者：女性反暴力指南', '以柔克刚：利用关节技反制力量差异', '不仅是防身，是生存'],
     description: '专为女性设计，针对体型力量悬殊的场景。重点在于反抓手、反纠缠，利用古流自卫柔术的关节技（小关节控制）和地面逃脱技术。',
@@ -75,6 +77,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-3',
     category: 'CIVILIAN',
+    difficulty: 'BEGINNER',
     title: '校园铁盾：青少年反霸凌与自信',
     hooks: ['拒绝校园霸凌：做自己的保镖', '自信是最好的防线', '不动手也能制服对方'],
     description: '专为青少年设计。重点在于建立自信、语言震慑（De-escalation）以及在不造成严重伤害的前提下挣脱控制（Headlock, 抓衣领）。',
@@ -110,6 +113,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-4',
     category: 'CIVILIAN',
+    difficulty: 'INTERMEDIATE',
     title: '路怒症与车内防卫：狭小空间的生死时速',
     hooks: ['别让方向盘成为你的棺材板', '车内关节技：坐姿下的反制', '路怒终结者'],
     description: '专门针对驾驶员和乘客的安全。包含被拉出车外、车窗被砸、后座勒颈等高危场景。重点是狭窄空间内的关节折叠与控制。',
@@ -145,6 +149,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-5',
     category: 'CIVILIAN',
+    difficulty: 'ADVANCED',
     title: '刀锋之下：持刀抢劫与反恐生存',
     hooks: ['面对利刃的终极指南', 'Run-Hide-Fight 实战应用', '背包盾牌与反抢劫术'],
     description: '融合了个人反抢劫与公共场所反恐技术。教授如何应对持刀索财的歹徒，以及在火车站、广场遭遇无差别砍杀时的生存策略。',
@@ -180,6 +185,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-6',
     category: 'CIVILIAN',
+    difficulty: 'INTERMEDIATE',
     title: '地面修罗：倒地后的生存法则',
     hooks: ['这不是竞技柔术，是生存', '倒地绝不意味着结束', '防踢、防踩与快速站起'],
     description: '街头格斗中一旦倒地，就是最危险的时刻。本课程不教你复杂的地面缠斗，只教你如何在大体重对手、多名敌人围攻下保护自己并安全站起。',
@@ -215,6 +221,7 @@ export const THEMES: Theme[] = [
     {
     id: 'civ-7',
     category: 'CIVILIAN',
+    difficulty: 'ADVANCED',
     title: '枪械威胁应对：生死一线的抉择',
     hooks: ['枪口下的赌博：夺枪还是投降？', '特工级夺枪术', 'Active Shooter 场景下的生存策略'],
     description: '极高风险。仅在确信对方会开枪（处决式）或无法逃脱时使用。重点是重定向火线，并利用杠杆原理夺枪。',
@@ -250,6 +257,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-8',
     category: 'CIVILIAN',
+    difficulty: 'INTERMEDIATE',
     title: '居家入侵与家庭保卫：最后的堡垒',
     hooks: ['当危险敲响家门', '家庭防卫计划：保护挚爱', '狭窄走廊与卧室的战斗'],
     description: '针对入室抢劫、盗窃演变成的暴力。如何利用家里的地形和物品，配合柔道摔法和器械保护家人。',
@@ -285,6 +293,7 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-9',
     category: 'CIVILIAN',
+    difficulty: 'INTERMEDIATE',
     title: '短棍防卫与菲律宾魔杖实战',
     hooks: ['雨伞、自拍杆的战术应用', '菲律宾魔杖 (Kali) 入门', '以长制短的智慧'],
     description: '融合菲律宾魔杖 (Kali/Escrima) 与民用短棍技术。教授如何利用手中的雨伞、登山杖进行有效防御，保持安全距离。',
@@ -322,6 +331,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-1',
     category: 'MILITARY',
+    difficulty: 'INTERMEDIATE',
     title: 'FBI特工必修：近身控制与逮捕术 (CQC)',
     hooks: ['五秒制服：从接触到手铐', '古流柔术逮捕技', '不仅是打倒，是彻底控制'],
     description: '针对执法人员。重点在于如何在保护自己武器的同时，利用古流柔术的关节锁和投技，迅速将嫌疑人从站立控制到地面并完成上铐。',
@@ -357,6 +367,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-2',
     category: 'MILITARY',
+    difficulty: 'ADVANCED',
     title: '海豹突击队战术：哨兵摸排与无声歼敌',
     hooks: ['幽灵行动：无声暗杀技术', '战场刺杀术：一击必杀', '匕首格斗的高级应用'],
     description: '纯军事用途。如何从背后接近敌人并实施致命打击（模拟），以及防止自己被偷袭。包含匕首格斗和绞杀技术。',
@@ -392,6 +403,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-3',
     category: 'MILITARY',
+    difficulty: 'ADVANCED',
     title: '要员保护 (VIP Protection)：肉盾的艺术',
     hooks: ['总统保镖战术：替人挡子弹的科学', '撤离专线：从袭击圈中杀出血路', '保镖必修：阵型与观察'],
     description: '针对保镖和特勤人员。不仅要能打，还要能边打边移动VIP。包括阵型（Diamond Formation）和紧急撤离。',
@@ -427,6 +439,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-4',
     category: 'MILITARY',
+    difficulty: 'ADVANCED',
     title: '战术CQB与夺枪术：枪火中的格斗',
     hooks: ['近室扫荡：当子弹打光时', '枪械格斗术 (Gun Fu)', '特警突入技术'],
     description: '室内近距离战斗（CQB）。处理枪械故障、弹尽时的格斗，以及在极近距离如何使用长枪作为钝器打击，结合柔道摔法。',
@@ -462,6 +475,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-5',
     category: 'MILITARY',
+    difficulty: 'ADVANCED',
     title: '刀锋战士：匕首格斗与反恐制杀',
     hooks: ['刀对刀：零距离的噩梦', '特种部队匕首格斗术 (Tantōjutsu)', '致命解剖学应用'],
     description: '最高级别的冷兵器对抗。假设双方均持有利刃，或我方仅有一把匕首对抗武装分子。强调速度、时机与致命部位的精准打击。',
@@ -497,6 +511,7 @@ export const THEMES: Theme[] = [
   {
     id: 'mil-6',
     category: 'MILITARY',
+    difficulty: 'INTERMEDIATE',
     title: '万物皆兵：随身物品武器化',
     hooks: ['一支战术笔的威力', '手机、钥匙、外套的战斗属性', '就地取材的防卫艺术'],
     description: '当你赤手空拳时，身边的任何物体都能成为武器。学习如何快速识别并利用战术笔、手机、外套、甚至水瓶进行防卫。',
@@ -534,6 +549,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-public-safety',
     category: 'INSTRUCTOR',
+    difficulty: 'ADVANCED',
     title: '公共安全与反恐生存：避险与逃生',
     hooks: ['Public Safety & Anti-Terror Survival: Avoidance and Escape', '遭遇恐袭时的Run-Hide-Fight', '重大公共事件处理原则'],
     description: '针对教官的公共安全与反恐生存策略。重点在于如何规避风险，以及在恐袭、枪击、持械伤人等重大公共事件中的处理原则：避免(Avoid)、逃避(Escape)、躲藏(Hide)、反击(Fight)。',
@@ -570,6 +586,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-training-safety',
     category: 'INSTRUCTOR',
+    difficulty: 'INTERMEDIATE',
     title: '执教风控与学员安全：训练场零事故',
     hooks: ['会救人比会打人更重要', '教官的红线与底线', '运动损伤的预防与急救'],
     description: '教官对学员生命安全的绝对责任。涵盖急救证书要求(CPR/AED)、运动损伤紧急处理(R.I.C.E)、训练强度控制、护具检查及热身规范。',
@@ -604,6 +621,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-combat-skills',
     category: 'INSTRUCTOR',
+    difficulty: 'ADVANCED',
     title: '教官必修格斗技能体系：从基础到精通',
     hooks: ['标准马伽术 vs 高级特色技能', '教官级动作标准', '全能战术专家'],
     description: '教官必须掌握的完整技术体系。分为“标准马伽术”（站架、打击、防御、解脱、受身）与“高级/特色技能”（菲律宾短棍、夺刀术、简易武器、VIP保护）。',
@@ -639,6 +657,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-stress-test',
     category: 'INSTRUCTOR',
+    difficulty: 'ADVANCED',
     title: '身体素质与实战压力测试 (Stress Test)',
     hooks: ['军事演习级压力测试', '眩晕与黑暗中的战斗', '极限体能下的决策'],
     description: '模拟极端环境下的生存与反击能力。教官必须通过连续极限体能（Tabata）、暗黑盲斗、眩晕对抗等高压测试，证明其在力竭时的战斗意志。',
@@ -673,6 +692,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-pedagogy',
     category: 'INSTRUCTOR',
+    difficulty: 'INTERMEDIATE',
     title: '国际马伽术教学法与沟通艺术',
     hooks: ['让小白听得懂，高手练得爽', '三明治沟通法', '四步教学标准流程'],
     description: '教官的核心竞争力。掌握KMCN标准教学四步法：讲解、示范、引导、纠错。学会针对不同学员（男/女/青少年）的沟通技巧与纠错艺术。',
@@ -707,6 +727,7 @@ export const THEMES: Theme[] = [
   {
     id: 'inst-legal',
     category: 'INSTRUCTOR',
+    difficulty: 'BEGINNER',
     title: '法律红线与犯罪心理学',
     hooks: ['刑法第20条深度解析', '正当防卫的边界', '攻击者心理画像'],
     description: '懂法才能保命。深度解析中国刑法第20条（正当防卫），区分防卫过当与互殴。分析“捕食者”与“社交暴力”的心理特征，制定对应策略。',
@@ -729,7 +750,7 @@ export const THEMES: Theme[] = [
       { name: '证据意识', details: '录音/录像/证人' },
       { name: '捕食者画像', details: '冷血/有计划/寻找弱者' },
       { name: '社交暴力', details: '情绪化/面子/可降级' },
-      { name: '非语言信号', details: '识别攻击前的微表情/动作' },
+      { name: '非语言信号', details: '识别防卫过当的界限' },
       { name: '受害者筛选', details: '如何避免成为软柿子' },
       { name: '恐惧管理', details: '理解生理反应 (隧道视野)' },
       { name: '战后心理', details: 'PTSD创伤后应激干预' },

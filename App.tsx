@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import { THEMES } from './data';
-import { Theme } from './types';
+import { Theme, Difficulty } from './types';
 import ThemeCard from './components/ThemeCard';
 import DetailView from './components/DetailView';
-import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone } from 'lucide-react';
+import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone, BarChart3, Filter } from 'lucide-react';
 
 const App: React.FC = () => {
   const [mode, setMode] = useState<'CIVILIAN' | 'MILITARY' | 'INSTRUCTOR'>('CIVILIAN');
+  const [difficultyFilter, setDifficultyFilter] = useState<'ALL' | Difficulty>('ALL');
   const [selectedTheme, setSelectedTheme] = useState<Theme | null>(null);
 
   const isMilitary = mode === 'MILITARY';
   const isInstructor = mode === 'INSTRUCTOR';
 
-  const filteredThemes = THEMES.filter(t => t.category === mode);
+  const filteredThemes = THEMES.filter(t => {
+    const modeMatch = t.category === mode;
+    const difficultyMatch = difficultyFilter === 'ALL' || t.difficulty === difficultyFilter;
+    return modeMatch && difficultyMatch;
+  });
 
   // Background images for different modes
   let bgImage = "https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=2070&auto=format&fit=crop"; // Civilian Default
@@ -29,6 +34,21 @@ const App: React.FC = () => {
   // ---------------------------------------------------------------------------
   const logoUrl = "logo.png";
   // ---------------------------------------------------------------------------
+
+  const DifficultyButton = ({ level, label, colorClass }: { level: 'ALL' | Difficulty, label: string, colorClass: string }) => (
+    <button
+      onClick={() => setDifficultyFilter(level)}
+      className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 border flex items-center gap-1.5
+        ${difficultyFilter === level 
+          ? `${colorClass} shadow-lg scale-105` 
+          : 'bg-black/40 border-white/10 text-gray-500 hover:text-white hover:bg-white/5'
+        }
+      `}
+    >
+      {level !== 'ALL' && <div className={`w-1.5 h-1.5 rounded-full ${difficultyFilter === level ? 'bg-current' : 'bg-gray-600'}`}></div>}
+      {label}
+    </button>
+  );
 
   return (
     <div className={`min-h-screen bg-km-black text-gray-200 selection:bg-km-red selection:text-white`}>
@@ -154,16 +174,46 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-             <div className={`px-10 py-4 rounded text-white font-bold uppercase tracking-wider transition-all cursor-pointer transform hover:-translate-y-1 shadow-lg
-                ${isInstructor 
-                  ? 'bg-amber-600 hover:bg-amber-700 shadow-[0_0_20px_rgba(217,119,6,0.4)]' 
-                  : 'bg-km-red hover:bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.4)]'
-                }`}>
-               {isInstructor ? '申请教官考核' : '开始主题训练'}
+          <div className="flex flex-col items-center gap-8">
+             <div className="inline-flex flex-col sm:flex-row items-center gap-4">
+               <div className={`px-10 py-4 rounded text-white font-bold uppercase tracking-wider transition-all cursor-pointer transform hover:-translate-y-1 shadow-lg
+                  ${isInstructor 
+                    ? 'bg-amber-600 hover:bg-amber-700 shadow-[0_0_20px_rgba(217,119,6,0.4)]' 
+                    : 'bg-km-red hover:bg-red-600 shadow-[0_0_20px_rgba(220,38,38,0.4)]'
+                  }`}>
+                 {isInstructor ? '申请教官考核' : '开始主题训练'}
+               </div>
+               <div className="px-10 py-4 rounded border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur text-white font-bold uppercase tracking-wider transition-all cursor-pointer hover:border-white/40">
+                 {filteredThemes.length} 个核心{isInstructor ? '认证' : '应用'}主题
+               </div>
              </div>
-             <div className="px-10 py-4 rounded border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur text-white font-bold uppercase tracking-wider transition-all cursor-pointer hover:border-white/40">
-               {filteredThemes.length} 个核心{isInstructor ? '认证' : '应用'}主题
+
+             {/* Difficulty Filter Bar */}
+             <div className="flex flex-wrap justify-center items-center gap-3 p-2 rounded-xl bg-black/40 backdrop-blur border border-white/10 shadow-xl max-w-2xl">
+               <div className="flex items-center text-xs font-bold text-gray-400 mr-2 uppercase tracking-widest">
+                 <Filter className="w-3 h-3 mr-1" />
+                 Difficulty:
+               </div>
+               <DifficultyButton 
+                  level="ALL" 
+                  label="全部 (All)" 
+                  colorClass="bg-white text-black border-white" 
+               />
+               <DifficultyButton 
+                  level="BEGINNER" 
+                  label="基础 (Beginner)" 
+                  colorClass="bg-green-600 text-white border-green-500" 
+               />
+               <DifficultyButton 
+                  level="INTERMEDIATE" 
+                  label="进阶 (Intermediate)" 
+                  colorClass="bg-yellow-600 text-white border-yellow-500" 
+               />
+               <DifficultyButton 
+                  level="ADVANCED" 
+                  label="高阶 (Advanced)" 
+                  colorClass="bg-red-600 text-white border-red-500" 
+               />
              </div>
           </div>
         </div>
@@ -175,16 +225,30 @@ const App: React.FC = () => {
            <div className={`w-2 h-2 rounded-full shadow-[0_0_8px] ${isInstructor ? 'bg-amber-500 shadow-amber-500' : 'bg-km-red shadow-red-600'}`}></div>
            KMCN 马伽术应用主题训练计划 (Krav Maga Application Themes)
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredThemes.map(theme => (
-            <ThemeCard 
-              key={theme.id} 
-              theme={theme} 
-              onClick={setSelectedTheme} 
-              isMilitary={isMilitary} 
-            />
-          ))}
-        </div>
+        
+        {filteredThemes.length === 0 ? (
+          <div className="text-center py-20 bg-neutral-900/50 rounded-xl border border-dashed border-neutral-800">
+            <BarChart3 className="w-12 h-12 text-neutral-700 mx-auto mb-4" />
+            <p className="text-gray-500 font-bold">该筛选条件下暂无训练主题</p>
+            <button 
+              onClick={() => setDifficultyFilter('ALL')}
+              className="mt-4 text-sm text-km-red hover:underline"
+            >
+              清除筛选条件
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredThemes.map(theme => (
+              <ThemeCard 
+                key={theme.id} 
+                theme={theme} 
+                onClick={setSelectedTheme} 
+                isMilitary={isMilitary} 
+              />
+            ))}
+          </div>
+        )}
       </main>
 
       {/* Static Footer with Contact & Motto */}

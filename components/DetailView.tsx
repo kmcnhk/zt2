@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Theme, Technique } from '../types';
-import { X, CheckCircle, Flame, BrainCircuit, Activity } from 'lucide-react';
+import { X, CheckCircle, Flame, BrainCircuit, Activity, ClipboardList, Zap, ShieldAlert, AlertTriangle, BarChart3 } from 'lucide-react';
 import { generateDrill } from '../services/gemini';
 
 interface Props {
@@ -35,9 +35,28 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
     setSelectedTechnique(tech);
     setLoading(true);
     setAiDrill(null);
-    const drill = await generateDrill(tech.name, isMilitary ? 'HIGH' : 'LOW', theme.category);
+    // Updated call signature to include technique details, theme title and difficulty
+    const drill = await generateDrill(
+      tech.name, 
+      tech.details, 
+      theme.title, 
+      theme.difficulty, // Passing the difficulty level
+      theme.category
+    );
     setAiDrill(drill);
     setLoading(false);
+  };
+
+  const difficultyLabels = {
+    'BEGINNER': '基础入门 (Beginner)',
+    'INTERMEDIATE': '进阶实战 (Intermediate)',
+    'ADVANCED': '高阶专家 (Advanced)'
+  };
+
+  const difficultyColor = {
+    'BEGINNER': 'text-green-400',
+    'INTERMEDIATE': 'text-yellow-400',
+    'ADVANCED': 'text-red-500'
   };
 
   return (
@@ -80,9 +99,16 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
             
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
-                <span className={`inline-block px-3 py-1 rounded text-xs font-bold tracking-widest mb-3 bg-km-red text-white shadow-lg`}>
-                  {theme.category === 'MILITARY' ? '军警战术模块' : '民用防卫模块'}
-                </span>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`inline-block px-3 py-1 rounded text-xs font-bold tracking-widest bg-km-red text-white shadow-lg`}>
+                    {theme.category === 'MILITARY' ? '军警战术模块' : '民用防卫模块'}
+                  </span>
+                  <span className={`inline-flex items-center px-3 py-1 rounded text-xs font-bold tracking-widest bg-black/60 border border-white/10 backdrop-blur ${difficultyColor[theme.difficulty]}`}>
+                    <BarChart3 className="w-3 h-3 mr-1" />
+                    {difficultyLabels[theme.difficulty]}
+                  </span>
+                </div>
+                
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight text-white drop-shadow-lg">{theme.title}</h2>
                 <div className="flex flex-wrap gap-4 text-sm text-gray-300 font-medium italic">
                   {theme.hooks.map((hook, i) => (
@@ -139,37 +165,75 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
               <Flame className="w-5 h-5 mr-2" /> 核心技术库
             </h3>
             
-            {/* AI Generator Box */}
-            <div className={`p-4 rounded-xl border border-neutral-800 bg-neutral-900`}>
-              <div className="flex justify-between items-center mb-2">
-                <h4 className="text-sm font-bold flex items-center text-gray-200">
-                  <BrainCircuit className="w-4 h-4 mr-2 text-km-red" /> 
-                  AI 战术教官: 训练生成器
+            {/* AI Generator Box - REFACTORED LAYOUT */}
+            <div className={`p-5 rounded-xl border border-neutral-800 bg-neutral-900 shadow-inner`}>
+              <div className="flex justify-between items-center mb-4 border-b border-neutral-800 pb-2">
+                <h4 className="text-base font-bold flex items-center text-gray-200">
+                  <BrainCircuit className="w-5 h-5 mr-2 text-km-red" /> 
+                  AI 战术教官: 专项训练生成器
                 </h4>
+                {selectedTechnique && !loading && (
+                   <span className="text-xs text-km-red font-mono px-2 py-1 bg-km-red/10 rounded border border-km-red/20">
+                     TARGET: {selectedTechnique.name}
+                   </span>
+                )}
               </div>
               
               {!selectedTechnique && !loading && (
-                <p className="text-xs text-gray-500">点击生成训练：训练详细专属方案，为防抄袭请用“魔法”方可查看。</p>
+                <div className="text-center py-8 text-gray-500">
+                  <p className="mb-2">请从下方列表点击 <span className="text-km-red">“生成训练”</span> 按钮。</p>
+                  <p className="text-xs opacity-70">AI教官将根据 <span className={difficultyColor[theme.difficulty]}>{difficultyLabels[theme.difficulty]}</span> 级别生成教案。</p>
+                </div>
               )}
 
               {loading && (
-                <div className="animate-pulse flex space-x-4">
-                  <div className="flex-1 space-y-2 py-1">
-                    <div className="h-2 bg-neutral-700 rounded"></div>
-                    <div className="h-2 bg-neutral-700 rounded w-5/6"></div>
+                <div className="py-8 space-y-4">
+                  <div className="flex items-center justify-center space-x-2 text-km-red animate-pulse">
+                     <BrainCircuit className="w-6 h-6" />
+                     <span className="font-bold tracking-widest uppercase">Analyzing Tactics ({theme.difficulty})...</span>
+                  </div>
+                  <div className="space-y-2 max-w-md mx-auto">
+                    <div className="h-2 bg-neutral-800 rounded w-full"></div>
+                    <div className="h-2 bg-neutral-800 rounded w-5/6"></div>
+                    <div className="h-2 bg-neutral-800 rounded w-4/6"></div>
                   </div>
                 </div>
               )}
 
               {aiDrill && !loading && (
-                <div className="text-sm">
-                  <p className="font-bold text-km-red mb-1">{aiDrill.drillName}</p>
-                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-300">
-                    {aiDrill.instructions.map((step: string, idx: number) => (
-                      <li key={idx}>{step}</li>
-                    ))}
-                    <li className="font-semibold text-white mt-2">压力因素: {aiDrill.stressFactor}</li>
-                  </ul>
+                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                  {/* Drill Title & Setup */}
+                  <div>
+                    <h3 className="text-lg font-black text-white mb-2">{aiDrill.drillName}</h3>
+                    <div className="flex items-start text-xs text-gray-400 bg-black/30 p-2 rounded border border-neutral-800">
+                      <ClipboardList className="w-4 h-4 mr-2 shrink-0 text-gray-500" />
+                      <span><strong className="text-gray-300">训练准备:</strong> {aiDrill.setup}</span>
+                    </div>
+                  </div>
+
+                  {/* Phases */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-neutral-950 p-3 rounded border border-neutral-800">
+                       <h5 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2 flex items-center">
+                         <ShieldAlert className="w-3 h-3 mr-1" /> 阶段一: 动作分解
+                       </h5>
+                       <p className="text-sm text-gray-300 whitespace-pre-wrap leading-relaxed">{aiDrill.phase1_technical}</p>
+                    </div>
+                    <div className="bg-neutral-950 p-3 rounded border border-neutral-800">
+                       <h5 className="text-xs font-bold text-km-red uppercase tracking-wider mb-2 flex items-center">
+                         <Zap className="w-3 h-3 mr-1" /> 阶段二: 压力模拟
+                       </h5>
+                       <p className="text-sm text-gray-300 whitespace-pre-wrap leading-relaxed">{aiDrill.phase2_stress}</p>
+                    </div>
+                  </div>
+
+                  {/* Critical Checkpoints */}
+                  <div className="bg-yellow-900/10 border border-yellow-700/30 p-3 rounded">
+                    <h5 className="text-xs font-bold text-yellow-500 uppercase tracking-wider mb-1 flex items-center">
+                       <AlertTriangle className="w-3 h-3 mr-1" /> 教官视角 (Critical Points)
+                    </h5>
+                    <p className="text-xs text-yellow-200/80">{aiDrill.critical_checkpoints}</p>
+                  </div>
                 </div>
               )}
             </div>
@@ -179,14 +243,22 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
               <table className="w-full text-sm text-left">
                 <tbody className="divide-y divide-neutral-800">
                   {theme.techniques.map((t, i) => (
-                    <tr key={i} className={`${rowHover} transition-colors`}>
-                      <td className="px-4 py-2 font-bold text-gray-200">{t.name}</td>
-                      <td className={`px-4 py-2 text-xs text-gray-500`}>{t.details}</td>
-                      <td className="px-4 py-2 text-right">
+                    <tr key={i} className={`${rowHover} transition-colors group`}>
+                      <td className="px-4 py-3">
+                         <div className="font-bold text-gray-200">{t.name}</div>
+                         <div className="text-[10px] text-gray-500 mt-0.5">{t.details}</div>
+                      </td>
+                      <td className="px-4 py-3 text-right align-middle">
                         <button 
                           onClick={() => handleGenerateDrill(t)}
-                          className={`text-xs px-2 py-1 rounded border border-neutral-700 text-gray-400 hover:bg-km-red hover:text-white hover:border-km-red transition-all whitespace-nowrap`}
+                          className={`
+                            text-xs font-bold px-3 py-1.5 rounded-full border border-neutral-700 
+                            text-gray-400 bg-neutral-900
+                            hover:bg-km-red hover:text-white hover:border-km-red hover:shadow-[0_0_10px_rgba(220,38,38,0.5)]
+                            active:scale-95 transition-all whitespace-nowrap flex items-center ml-auto
+                          `}
                         >
+                          <BrainCircuit className="w-3 h-3 mr-1" />
                           生成训练
                         </button>
                       </td>

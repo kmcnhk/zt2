@@ -1,4 +1,5 @@
 export type Category = 'CIVILIAN' | 'MILITARY' | 'INSTRUCTOR';
+export type Difficulty = 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED';
 
 export interface Technique {
   name: string;
@@ -13,6 +14,7 @@ export interface Scenario {
 export interface Theme {
   id: string;
   category: Category;
+  difficulty: Difficulty;
   title: string;
   hooks: string[]; // Catchy alternative titles
   description: string;

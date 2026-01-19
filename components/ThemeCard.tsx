@@ -1,6 +1,6 @@
 import React from 'react';
 import { Theme } from '../types';
-import { Shield, Sword, ArrowRight } from 'lucide-react';
+import { Shield, Sword, ArrowRight, BarChart } from 'lucide-react';
 
 interface Props {
   theme: Theme;
@@ -9,6 +9,19 @@ interface Props {
 }
 
 const ThemeCard: React.FC<Props> = ({ theme, onClick, isMilitary }) => {
+  // Difficulty Color Mapping
+  const difficultyColors = {
+    'BEGINNER': 'bg-green-900/50 text-green-400 border-green-800',
+    'INTERMEDIATE': 'bg-yellow-900/50 text-yellow-400 border-yellow-800',
+    'ADVANCED': 'bg-red-900/50 text-red-400 border-red-800'
+  };
+
+  const difficultyLabel = {
+    'BEGINNER': '基础入门',
+    'INTERMEDIATE': '进阶实战',
+    'ADVANCED': '高阶专家'
+  };
+
   return (
     <div 
       onClick={() => onClick(theme)}
@@ -28,12 +41,20 @@ const ThemeCard: React.FC<Props> = ({ theme, onClick, isMilitary }) => {
       <div className="p-6 relative z-10 flex flex-col h-full">
         {/* Top Row: Icon & ID */}
         <div className="flex justify-between items-start mb-5">
-          <div className={`p-2.5 rounded-lg bg-neutral-900/80 border border-neutral-800 group-hover:border-km-red/30 transition-colors duration-300`}>
-            {theme.category === 'MILITARY' 
-              ? <Sword className={`w-6 h-6 text-km-red`} />
-              : <Shield className="w-6 h-6 text-white group-hover:text-km-red transition-colors duration-300" />
-            }
+          <div className="flex gap-2">
+            <div className={`p-2.5 rounded-lg bg-neutral-900/80 border border-neutral-800 group-hover:border-km-red/30 transition-colors duration-300`}>
+              {theme.category === 'MILITARY' 
+                ? <Sword className={`w-6 h-6 text-km-red`} />
+                : <Shield className="w-6 h-6 text-white group-hover:text-km-red transition-colors duration-300" />
+              }
+            </div>
+            {/* Difficulty Badge */}
+            <div className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center border ${difficultyColors[theme.difficulty]}`}>
+              <BarChart className="w-3 h-3 mr-1" />
+              {difficultyLabel[theme.difficulty]}
+            </div>
           </div>
+
           <span className={`text-[10px] font-black tracking-widest px-2 py-1 rounded bg-neutral-950 text-neutral-500 border border-neutral-900 group-hover:text-km-red/80 group-hover:border-km-red/20 transition-colors duration-300`}>
             #{theme.id.toUpperCase()}
           </span>
