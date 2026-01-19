@@ -42,7 +42,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/90 backdrop-blur-sm overflow-y-auto"
       onClick={(e) => {
         // Close when clicking the backdrop
         if (e.target === e.currentTarget) {
@@ -69,10 +69,10 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
           <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/90 to-black/50" />
 
           <div className={`p-8 relative z-10`}>
-            {/* Improved Close Button */}
+            {/* Improved Close Button - FIXED on mobile, ABSOLUTE on desktop */}
             <button 
               onClick={onClose} 
-              className="absolute top-6 right-6 z-50 p-2 rounded-full bg-black/40 hover:bg-km-red transition-all duration-300 text-gray-300 hover:text-white backdrop-blur border border-white/10 group shadow-lg"
+              className="fixed top-4 right-4 md:absolute md:top-6 md:right-6 z-[60] p-2 rounded-full bg-black/60 md:bg-black/40 hover:bg-km-red transition-all duration-300 text-gray-300 hover:text-white backdrop-blur border border-white/10 group shadow-lg"
               title="Close (Esc)"
             >
               <X className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
@@ -201,7 +201,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
 
         {/* Footer info */}
         <div className={`p-4 border-t ${borderColor} bg-neutral-900 flex justify-between text-xs text-gray-500`}>
-          <span>课程格式: 线上视频课程 + 6节线下实战课 (90分钟/节)</span>
+          <span>课程格式: 线上视频课程 + 6节线下实战课 (70分钟/节)</span>
           <span className="font-bold text-gray-300">考核通过后颁发官方证书</span>
         </div>
       </div>

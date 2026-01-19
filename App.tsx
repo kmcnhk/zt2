@@ -24,11 +24,10 @@ const App: React.FC = () => {
 
   // ---------------------------------------------------------------------------
   // --- LOGO SETTING ---
-  // 1. 图片必须放在项目的 'public/' 文件夹内。
-  // 2. 文件名必须完全小写：'logo.png' (Linux服务器区分大小写，Logo.png 不行)。
-  // 3. 使用绝对路径 '/logo.png' 确保从域名根目录加载。
+  // 使用相对路径 "logo.png" 以配合 vite.config.ts 中的 base: './'。
+  // 这确保了即使网站部署在子目录下，也能正确找到 public 文件夹中的 logo.png。
   // ---------------------------------------------------------------------------
-  const logoUrl = "/logo.png";
+  const logoUrl = "logo.png";
   // ---------------------------------------------------------------------------
 
   return (
@@ -46,9 +45,8 @@ const App: React.FC = () => {
                 <img 
                   src={logoUrl}
                   onError={(e) => {
-                    // Fallback if image fails to load
-                    console.error("Logo load failed. Check if public/logo.png exists and is lowercase.");
-                    e.currentTarget.style.display = 'none'; // Hide broken image icon if fails
+                    // Silent fallback to prevent console spam
+                    e.currentTarget.src = "https://placehold.co/150x80/000000/ffffff?text=KMCN";
                   }}
                   alt="KMCN 深圳马伽术 Logo" 
                   // Revised: h-12 on mobile, h-16 on desktop for better adaptiveness
@@ -227,7 +225,7 @@ const App: React.FC = () => {
 
       {/* CTA Footer */}
       <div className={`fixed bottom-0 w-full border-t p-4 z-30 bg-neutral-950/95 backdrop-blur border-neutral-800`}>
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-7xl mx-auto flex justify-end sm:justify-between items-center">
           <div className="hidden sm:block">
             <p className="text-xs font-bold text-gray-400">KMCN 以色列马伽术认证专家</p>
             <p className="text-sm font-bold text-gray-200">联系教官报名: 13424247185</p>
