@@ -3,12 +3,14 @@ import { THEMES } from './data';
 import { Theme, Difficulty } from './types';
 import ThemeCard from './components/ThemeCard';
 import DetailView from './components/DetailView';
-import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone, BarChart3, Filter } from 'lucide-react';
+import UserProfile from './components/UserProfile';
+import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone, BarChart3, Filter, User } from 'lucide-react';
 
 const App: React.FC = () => {
   const [mode, setMode] = useState<'CIVILIAN' | 'MILITARY' | 'INSTRUCTOR'>('CIVILIAN');
   const [difficultyFilter, setDifficultyFilter] = useState<'ALL' | Difficulty>('ALL');
   const [selectedTheme, setSelectedTheme] = useState<Theme | null>(null);
+  const [showProfile, setShowProfile] = useState(false);
 
   const isMilitary = mode === 'MILITARY';
   const isInstructor = mode === 'INSTRUCTOR';
@@ -29,10 +31,7 @@ const App: React.FC = () => {
 
   // ---------------------------------------------------------------------------
   // --- LOGO SETTING ---
-  // 使用相对路径 "logo.png" 以配合 vite.config.ts 中的 base: './'。
-  // 这确保了即使网站部署在子目录下，也能正确找到 public 文件夹中的 logo.png。
-  // ---------------------------------------------------------------------------
-  const logoUrl = "logo.png";
+  const logoUrl = "./logo.png";
   // ---------------------------------------------------------------------------
 
   const DifficultyButton = ({ level, label, colorClass }: { level: 'ALL' | Difficulty, label: string, colorClass: string }) => (
@@ -60,16 +59,13 @@ const App: React.FC = () => {
             <div className="flex items-center gap-3 sm:gap-4">
               {/* Logo Section */}
               <div className="relative group shrink-0">
-                {/* Custom Glow: Red to Blue Gradient to match the Yin-Yang symbol in the logo */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-km-red via-transparent to-blue-600 rounded-[50%] blur-md opacity-20 group-hover:opacity-50 transition duration-500"></div>
                 <img 
                   src={logoUrl}
                   onError={(e) => {
-                    // Silent fallback to prevent console spam
                     e.currentTarget.src = "https://placehold.co/150x80/000000/ffffff?text=KMCN";
                   }}
                   alt="KMCN 深圳马伽术 Logo" 
-                  // Revised: h-12 on mobile, h-16 on desktop for better adaptiveness
                   className="relative h-12 sm:h-16 w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" 
                 />
               </div>
@@ -89,57 +85,93 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Mode Switcher */}
-            <div className="flex items-center gap-2 bg-neutral-900/80 rounded-full p-1 border border-white/10 shadow-inner overflow-x-auto max-w-[200px] sm:max-w-none scrollbar-hide">
-               <button 
-                  onClick={() => setMode('CIVILIAN')}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
-                    ${mode === 'CIVILIAN'
-                      ? 'bg-white text-black shadow-lg ring-1 ring-white/50' 
-                      : 'text-gray-500 hover:text-white hover:bg-white/10'
-                    }
-                  `}
-                >
-                  <Shield className={`w-3 h-3 sm:w-4 sm:h-4 ${mode === 'CIVILIAN' ? 'text-km-red' : ''}`} />
-                  <span className="hidden sm:inline">自卫马伽术</span>
-                  <span className="sm:hidden">民用</span>
-                </button>
+            {/* Right Side: Mode Switcher & Profile */}
+            <div className="flex items-center gap-4">
+              {/* Mode Switcher */}
+              <div className="hidden md:flex items-center gap-2 bg-neutral-900/80 rounded-full p-1 border border-white/10 shadow-inner">
+                 <button 
+                    onClick={() => setMode('CIVILIAN')}
+                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
+                      ${mode === 'CIVILIAN'
+                        ? 'bg-white text-black shadow-lg ring-1 ring-white/50' 
+                        : 'text-gray-500 hover:text-white hover:bg-white/10'
+                      }
+                    `}
+                  >
+                    <Shield className={`w-3 h-3 sm:w-4 sm:h-4 ${mode === 'CIVILIAN' ? 'text-km-red' : ''}`} />
+                    <span className="hidden sm:inline">自卫马伽术</span>
+                    <span className="sm:hidden">民用</span>
+                  </button>
 
-                <button 
-                  onClick={() => setMode('MILITARY')}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
-                    ${mode === 'MILITARY'
-                      ? 'bg-km-red text-white shadow-[0_0_10px_rgba(220,38,38,0.4)] ring-1 ring-red-500/50' 
-                      : 'text-gray-500 hover:text-white hover:bg-white/10'
-                    }
-                  `}
-                >
-                  <Target className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="hidden sm:inline">军警特勤格斗</span>
-                  <span className="sm:hidden">军警</span>
-                </button>
+                  <button 
+                    onClick={() => setMode('MILITARY')}
+                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
+                      ${mode === 'MILITARY'
+                        ? 'bg-km-red text-white shadow-[0_0_10px_rgba(220,38,38,0.4)] ring-1 ring-red-500/50' 
+                        : 'text-gray-500 hover:text-white hover:bg-white/10'
+                      }
+                    `}
+                  >
+                    <Target className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">军警特勤</span>
+                    <span className="sm:hidden">军警</span>
+                  </button>
 
-                <button 
-                  onClick={() => setMode('INSTRUCTOR')}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
-                    ${mode === 'INSTRUCTOR'
-                      ? 'bg-amber-600 text-white shadow-[0_0_10px_rgba(217,119,6,0.4)] ring-1 ring-amber-500/50' 
-                      : 'text-gray-500 hover:text-white hover:bg-white/10'
-                    }
-                  `}
-                >
-                  <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="hidden sm:inline">马伽术教官特训</span>
-                  <span className="sm:hidden">教官</span>
-                </button>
+                  <button 
+                    onClick={() => setMode('INSTRUCTOR')}
+                    className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 text-xs sm:text-sm font-bold whitespace-nowrap
+                      ${mode === 'INSTRUCTOR'
+                        ? 'bg-amber-600 text-white shadow-[0_0_10px_rgba(217,119,6,0.4)] ring-1 ring-amber-500/50' 
+                        : 'text-gray-500 hover:text-white hover:bg-white/10'
+                      }
+                    `}
+                  >
+                    <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">教官特训</span>
+                    <span className="sm:hidden">教官</span>
+                  </button>
+              </div>
+
+              {/* Profile Icon */}
+              <button 
+                onClick={() => setShowProfile(true)}
+                className="p-2 rounded-full bg-neutral-800 border border-neutral-700 hover:border-km-red text-gray-400 hover:text-white transition-all hover:bg-neutral-700"
+                title="个人中心"
+              >
+                <User className="w-5 h-5" />
+              </button>
             </div>
+          </div>
+          
+          {/* Mobile Mode Switcher (Separate Row) */}
+          <div className="md:hidden flex items-center justify-between pb-3 gap-2 overflow-x-auto scrollbar-hide">
+              <button 
+                onClick={() => setMode('CIVILIAN')}
+                className={`flex-1 flex items-center justify-center gap-1 px-2 py-1.5 rounded text-xs font-bold whitespace-nowrap border transition-all
+                  ${mode === 'CIVILIAN' ? 'bg-white text-black border-white' : 'bg-neutral-900 text-gray-500 border-neutral-800'}`}
+              >
+                <Shield className="w-3 h-3" /> 民用
+              </button>
+              <button 
+                onClick={() => setMode('MILITARY')}
+                className={`flex-1 flex items-center justify-center gap-1 px-2 py-1.5 rounded text-xs font-bold whitespace-nowrap border transition-all
+                  ${mode === 'MILITARY' ? 'bg-km-red text-white border-km-red' : 'bg-neutral-900 text-gray-500 border-neutral-800'}`}
+              >
+                <Target className="w-3 h-3" /> 军警
+              </button>
+              <button 
+                onClick={() => setMode('INSTRUCTOR')}
+                className={`flex-1 flex items-center justify-center gap-1 px-2 py-1.5 rounded text-xs font-bold whitespace-nowrap border transition-all
+                  ${mode === 'INSTRUCTOR' ? 'bg-amber-600 text-white border-amber-600' : 'bg-neutral-900 text-gray-500 border-neutral-800'}`}
+              >
+                <GraduationCap className="w-3 h-3" /> 教官
+              </button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <div className="relative overflow-hidden py-16 sm:py-24">
-        {/* Background Image Layer - Updated for better responsiveness (Adaptive) */}
         <div 
           className="absolute inset-0 z-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat"
           style={{
@@ -147,7 +179,6 @@ const App: React.FC = () => {
             opacity: 0.4
           }}
         />
-        {/* Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/90 via-black/70 to-km-black" />
 
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
@@ -251,10 +282,9 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Static Footer with Contact & Motto */}
+      {/* Static Footer */}
       <footer className="relative z-10 bg-black/60 border-t border-white/5 py-16 pb-32 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 text-center">
-            
             <div className="mb-10 flex flex-col items-center">
                 <h4 className="text-2xl font-black text-white tracking-tighter mb-2">KMCN <span className="text-km-red">中国马伽术</span></h4>
                 <div className="flex items-center gap-6 text-sm sm:text-base font-bold text-gray-400 mt-2">
@@ -262,7 +292,6 @@ const App: React.FC = () => {
                    <span className="flex items-center text-km-red"><Phone className="w-4 h-4 mr-2" /> 13424247185</span>
                 </div>
             </div>
-
             <div className="inline-block p-8 rounded-xl bg-black/50 border border-white/10 shadow-2xl backdrop-blur max-w-3xl transform hover:scale-[1.02] transition-transform duration-500">
                 <p className="text-xl md:text-2xl font-black text-gray-100 mb-3 tracking-wide">
                     “级别不是目的，重要的是能安全回家！”
@@ -271,20 +300,23 @@ const App: React.FC = () => {
                     "The goal is not the rank, but getting home safe."
                 </p>
             </div>
-
             <div className="mt-12 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-bold">
                 &copy; 2026 KMCN | KRAV MAGA ELITE TRAINING
             </div>
         </div>
       </footer>
 
-      {/* Modal */}
+      {/* Modals */}
       {selectedTheme && (
         <DetailView 
           theme={selectedTheme} 
           onClose={() => setSelectedTheme(null)} 
           isMilitary={isMilitary}
         />
+      )}
+      
+      {showProfile && (
+        <UserProfile onClose={() => setShowProfile(false)} />
       )}
 
       {/* CTA Footer */}
