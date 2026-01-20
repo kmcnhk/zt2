@@ -5,29 +5,327 @@ import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Tar
 // ==========================================
 // 🔧 视频链接配置区域 (Video Configuration)
 // ==========================================
-// 默认主题主视频
+// 默认主题主视频 (当找不到具体技术视频时播放)
 const MAIN_VIDEO_CONFIG = {
-  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/946516651253642699130507926/f2GvtjMt9J8A.mp4",
+  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4",
   MILITARY: "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
-  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/df61d6e61253642699131452585/8uv6gnmpCNMA.mp4"
+  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4"
 };
 
-// 💡 提示：在此处配置分集视频路径
+// 临时通用链接 (用于占位，修改时请替换为真实链接)
+const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4";
+
+// 💡 提示：在此处配置分集视频路径 (第 18 行开始)
+// 键(Key)格式：主题简称 + 空格 + 序号 (例如: "女子防身特辑 1")
+// 值(Value)为视频的 URL 地址
 const VIDEO_PLAYLIST_MAP: Record<string, string> = {
-    "小手返 (Kote Gaeshi)": "https://path-to-your-video/kote-gaeshi.mp4",
-  "小手返2 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
-  "小手返3 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/df61d6e61253642699131452585/8uv6gnmpCNMA.mp4",
-  "小手返4 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
-  "小手返5 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
-  "小手返6 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
-    // ... 添加更多
+    // ================= CIVILIAN (民用主题) =================
+    // 1. 街头格斗终结者
+    "街头格斗终结者 1": TEMP_LINK,
+    "街头格斗终结者 2": TEMP_LINK,
+    "街头格斗终结者 3": TEMP_LINK,
+    "街头格斗终结者 4": TEMP_LINK,
+    "街头格斗终结者 5": TEMP_LINK,
+    "街头格斗终结者 6": TEMP_LINK,
+    "街头格斗终结者 7": TEMP_LINK,
+    "街头格斗终结者 8": TEMP_LINK,
+    "街头格斗终结者 9": TEMP_LINK,
+    "街头格斗终结者 10": TEMP_LINK,
+    "街头格斗终结者 11": TEMP_LINK,
+    "街头格斗终结者 12": TEMP_LINK,
+
+    // 2. 女子防身特辑
+    "女子防身特辑 1": TEMP_LINK,
+    "女子防身特辑 2": TEMP_LINK,
+    "女子防身特辑 3": TEMP_LINK,
+    "女子防身特辑 4": TEMP_LINK,
+    "女子防身特辑 5": TEMP_LINK,
+    "女子防身特辑 6": TEMP_LINK,
+    "女子防身特辑 7": TEMP_LINK,
+    "女子防身特辑 8": TEMP_LINK,
+    "女子防身特辑 9": TEMP_LINK,
+    "女子防身特辑 10": TEMP_LINK,
+    "女子防身特辑 11": TEMP_LINK,
+    "女子防身特辑 12": TEMP_LINK,
+
+    // 3. 校园铁盾
+    "校园铁盾 1": TEMP_LINK,
+    "校园铁盾 2": TEMP_LINK,
+    "校园铁盾 3": TEMP_LINK,
+    "校园铁盾 4": TEMP_LINK,
+    "校园铁盾 5": TEMP_LINK,
+    "校园铁盾 6": TEMP_LINK,
+    "校园铁盾 7": TEMP_LINK,
+    "校园铁盾 8": TEMP_LINK,
+    "校园铁盾 9": TEMP_LINK,
+    "校园铁盾 10": TEMP_LINK,
+    "校园铁盾 11": TEMP_LINK,
+    "校园铁盾 12": TEMP_LINK,
+    
+    // 4. 路怒症与车内防卫
+    "路怒症与车内防卫 1": TEMP_LINK,
+    "路怒症与车内防卫 2": TEMP_LINK,
+    "路怒症与车内防卫 3": TEMP_LINK,
+    "路怒症与车内防卫 4": TEMP_LINK,
+    "路怒症与车内防卫 5": TEMP_LINK,
+    "路怒症与车内防卫 6": TEMP_LINK,
+    "路怒症与车内防卫 7": TEMP_LINK,
+    "路怒症与车内防卫 8": TEMP_LINK,
+    "路怒症与车内防卫 9": TEMP_LINK,
+    "路怒症与车内防卫 10": TEMP_LINK,
+    "路怒症与车内防卫 11": TEMP_LINK,
+    "路怒症与车内防卫 12": TEMP_LINK,
+
+    // 5. 刀锋之下
+    "刀锋之下 1": TEMP_LINK,
+    "刀锋之下 2": TEMP_LINK,
+    "刀锋之下 3": TEMP_LINK,
+    "刀锋之下 4": TEMP_LINK,
+    "刀锋之下 5": TEMP_LINK,
+    "刀锋之下 6": TEMP_LINK,
+    "刀锋之下 7": TEMP_LINK,
+    "刀锋之下 8": TEMP_LINK,
+    "刀锋之下 9": TEMP_LINK,
+    "刀锋之下 10": TEMP_LINK,
+    "刀锋之下 11": TEMP_LINK,
+    "刀锋之下 12": TEMP_LINK,
+
+    // 6. 地面修罗
+    "地面修罗 1": TEMP_LINK,
+    "地面修罗 2": TEMP_LINK,
+    "地面修罗 3": TEMP_LINK,
+    "地面修罗 4": TEMP_LINK,
+    "地面修罗 5": TEMP_LINK,
+    "地面修罗 6": TEMP_LINK,
+    "地面修罗 7": TEMP_LINK,
+    "地面修罗 8": TEMP_LINK,
+    "地面修罗 9": TEMP_LINK,
+    "地面修罗 10": TEMP_LINK,
+    "地面修罗 11": TEMP_LINK,
+    "地面修罗 12": TEMP_LINK,
+
+    // 7. 枪械威胁应对
+    "枪械威胁应对 1": TEMP_LINK,
+    "枪械威胁应对 2": TEMP_LINK,
+    "枪械威胁应对 3": TEMP_LINK,
+    "枪械威胁应对 4": TEMP_LINK,
+    "枪械威胁应对 5": TEMP_LINK,
+    "枪械威胁应对 6": TEMP_LINK,
+    "枪械威胁应对 7": TEMP_LINK,
+    "枪械威胁应对 8": TEMP_LINK,
+    "枪械威胁应对 9": TEMP_LINK,
+    "枪械威胁应对 10": TEMP_LINK,
+    "枪械威胁应对 11": TEMP_LINK,
+    "枪械威胁应对 12": TEMP_LINK,
+
+    // 8. 居家入侵与家庭保卫
+    "居家入侵与家庭保卫 1": TEMP_LINK,
+    "居家入侵与家庭保卫 2": TEMP_LINK,
+    "居家入侵与家庭保卫 3": TEMP_LINK,
+    "居家入侵与家庭保卫 4": TEMP_LINK,
+    "居家入侵与家庭保卫 5": TEMP_LINK,
+    "居家入侵与家庭保卫 6": TEMP_LINK,
+    "居家入侵与家庭保卫 7": TEMP_LINK,
+    "居家入侵与家庭保卫 8": TEMP_LINK,
+    "居家入侵与家庭保卫 9": TEMP_LINK,
+    "居家入侵与家庭保卫 10": TEMP_LINK,
+    "居家入侵与家庭保卫 11": TEMP_LINK,
+    "居家入侵与家庭保卫 12": TEMP_LINK,
+
+    // 9. 短棍防卫与菲律宾魔杖实战
+    "短棍防卫与菲律宾魔杖实战 1": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 2": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 3": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 4": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 5": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 6": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 7": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 8": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 9": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 10": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 11": TEMP_LINK,
+    "短棍防卫与菲律宾魔杖实战 12": TEMP_LINK,
+
+
+    // ================= MILITARY (军警主题) =================
+    // 10. FBI特工必修
+    "FBI特工必修 1": TEMP_LINK,
+    "FBI特工必修 2": TEMP_LINK,
+    "FBI特工必修 3": TEMP_LINK,
+    "FBI特工必修 4": TEMP_LINK,
+    "FBI特工必修 5": TEMP_LINK,
+    "FBI特工必修 6": TEMP_LINK,
+    "FBI特工必修 7": TEMP_LINK,
+    "FBI特工必修 8": TEMP_LINK,
+    "FBI特工必修 9": TEMP_LINK,
+    "FBI特工必修 10": TEMP_LINK,
+    "FBI特工必修 11": TEMP_LINK,
+    "FBI特工必修 12": TEMP_LINK,
+
+    // 11. 海豹突击队战术
+    "海豹突击队战术 1": TEMP_LINK,
+    "海豹突击队战术 2": TEMP_LINK,
+    "海豹突击队战术 3": TEMP_LINK,
+    "海豹突击队战术 4": TEMP_LINK,
+    "海豹突击队战术 5": TEMP_LINK,
+    "海豹突击队战术 6": TEMP_LINK,
+    "海豹突击队战术 7": TEMP_LINK,
+    "海豹突击队战术 8": TEMP_LINK,
+    "海豹突击队战术 9": TEMP_LINK,
+    "海豹突击队战术 10": TEMP_LINK,
+    "海豹突击队战术 11": TEMP_LINK,
+    "海豹突击队战术 12": TEMP_LINK,
+
+    // 12. 要员保护 (VIP Protection)
+    "要员保护 (VIP Protection) 1": TEMP_LINK,
+    "要员保护 (VIP Protection) 2": TEMP_LINK,
+    "要员保护 (VIP Protection) 3": TEMP_LINK,
+    "要员保护 (VIP Protection) 4": TEMP_LINK,
+    "要员保护 (VIP Protection) 5": TEMP_LINK,
+    "要员保护 (VIP Protection) 6": TEMP_LINK,
+    "要员保护 (VIP Protection) 7": TEMP_LINK,
+    "要员保护 (VIP Protection) 8": TEMP_LINK,
+    "要员保护 (VIP Protection) 9": TEMP_LINK,
+    "要员保护 (VIP Protection) 10": TEMP_LINK,
+    "要员保护 (VIP Protection) 11": TEMP_LINK,
+    "要员保护 (VIP Protection) 12": TEMP_LINK,
+
+    // 13. 战术CQB与夺枪术
+    "战术CQB与夺枪术 1": TEMP_LINK,
+    "战术CQB与夺枪术 2": TEMP_LINK,
+    "战术CQB与夺枪术 3": TEMP_LINK,
+    "战术CQB与夺枪术 4": TEMP_LINK,
+    "战术CQB与夺枪术 5": TEMP_LINK,
+    "战术CQB与夺枪术 6": TEMP_LINK,
+    "战术CQB与夺枪术 7": TEMP_LINK,
+    "战术CQB与夺枪术 8": TEMP_LINK,
+    "战术CQB与夺枪术 9": TEMP_LINK,
+    "战术CQB与夺枪术 10": TEMP_LINK,
+    "战术CQB与夺枪术 11": TEMP_LINK,
+    "战术CQB与夺枪术 12": TEMP_LINK,
+
+    // 14. 刀锋战士
+    "刀锋战士 1": TEMP_LINK,
+    "刀锋战士 2": TEMP_LINK,
+    "刀锋战士 3": TEMP_LINK,
+    "刀锋战士 4": TEMP_LINK,
+    "刀锋战士 5": TEMP_LINK,
+    "刀锋战士 6": TEMP_LINK,
+    "刀锋战士 7": TEMP_LINK,
+    "刀锋战士 8": TEMP_LINK,
+    "刀锋战士 9": TEMP_LINK,
+    "刀锋战士 10": TEMP_LINK,
+    "刀锋战士 11": TEMP_LINK,
+    "刀锋战士 12": TEMP_LINK,
+
+    // 15. 万物皆兵
+    "万物皆兵 1": TEMP_LINK,
+    "万物皆兵 2": TEMP_LINK,
+    "万物皆兵 3": TEMP_LINK,
+    "万物皆兵 4": TEMP_LINK,
+    "万物皆兵 5": TEMP_LINK,
+    "万物皆兵 6": TEMP_LINK,
+    "万物皆兵 7": TEMP_LINK,
+    "万物皆兵 8": TEMP_LINK,
+    "万物皆兵 9": TEMP_LINK,
+    "万物皆兵 10": TEMP_LINK,
+    "万物皆兵 11": TEMP_LINK,
+    "万物皆兵 12": TEMP_LINK,
+
+
+    // ================= INSTRUCTOR (教官主题) =================
+    // 16. 公共安全与反恐生存
+    "公共安全与反恐生存 1": TEMP_LINK,
+    "公共安全与反恐生存 2": TEMP_LINK,
+    "公共安全与反恐生存 3": TEMP_LINK,
+    "公共安全与反恐生存 4": TEMP_LINK,
+    "公共安全与反恐生存 5": TEMP_LINK,
+    "公共安全与反恐生存 6": TEMP_LINK,
+    "公共安全与反恐生存 7": TEMP_LINK,
+    "公共安全与反恐生存 8": TEMP_LINK,
+    "公共安全与反恐生存 9": TEMP_LINK,
+    "公共安全与反恐生存 10": TEMP_LINK,
+    "公共安全与反恐生存 11": TEMP_LINK,
+    "公共安全与反恐生存 12": TEMP_LINK,
+
+    // 17. 执教风控与学员安全
+    "执教风控与学员安全 1": TEMP_LINK,
+    "执教风控与学员安全 2": TEMP_LINK,
+    "执教风控与学员安全 3": TEMP_LINK,
+    "执教风控与学员安全 4": TEMP_LINK,
+    "执教风控与学员安全 5": TEMP_LINK,
+    "执教风控与学员安全 6": TEMP_LINK,
+    "执教风控与学员安全 7": TEMP_LINK,
+    "执教风控与学员安全 8": TEMP_LINK,
+    "执教风控与学员安全 9": TEMP_LINK,
+    "执教风控与学员安全 10": TEMP_LINK,
+    "执教风控与学员安全 11": TEMP_LINK,
+    "执教风控与学员安全 12": TEMP_LINK,
+
+    // 18. 教官必修格斗技能体系
+    "教官必修格斗技能体系 1": TEMP_LINK,
+    "教官必修格斗技能体系 2": TEMP_LINK,
+    "教官必修格斗技能体系 3": TEMP_LINK,
+    "教官必修格斗技能体系 4": TEMP_LINK,
+    "教官必修格斗技能体系 5": TEMP_LINK,
+    "教官必修格斗技能体系 6": TEMP_LINK,
+    "教官必修格斗技能体系 7": TEMP_LINK,
+    "教官必修格斗技能体系 8": TEMP_LINK,
+    "教官必修格斗技能体系 9": TEMP_LINK,
+    "教官必修格斗技能体系 10": TEMP_LINK,
+    "教官必修格斗技能体系 11": TEMP_LINK,
+    "教官必修格斗技能体系 12": TEMP_LINK,
+
+    // 19. 身体素质与实战压力测试 (Stress Test)
+    "身体素质与实战压力测试 (Stress Test) 1": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 2": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 3": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 4": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 5": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 6": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 7": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 8": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 9": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 10": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 11": TEMP_LINK,
+    "身体素质与实战压力测试 (Stress Test) 12": TEMP_LINK,
+
+    // 20. 国际马伽术教学法与沟通艺术
+    "国际马伽术教学法与沟通艺术 1": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 2": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 3": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 4": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 5": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 6": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 7": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 8": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 9": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 10": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 11": TEMP_LINK,
+    "国际马伽术教学法与沟通艺术 12": TEMP_LINK,
+
+    // 21. 法律红线与犯罪心理学
+    "法律红线与犯罪心理学 1": TEMP_LINK,
+    "法律红线与犯罪心理学 2": TEMP_LINK,
+    "法律红线与犯罪心理学 3": TEMP_LINK,
+    "法律红线与犯罪心理学 4": TEMP_LINK,
+    "法律红线与犯罪心理学 5": TEMP_LINK,
+    "法律红线与犯罪心理学 6": TEMP_LINK,
+    "法律红线与犯罪心理学 7": TEMP_LINK,
+    "法律红线与犯罪心理学 8": TEMP_LINK,
+    "法律红线与犯罪心理学 9": TEMP_LINK,
+    "法律红线与犯罪心理学 10": TEMP_LINK,
+    "法律红线与犯罪心理学 11": TEMP_LINK,
+    "法律红线与犯罪心理学 12": TEMP_LINK,
 };
 
 // 获取当前应该播放的视频
-const getVideoUrl = (themeCategory: string, techniqueName: string | null) => {
-    if (techniqueName && VIDEO_PLAYLIST_MAP[techniqueName]) {
-        return VIDEO_PLAYLIST_MAP[techniqueName];
+// 参数从 techniqueName 改为 videoKey (例如: "女子防身特辑 1")
+const getVideoUrl = (themeCategory: string, videoKey: string | null) => {
+    if (videoKey && VIDEO_PLAYLIST_MAP[videoKey]) {
+        return VIDEO_PLAYLIST_MAP[videoKey];
     }
+    // 如果没有找到特定分集视频，则使用该类别的默认主视频
     if (themeCategory === 'MILITARY') return MAIN_VIDEO_CONFIG.MILITARY;
     if (themeCategory === 'INSTRUCTOR') return MAIN_VIDEO_CONFIG.INSTRUCTOR;
     return MAIN_VIDEO_CONFIG.CIVILIAN;
@@ -56,10 +354,11 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
     }
   }, [theme.id]);
 
+  // 控制视频播放 (已禁用自动播放)
   useEffect(() => {
       if (videoRef.current) {
           videoRef.current.load();
-          videoRef.current.play().catch(e => console.log("Auto-play prevented", e));
+          // videoRef.current.play().catch(e => console.log("Auto-play prevented", e)); // 禁止自动播放
       }
   }, [selectedTechnique]);
 
@@ -86,8 +385,35 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
     }
   };
 
-  const currentVideoUrl = getVideoUrl(theme.category, selectedTechnique?.name || null);
   const handleSelectTechnique = (tech: Technique) => setSelectedTechnique(tech);
+
+  // ----------------------------------------------------------------------------------
+  //  🎨 Display Logic Helpers
+  // ----------------------------------------------------------------------------------
+  
+  // 1. 获取主题简称 (去除冒号后的部分)
+  // 例: "女子防身特辑：反强暴..." -> "女子防身特辑"
+  const getShortTitle = () => {
+      return theme.title.split('：')[0].trim();
+  };
+  
+  // 2. 生成当前视频的 Key
+  // 例: "女子防身特辑 1"
+  const getCurrentVideoKey = () => {
+      if (!selectedTechnique) return null;
+      const index = theme.techniques.findIndex(t => t.name === selectedTechnique.name);
+      if (index === -1) return null;
+      return `${getShortTitle()} ${index + 1}`;
+  };
+
+  // 3. 获取视频 URL
+  const currentVideoUrl = getVideoUrl(theme.category, getCurrentVideoKey());
+  
+  // 4. 当前播放的标题 (视频播放器上方显示)
+  const currentPlayingTitle = selectedTechnique 
+      ? `${getCurrentVideoKey()} - ${selectedTechnique.name}`
+      : "课程总览 (Course Overview)";
+
 
   // ==========================================
   // 💰 Pricing Logic (Updated Requirement)
@@ -313,7 +639,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                         <span className="text-[10px] font-bold text-red-500 uppercase tracking-wider">Now Playing</span>
                      </div>
                      <h3 className="text-sm font-bold text-white shadow-black drop-shadow-md truncate">
-                        {selectedTechnique ? selectedTechnique.name : "课程总览 (Course Overview)"}
+                        {currentPlayingTitle}
                      </h3>
                   </div>
               </div>
@@ -343,6 +669,9 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
 
                        {theme.techniques.map((t, i) => {
                            const isActive = selectedTechnique?.name === t.name;
+                           // 核心修改：生成 "主题名 + 序号" 格式的标题用于播放列表
+                           const displayName = `${getShortTitle()} ${i + 1}`;
+
                            return (
                                <button
                                    key={i}
@@ -354,7 +683,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                                        {String(i + 1).padStart(2, '0')}
                                    </span>
                                    <div className={`text-xs font-bold truncate flex-1 ${isActive ? 'text-white' : 'text-gray-400'}`}>
-                                       {t.name}
+                                       {displayName}
                                    </div>
                                    {isActive && <div className="w-1.5 h-1.5 rounded-full bg-km-red shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>}
                                </button>
@@ -588,6 +917,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                                       <span className={`font-mono text-xs w-6 h-6 flex items-center justify-center rounded shrink-0 ${isActive ? 'bg-km-red text-white' : 'bg-neutral-800 text-gray-600 group-hover:bg-neutral-700'}`}>
                                           {String(i+1).padStart(2,'0')}
                                       </span>
+                                      {/* 下方索引保持原样显示技术名称，不改动 */}
                                       <span className="truncate">{t.name}</span>
                                   </div>
                                   <div className={`transition-transform duration-300 ${isActive ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-50'}`}>
