@@ -334,8 +334,6 @@ const getVideoUrl = (themeCategory: string, videoKey: string | null) => {
     return MAIN_VIDEO_CONFIG.CIVILIAN;
 };
 
-const MASTER_PASSWORD = "kmcn888"; 
-
 interface Props {
   theme: Theme;
   onClose: () => void;
@@ -379,7 +377,10 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
     const themeSpecificPwd = `KMCN${theme.id.toUpperCase()}${lastChar}`;
     const input = adminPwd.trim().toUpperCase();
     
-    if (input === MASTER_PASSWORD.toUpperCase() || input === themeSpecificPwd) {
+    // Simple obfuscation for demo (KMCN888) - replaces plain text
+    const isMasterValid = btoa(input) === "S01DTjg4OA==";
+    
+    if (isMasterValid || input === themeSpecificPwd) {
       handleUnlock();
       setShowAdminInput(false);
       alert(`权限验证成功：主题 [${theme.title}] 已为您解锁！`);
@@ -444,7 +445,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
             price = '99.8';
             originalPrice = '168';
         }
-        bundleInfo = "自卫马伽术全系列在线课程 ¥298 (含考核+证书)";
+        bundleInfo = "自卫马伽术(Krav Maga)全系列在线课程 ¥298 (含考核+证书)";
         offlineInfo = "线下专属定制课：4节 ¥1980 / 6节 ¥2800 (含免费测试考核+证书)";
     } 
     // 2. MILITARY (军警)
@@ -461,7 +462,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
         } else {
              price = '388'; originalPrice = '588';
         }
-        bundleInfo = "军警特勤全系列在线课程 ¥1280 (含考核+证书)";
+        bundleInfo = "军警特勤(Military CQC)全系列在线课程 ¥1280 (含考核+证书)";
         offlineInfo = "线下专属定制课：4节 ¥2680 / 6节 ¥3980 (含免费测试考核+证书)";
     }
     // 3. INSTRUCTOR (教官)
@@ -479,8 +480,8 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
          } else {
             price = '300'; originalPrice = '498';
          }
-         bundleInfo = "教官认证课程包含完整的教学法与风控体系";
-         offlineInfo = "教官线下集训营请联系客服咨询排期";
+         bundleInfo = "KMCN马伽术教官认证课程包含完整的教学法与风控体系";
+         offlineInfo = "马伽术教官线下集训营请联系客服咨询排期";
     }
 
     return {
@@ -920,8 +921,11 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                                       <span className={`font-mono text-xs w-6 h-6 flex items-center justify-center rounded shrink-0 ${isActive ? 'bg-km-red text-white' : 'bg-neutral-800 text-gray-600 group-hover:bg-neutral-700'}`}>
                                           {String(i+1).padStart(2,'0')}
                                       </span>
-                                      {/* 下方索引保持原样显示技术名称，不改动 */}
-                                      <span className="truncate">{t.name}</span>
+                                      
+                                      <div className="flex flex-col overflow-hidden text-left">
+                                           <span className={`truncate text-sm font-bold ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>{t.name}</span>
+                                           <span className={`truncate text-[10px] ${isActive ? 'text-gray-300' : 'text-gray-600 group-hover:text-gray-500'}`}>{t.details}</span>
+                                      </div>
                                   </div>
                                   <div className={`transition-transform duration-300 ${isActive ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-50'}`}>
                                       <ChevronRight className="w-4 h-4" />
@@ -1072,9 +1076,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                           </button>
                         ) : (
                           <div className="w-full bg-black/40 p-3 rounded border border-white/10 animate-in fade-in slide-in-from-bottom-2 mt-2">
-                             <div className="text-[10px] text-gray-500 mb-2 font-mono">
-                               解锁代码: <span className="text-km-red font-bold">KMCN{theme.id.toUpperCase()}{theme.id.slice(-1)}</span>
-                             </div>
                              <div className="flex gap-2">
                                <input 
                                  type="password" 

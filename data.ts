@@ -1256,10 +1256,10 @@ export const THEMES: Theme[] = [
   {
     id: 'civ-9',
     category: 'CIVILIAN',
-    difficulty: 'INTERMEDIATE',
+    difficulty: 'ADVANCED',
     title: '短棍防卫与菲律宾魔杖实战',
     hooks: ['雨伞、自拍杆的战术应用', '菲律宾魔杖 (Kali) 入门', '以长制短的智慧'],
-    description: '融合菲律宾魔杖 (Kali/Escrima) 与民用短棍技术。教授如何利用手中的雨伞、登山杖进行有效防御，保持安全距离。',
+    description: '融合菲律宾魔杖 (Kali/Escrima) 与 KMCN深圳马伽术 (Krav Maga) 民用短棍技术。教授如何利用手中的雨伞、登山杖进行有效防身防御，保持安全距离。',
     principles: [
       '武器即肢体的延伸 (Extension)',
       '打击手部 (Defang the Snake)',
