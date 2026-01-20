@@ -36,8 +36,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "街头格斗终结者 12": TEMP_LINK,
 
     // 2. 女子防身特辑
-    "女子防身特辑 1": TEMP_LINK,
-    "女子防身特辑 2": TEMP_LINK,
+    "女子防身特辑 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
+    "女子防身特辑 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/946516651253642699130507926/f2GvtjMt9J8A.mp4",
     "女子防身特辑 3": TEMP_LINK,
     "女子防身特辑 4": TEMP_LINK,
     "女子防身特辑 5": TEMP_LINK,
@@ -78,8 +78,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "路怒症与车内防卫 12": TEMP_LINK,
 
     // 5. 刀锋之下
-    "刀锋之下 1": TEMP_LINK,
-    "刀锋之下 2": TEMP_LINK,
+    "刀锋之下 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/d575dd5a1253642699124261042/P1OLwmypmEkA.mp4",
+    "刀锋之下 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/df61d6e61253642699131452585/8uv6gnmpCNMA.mp4",
     "刀锋之下 3": TEMP_LINK,
     "刀锋之下 4": TEMP_LINK,
     "刀锋之下 5": TEMP_LINK,
@@ -179,8 +179,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "海豹突击队战术 12": TEMP_LINK,
 
     // 12. 要员保护 (VIP Protection)
-    "要员保护 (VIP Protection) 1": TEMP_LINK,
-    "要员保护 (VIP Protection) 2": TEMP_LINK,
+    "要员保护 (VIP Protection) 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
+    "要员保护 (VIP Protection) 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/9db5c4581253642699130900214/WwUYAOLaxGYA.mp4",
     "要员保护 (VIP Protection) 3": TEMP_LINK,
     "要员保护 (VIP Protection) 4": TEMP_LINK,
     "要员保护 (VIP Protection) 5": TEMP_LINK,
