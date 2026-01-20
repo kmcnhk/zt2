@@ -12,14 +12,15 @@ const MAIN_VIDEO_CONFIG = {
   INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4"
 };
 
-// 临时通用链接 (用于占位，修改时请替换为真实链接)
-const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4";
+// 临时通用链接 (统一替换为指定视频)
+const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4";
 
 // 💡 提示：在此处配置分集视频路径 (第 18 行开始)
 // 键(Key)格式：主题简称 + 空格 + 序号 (例如: "女子防身特辑 1")
 // 值(Value)为视频的 URL 地址
 const VIDEO_PLAYLIST_MAP: Record<string, string> = {
-    // ================= CIVILIAN (民用主题) =================
+    // ================= CIVILIAN (民用主题 9个) =================
+    
     // 1. 街头格斗终结者
     "街头格斗终结者 1": TEMP_LINK,
     "街头格斗终结者 2": TEMP_LINK,
@@ -147,7 +148,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "短棍防卫与菲律宾魔杖实战 12": TEMP_LINK,
 
 
-    // ================= MILITARY (军警主题) =================
+    // ================= MILITARY (军警主题 6个) =================
+    
     // 10. FBI特工必修
     "FBI特工必修 1": TEMP_LINK,
     "FBI特工必修 2": TEMP_LINK,
@@ -233,7 +235,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "万物皆兵 12": TEMP_LINK,
 
 
-    // ================= INSTRUCTOR (教官主题) =================
+    // ================= INSTRUCTOR (教官主题 6个) =================
+    
     // 16. 公共安全与反恐生存
     "公共安全与反恐生存 1": TEMP_LINK,
     "公共安全与反恐生存 2": TEMP_LINK,
