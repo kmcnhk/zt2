@@ -7,9 +7,9 @@ import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Tar
 // ==========================================
 // 默认主题主视频
 const MAIN_VIDEO_CONFIG = {
-  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4",
+  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/946516651253642699130507926/f2GvtjMt9J8A.mp4",
   MILITARY: "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
-  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4"
+  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/df61d6e61253642699131452585/8uv6gnmpCNMA.mp4"
 };
 
 // 💡 提示：在此处配置分集视频路径
