@@ -15,6 +15,11 @@ const MAIN_VIDEO_CONFIG = {
 // 💡 提示：在此处配置分集视频路径
 const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "小手返 (Kote Gaeshi)": "https://path-to-your-video/kote-gaeshi.mp4",
+  "小手返2 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
+  "小手返3 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/df61d6e61253642699131452585/8uv6gnmpCNMA.mp4",
+  "小手返4 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
+  "小手返5 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
+  "小手返6 (Kote Gaeshi)": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
     // ... 添加更多
 };
 
