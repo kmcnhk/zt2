@@ -13,17 +13,22 @@ export const THEMES: Theme[] = [
     hooks: ['街头生存法则：3秒结束战斗', '拒绝霸凌：弱者反击的必修课', '古流柔术的街头应用'],
     description: '针对生活中常见的推搡、挑衅及街头斗殴。不依赖力量，而是利用古流柔术的关节控制与人体结构弱点，结合马伽术的快速打击，实现瞬间制服。',
     principles: [
-      '永远不要让自己被围在角落 (逃生通道原则)',
-      '先发制人，攻击感官 (眼、喉、裆)',
-      '利用对方力量破坏其重心 (合气原理)',
-      '打完即跑，不要恋战'
+      '逃生通道原则 (Exit Strategy): 永远不要让自己被围在角落，始终保持至少一条撤退路线畅通。',
+      '先发制人 (Preemptive Strike): 在对方动手前攻击感官(眼/喉/裆)，瞬间破坏其战斗能力。',
+      '合气借力 (Redirect Force): 不与对方力量硬抗，利用对方冲力破坏其重心(Kuzushi)。',
+      '扫描环境 (Scan & Run): 击倒对手后立即环顾四周确认无同伙，迅速撤离现场。'
     ],
     scenarios: [
-      { danger: '对方单手推搡胸部', response: '古流柔术折腕 (Kote Gaeshi) + 侧踹膝盖' },
-      { danger: '对方双手揪衣领', response: '合气道天大落 (Tenchin Nage) + 膝撞面部' },
-      { danger: '对方挥舞王八拳进攻', response: '360防御 + 柔道体落 (Tai Otoshi) 摔法' },
-      { danger: '对方试图抱摔 (Double Leg)', response: 'Sprawl (防摔) + 肘击后脑 + 断头台控制' },
-      { danger: '倒地后对方站立踢头', response: '柔术地面防守 + 蹬腿破坏膝关节' }
+      { danger: '深夜大排档遭遇醉汉无预警挥舞王八拳进攻', response: '马伽术360防御 (360 Defense) + 泰拳箍颈膝撞 (Clinch & Knee) + 猛推逃离' },
+      { danger: '争吵中对方突然伸手用力推搡胸部试图挑起斗殴', response: '古流柔术小手返 (Kote Gaeshi) 折腕控制 + 截拳道侧踹膝关节' },
+      { danger: '对方双手死死揪住衣领并试图用头撞击', response: '合气道天大落 (Tenchin Nage) 破坏重心 + 肘击面部 (Elbow Slash)' },
+      { danger: '被对方从侧面使用夹颈摔 (Headlock) 勒住脖子', response: '攻击腹股沟 (Groin Strike) + 手刀攻击人中穴 + 柔道谷落 (Tani Otoshi) 反摔' },
+      { danger: '对方试图使用抱腿摔 (Double Leg Takedown) 扑倒', response: '摔跤术 Sprawl (防摔下压) + 断头台 (Guillotine) 站立绞杀' },
+      { danger: '倒地后对方站立试图足球踢头部', response: '马伽术地面防御姿态 (Ground Stance) + 蹬腿破坏膝关节 + 战术起立' },
+      { danger: '被对方单手抓住手腕并试图强行拖拽', response: '合气道二教 (Nikkyo) 螺旋解脱 + 铁锤拳 (Hammer Fist) 击打鼻梁' },
+      { danger: '对方从背后突袭实施连臂熊抱 (Bearhug)', response: '重心下沉 (Base) + 头部后撞面部 + 柔道背负投 (Seoi Nage)' },
+      { danger: '被对方逼入墙角双手掐脖窒息', response: '双手合扣破坏拇指 (Pluck) + 泰拳低扫 (Low Kick) + 掌根推击下巴' },
+      { danger: '面对持啤酒瓶的流氓挑衅逼近', response: '战术后撤步 + 寻找长物 (椅子/棍) + 正蹬 (Teep) 控制距离' }
     ],
     techniques: [
       { 
@@ -169,17 +174,22 @@ export const THEMES: Theme[] = [
     hooks: ['绝不成为受害者：女性反暴力指南', '以柔克刚：利用关节技反制力量差异', '不仅是防身，是生存'],
     description: '专为女性设计，针对体型力量悬殊的场景。重点在于反抓手、反纠缠，利用古流自卫柔术的关节技（小关节控制）和地面逃脱技术。',
     principles: [
-      '攻击软弱部位：眼、喉、裆 (人体痛点)',
-      '利用杠杆原理而非蛮力 (Leverage)',
-      '在此刻，尖叫也是武器 (威慑)',
-      '绝不让背部贴地超过3秒'
+      '痛点打击 (Vital Points): 力量悬殊时，必须攻击眼、喉、裆等软弱部位以博取生存机会。',
+      '杠杆原理 (Leverage): 利用关节技的小支点撬动大力量，而非与男性进行力量对抗。',
+      '声音武器 (Verbal Weapon): 战术尖叫不仅能震慑歹徒，更能吸引周围救援，打破冻结反应。',
+      '地面生存 (Ground Survival): 绝不让背部平贴地面超过3秒，利用虾行(Shrimping)创造空间起立。'
     ],
     scenarios: [
-      { danger: '从后方被熊抱 (连手臂)', response: '重心下沉 + 手指掰离 (小关节) + 胯部顶摔' },
-      { danger: '被抓住头发拖拽', response: '双手封锁 + 柔术转身投 (利用杠杆)' },
-      { danger: '被按在墙上掐脖子', response: '合气道二教 (Nikkyo) 折腕 + 肘击面部' },
-      { danger: '地面骑乘位掐脖 (强暴位)', response: '柔术起桥 (Upa) + 翻转逃脱' },
-      { danger: '手腕被强力抓握', response: '针对虎口弱点的旋转解脱 + 踢击' }
+      { danger: '在电梯内被陌生男子从背后强行熊抱', response: '攻击手背小关节 (Small Joint Manipulation) + 猛踩脚面 + 肘击后撤' },
+      { danger: '被暴力扯住头发向车内或暗处拖拽', response: '双手固定发根减痛 + 顺势转身 + 肘击/膝撞 (Strike) + 逃离' },
+      { danger: '被按在墙角双手掐脖（甚至双脚离地）', response: '合气道二教 (Nikkyo) 强力折腕 + 膝撞腹股沟 (Knee to Groin)' },
+      { danger: '歹徒将受害者扑倒并处于骑乘位掐脖 (强暴体位)', response: '巴西柔术起桥 (Upa/Bridge) 翻转逃脱 + 肘击面部' },
+      { danger: '手腕被强力抓住无法挣脱', response: '针对虎口弱点旋转解脱 (Thumb Release) + 掌根击下巴' },
+      { danger: '被对方压在身下双手按住手腕 (十字架姿态)', response: '巴西柔术雪天使 (Snow Angel) 摆脱 + 膝肘连接防守' },
+      { danger: '遭遇色狼正面袭胸或搂抱腰部', response: '拇指压迫天突穴 (喉咙窝) + 掌根推击 (Palm Strike) + 战术呼救 (-1 辅助)' },
+      { danger: '被推倒在地，歹徒试图进入两腿之间 (Guard)', response: '地面剪刀扫 (Scissor Sweep) + 蹬腿踹脸 (Up Kick)' },
+      { danger: '在夜跑时被从后方勒住脖子拖行', response: '下巴内收防窒息 + 攻击腹股沟 + 柔道过肩摔 (Seoi Nage) 变体' },
+      { danger: '对方试图强行亲吻或啃咬面部', response: '双拇指挤压眼球 (Eye Gouge) + 猛推鼻梁 + 膝撞' }
     ],
     techniques: [
       { 
@@ -325,17 +335,22 @@ export const THEMES: Theme[] = [
     hooks: ['拒绝校园霸凌：做自己的保镖', '自信是最好的防线', '不动手也能制服对方'],
     description: '专为青少年设计。重点在于建立自信、语言震慑（De-escalation）以及在不造成严重伤害的前提下挣脱控制（Headlock, 抓衣领）。',
     principles: [
-      '自信的体态可以避免80%的麻烦',
-      '大声喝止 (Verbal Command)',
-      '挣脱优于打击 (Escape > Strike)',
-      '寻求援助并非软弱 (Get Help)'
+      '肢体语言 (Body Language): 保持抬头挺胸的自信体态，避免成为霸凌者眼中的\'软目标\'。',
+      '语言边界 (Verbal Boundary): 面对挑衅需大声喝止，建立清晰的个人边界，吸引他人注意。',
+      '脱困优先 (Escape First): 在校园环境中，摆脱控制并逃离优于互相殴打，避免事态升级。',
+      '寻求援助 (Seek Help): 战术撤退并向成年人/老师求助是智慧的表现，而非软弱。'
     ],
     scenarios: [
-      { danger: '被同学在走廊推搡', response: '战术站位 (Stance) + 语言警告' },
-      { danger: '被夹颈（Headlock）勒住', response: '破坏重心 + 抓握面部翻转解脱' },
-      { danger: '被多人围堵恐吓', response: '寻找缺口 + 突然冲刺逃离' },
-      { danger: '背包被强行拉扯', response: '旋转背包带脱身 + 推开距离' },
-      { danger: '被按在地上羞辱', response: '柔术起桥翻转 + 快速站起' }
+      { danger: '在走廊被霸凌者故意推搡挑衅', response: '战术站位 (Fighting Stance) + 双手前推建立边界 + 侧滑步' },
+      { danger: '被同学从侧面使用夹颈摔 (Headlock) 勒住并嘲笑', response: '双手下拉创造空隙 + 攻击腹股沟 (Groin Strike) + 向后翻转解脱' },
+      { danger: '被多人围堵在厕所或死角', response: '猛推正前方一人 (Push) + 突然爆发冲刺 (Sprint) + 高声呼救 (-1)' },
+      { danger: '书包带被强行拉扯试图拽倒', response: '顺势转身卸力 + 旋转解脱背包 (Backpack Release) + 推开距离' },
+      { danger: '被按在地上羞辱或殴打', response: '龟缩防御 (Turtle) 护头 + 寻找机会抓握/咬合 + 战术起立' },
+      { danger: '被抓住衣领并抵在墙上威胁', response: '双手扣腕破坏重心 (Pluck) + 掌根推击下巴 + 侧向滑步逃离' },
+      { danger: '遭遇言语侮辱和推搡升级', response: '保持冷静眼神对视 (Eye Contact) + 战术后撤 (Tactical Retreat) + 寻找老师 (-1)' },
+      { danger: '被抓住手腕试图强制带走', response: '针对虎口弱点旋转解脱 (Thumb Release) + 响亮求救指令' },
+      { danger: '对方试图使用断头台 (Guillotine) 勒颈', response: '一手挂颈一手推胯 (Frame) + 保持背部挺直 + 侧向移动解脱' },
+      { danger: '面对持棍棒/椅子的冲动攻击', response: '利用书包做盾牌 (Backpack Shield) + 蛇形跑位逃离 (Zigzag Run)' }
     ],
     techniques: [
       { 
@@ -481,17 +496,22 @@ export const THEMES: Theme[] = [
     hooks: ['别让方向盘成为你的棺材板', '车内关节技：坐姿下的反制', '路怒终结者'],
     description: '专门针对驾驶员和乘客的安全。包含被拉出车外、车窗被砸、后座勒颈等高危场景。重点是狭窄空间内的关节折叠与控制。',
     principles: [
-      '车锁是第一道防线',
-      '安全带解脱的时机',
-      '车辆本身就是巨型武器',
-      '狭窄空间多用肘膝与关节技'
+      '第一道防线 (First Line): 养成上车即落锁的习惯，这是防止外部入侵的最有效手段。',
+      '狭窄空间 (Confined Space): 车内格斗空间受限，多使用肘击、膝撞、头槌及咬合技术。',
+      '车辆武器化 (Vehicle as Weapon): 车辆本身就是2吨重的巨型武器，遇到围堵应果断撞击逃生。',
+      '离车时机 (Egress Timing): 只有在车辆无法移动或起火时才选择弃车，解安全带需防卡死。'
     ],
     scenarios: [
-      { danger: '路怒者拍打车窗试图拉门', response: '检查锁门 + 倒车/驶离' },
-      { danger: '被强行拉出车外', response: '钩住方向盘固定 + 蹬踹面部 + 手臂十字固' },
-      { danger: '后座歹徒勒脖子', response: '掰折对方手指 (小关节) + 转身肘击' },
-      { danger: '副驾驶歹徒持刀威胁', response: '双手控制持刀手腕 (二教锁) + 猛撞仪表盘' },
-      { danger: '在此刻被拖拽进后备箱', response: '破坏车尾灯线路/踢后座锁' }
+      { danger: '路怒者疯狂拍打车窗并试图拉开车门', response: '确认中控锁 + 挂倒档/转向 + 快速驶离 (Vehicle Escape)' },
+      { danger: '车门被拉开，遭强行拖拽出车外', response: '腿部勾住方向盘/门框固定 (Hook) + 蹬踹面部 + 手臂十字固 (Armbar)' },
+      { danger: '后座乘客突然使用绳索/手臂勒颈抢劫', response: '双手下拉创造呼吸空间 (Pluck) + 掰折小指 (Small Joint) + 转身肘击' },
+      { danger: '副驾驶歹徒持刀威胁颈部/腰部', response: '合气道二教 (Nikkyo) 控制持刀手腕 + 猛撞仪表盘/挡风玻璃' },
+      { danger: '歹徒从驾驶窗伸手进来抢夺车钥匙/方向盘', response: '利用车窗升起夹住手臂 (Trap) + 猛推手肘反关节 + 击打面部' },
+      { danger: '车辆被逼停，对方持棒球棍砸窗', response: '身体向中心倾斜躲避玻璃 + 双脚猛踹挡风玻璃逃生 (Defensive Kick)' },
+      { danger: '被强行推入后备箱绑架', response: '寻找内部逃生拉手 (Emergency Latch) + 踢坏尾灯求救 + 破坏锁扣 (-1 机械操作)' },
+      { danger: '安全带卡死无法解脱，车辆起火/落水', response: '使用战术笔/割刀切断安全带 + 破窗锤击打边角逃生 (-1 工具使用)' },
+      { danger: '停车时有人试图强行拉开副驾门抢包', response: '猛烈推开车门撞击对方 (Door Weaponizing) + 鸣笛示警' },
+      { danger: '在此刻被压制在驾驶位无法动弹', response: '利用头枕撞击对方头部 + 咬合反击 (Biting) + 拇指压迫眼球' }
     ],
     techniques: [
       { 
@@ -637,17 +657,22 @@ export const THEMES: Theme[] = [
     hooks: ['面对利刃的终极指南', 'Run-Hide-Fight 实战应用', '背包盾牌与反抢劫术'],
     description: '融合了个人反抢劫与公共场所反恐技术。教授如何应对持刀索财的歹徒，以及在火车站、广场遭遇无差别砍杀时的生存策略。',
     principles: [
-      '财物可以重来，生命只有一次',
-      '面对无差别袭击：利用长物阻隔',
-      '背包是你的移动盾牌',
-      '控制持刀手比击打更重要'
+      '生命至上 (Life First): 面对持刀抢劫，财物可以重来，生命只有一次，顺从是首选策略。',
+      '长物阻隔 (Create Distance): 面对无差别砍杀，利用椅子、棍棒等长物保持距离至关重要。',
+      '移动盾牌 (Mobile Shield): 善用背包作为盾牌护住颈动脉与心脏，牺牲背包换取生存空间。',
+      '控制持械手 (Control the Weapon): 近身搏斗中，控制对方持刀手比击打对方面部更重要。'
     ],
     scenarios: [
-      { danger: '刀抵腹部索要钱财', response: '示弱交涉 + 瞬间抓腕小手返 (Kote Gaeshi)' },
-      { danger: '暴徒持砍刀冲入人群', response: 'S型奔跑逃离 + 寻找硬掩体' },
-      { danger: '被逼入死角无路可逃', response: '背包做盾牌 (Shield) + 猛踹膝盖' },
-      { danger: '对方持刀上挑 (Upward Stab)', response: '身体后撤 (Hollow out) + 下压防守' },
-      { danger: '使用灭火器/椅子反击', response: '喷射致盲/投掷 + 寻找逃生口' }
+      { danger: '歹徒将刀抵在腹部低声索要钱财', response: '举手示弱分散注意 + 瞬间抓腕小手返 (Kote Gaeshi) + 逃离' },
+      { danger: '火车站突发暴徒持砍刀无差别冲入人群', response: 'S型奔跑逃离 (Zigzag Run) + 寻找混凝土掩体 (Cover) + 引导疏散' },
+      { danger: '被逼入死角，对方持刀挥舞逼近', response: '脱下背包做盾牌 (Shield) + 正蹬 (Teep) 阻击 + 投掷物品' },
+      { danger: '对方突然反手持刀从下向上捅刺 (Ice Pick)', response: '身体后弓 (Hollow Out) + 双手X型下压格挡 + 膝撞头部' },
+      { danger: '歹徒正手持刀从上向下劈砍 (Psycho Stab)', response: '360度手臂格挡 (360 Defense) + 同时直拳击打面部 + 缠抱控制' },
+      { danger: '身边有灭火器/椅子等环境物品', response: '喷射灭火器致盲/投掷椅子干扰 + 创造逃生通道' },
+      { danger: '被歹徒从背后持刀勒颈挟持', response: '双手控制持刀手臂 (2-on-1) + 身体下沉转体 + 肘击肋部' },
+      { danger: '在倒地状态下对方持刀扑上来', response: '双腿蹬踹控制距离 (Ground Kicks) + 保护重要脏器' },
+      { danger: '对方试图夺取你的防御武器（如背包）', response: '低位侧踹膝盖 (Oblique Kick) + 猛拉背包破坏重心' },
+      { danger: '遭遇多名持刀歹徒围攻', response: '利用地形限制对方展开 (Stacking) + 寻找出口绝不恋战' }
     ],
     techniques: [
       { 
@@ -793,17 +818,22 @@ export const THEMES: Theme[] = [
     hooks: ['这不是竞技柔术，是生存', '倒地绝不意味着结束', '防踢、防踩与快速站起'],
     description: '街头格斗中一旦倒地，就是最危险的时刻。本课程不教你复杂的地面缠斗，只教你如何在大体重对手、多名敌人围攻下保护自己并安全站起。',
     principles: [
-      '永远不要让背部平贴地面 (Stay Active)',
-      '双腿是你的第一道防线 (Legs as Shield)',
-      '保护头部，防止足球踢 (Protect Head)',
-      '寻找一切机会站起来 (Get Up)'
+      '保持动态 (Stay Active): 倒地后永远不要让背部平贴地面不动，需时刻保持侧卧移动。',
+      '腿部防线 (Legs as Shield): 利用双腿作为盾牌和矛，阻挡对方近身并蹬踹其膝盖/面部。',
+      '头部防护 (Protect Head): 龟缩防守时务必护住后脑，防止毁灭性的足球踢(Soccer Kick)。',
+      '战术起立 (Technical Stand-up): 地面格斗的终极目标是安全站起，而非在地面降服对手。'
     ],
     scenarios: [
-      { danger: '被击倒地，对方站立准备踢头', response: '地面防御姿态 + 蹬腿阻击膝盖/胫骨' },
-      { danger: '对方试图扑入怀中 (Guard)', response: '双腿蹬开 (Up Kick) + 战术起立' },
-      { danger: '被骑乘位压制打脸', response: '起桥 (Bridge) 破坏平衡 + 翻转逃脱' },
-      { danger: '被侧压控制 (Side Control)', response: '虾行 (Shrimp) 恢复防守 + 膝盖顶入' },
-      { danger: '多人围攻踢踩', response: '龟缩防守 (Turtle) 保护后脑 + 翻滚靠近障碍物' }
+      { danger: '被击倒在地，对方站立准备实施足球踢 (Soccer Kick)', response: '地面防御姿态 (Ground Stance) + 蹬腿阻击胫骨 + 战术起立' },
+      { danger: '对方试图扑入你的两腿之间 (Guard) 进行打击', response: '巴西柔术蹬离 (Up Kick) + 剪刀扫 (Scissor Sweep) + 站起' },
+      { danger: '被大体重对手骑乘位 (Mount) 压制并殴打面部', response: '手臂护头 + 巴西柔术起桥 (Upa/Bridge) + 翻转逃脱' },
+      { danger: '被侧压控制 (Side Control) 无法动弹', response: '铁肘推颈 + 虾行逃脱 (Shrimping) 恢复防守 + 膝盖顶入' },
+      { danger: '多人围攻并进行踢踩', response: '龟缩防守 (Turtle) 护住后脑脏器 + 翻滚靠近墙壁/障碍物' },
+      { danger: '对方在地面试图实施断头台绞杀', response: '手臂过肩搭扣 (Von Flue Choke预备) + 侧向移动身体解脱' },
+      { danger: '被背后裸绞 (RNC) 拖入地面', response: '保护气管 + 转身进入对方防守 + 咬合/攻击腹股沟' },
+      { danger: '倒地后对方试图抢夺腰间/口袋物品', response: '将身体压在物品侧 + 单手护头 + 腿部连续蹬踹 (Kicks)' },
+      { danger: '在狭窄空间（如洗手间）倒地', response: '利用墙壁蹬腿借力 + 抱腿摔 (Single Leg Takedown) 反击' },
+      { danger: '从楼梯滚落后遭遇追击', response: '利用高低差蹬踹对方膝盖 + 迅速占据高位' }
     ],
     techniques: [
       { 
@@ -949,17 +979,22 @@ export const THEMES: Theme[] = [
     hooks: ['枪口下的赌博：夺枪还是投降？', '特工级夺枪术', 'Active Shooter 场景下的生存策略'],
     description: '极高风险。仅在确信对方会开枪（处决式）或无法逃脱时使用。重点是重定向火线，并利用杠杆原理夺枪。',
     principles: [
-      '重定向火线 (Redirect)',
-      '控制枪管/套筒 (Control)',
-      '猛烈反击 (Attack)',
-      '夺取武器 (Disarm)'
+      '重定向火线 (Redirect): 动作的第一步必须是移动身体并推开枪口，避开致命弹道。',
+      '绝对控制 (Absolute Control): 抓握套筒或枪管时必须死死锁住，防止对方抽枪或再次射击。',
+      '猛烈反击 (Aggressive Counter): 在控制武器的同时，必须用膝肘对要害进行毁灭性打击。',
+      '夺取武器 (Disarm): 利用杠杆原理将武器从对方手中剥离，并立即拉开距离上膛。'
     ],
     scenarios: [
-      { danger: '手枪指头 (正面)', response: '侧闪拍挡 + 抓握套筒 + 踢裆' },
-      { danger: '手枪抵背', response: '快速转身扫开枪管 + 腋下夹紧手臂 + 卷腕夺枪' },
-      { danger: '手枪指侧面头部 (人质)', response: '双手举起 + 猛转体推开枪口 + 手腕折叠 (Kote Gaeshi)' },
-      { danger: '长枪/步枪指胸', response: '切入内围拍开枪管 + 刺刀式突进' },
-      { danger: '枪击发生时的掩体选择', response: '辨别掩体 (Cover) 与遮蔽物 (Concealment)' }
+      { danger: '歹徒正面手枪指头（处决式威胁）', response: '侧闪拍挡重定向 (Redirect) + 抓握套筒防复进 + 踢裆夺枪' },
+      { danger: '手枪抵住后背/后脑', response: '举手诱骗 + 快速转身扫开枪管 + 腋下夹紧手臂 (Trap) + 卷腕夺枪' },
+      { danger: '歹徒持枪挟持人质（枪指侧面太阳穴）', response: '双手举起 + 猛转体推开枪口 + 古流柔术小手返 (Kote Gaeshi)' },
+      { danger: '遭遇长枪/步枪正面指胸威胁', response: '切入内围拍开枪管 (C-Clamp) + 刺刀式突进 + 膝撞腹股沟' },
+      { danger: '枪击发生时寻找掩体', response: '辨别Cover(防弹)与Concealment(遮挡) + 匍匐移动' },
+      { danger: '在极近距离歹徒试图拔枪', response: '双手封堵枪套 (Jamming) + 头槌攻击 + 膝撞' },
+      { danger: '夺枪过程中双方激烈争夺', response: '利用枪管作为杠杆猛戳面部 + 咬合手臂 (Biting) + 撕扯扳机指' },
+      { danger: '歹徒持枪从侧面逼近', response: '利用余光观察 + 转身拍挡 + 俄式缠臂 (Russian Tie) 控制' },
+      { danger: '被歹徒强迫跪下处决', response: '利用起身假动作 + 扑腿抱摔 + 夺枪' },
+      { danger: '夺枪成功后对方试图反扑', response: '拉开距离 (Create Distance) + 拍击弹匣/上膛 (Tap-Rack) + 射击/警戒' }
     ],
     techniques: [
       { 
@@ -1105,17 +1140,22 @@ export const THEMES: Theme[] = [
     hooks: ['当危险敲响家门', '家庭防卫计划：保护挚爱', '狭窄走廊与卧室的战斗'],
     description: '针对入室抢劫、盗窃演变成的暴力。如何利用家里的地形和物品，配合柔道摔法和器械保护家人。',
     principles: [
-      '建立安全屋 (Safe Room)',
-      '沟通暗号 (Family Code Word)',
-      '楼梯口是最佳防守点 (扼守咽喉)',
-      '不要为了财物去搜寻入侵者'
+      '安全屋策略 (Safe Room): 全家应约定一个坚固房间作为避难所，配备通讯工具与防卫器械。',
+      '家庭暗号 (Family Code): 设立紧急暗号，一旦喊出，全员立即执行既定的撤离或躲避计划。',
+      '扼守咽喉 (Choke Point): 楼梯口是最佳战术防守点，利用高低差优势阻击入侵者。',
+      '固守待援 (Stand Ground): 除非家人受威胁，否则绝不主动离开安全屋去搜寻入侵者。'
     ],
     scenarios: [
-      { danger: '开门瞬间被强行闯入', response: '身体顶门 + 猛踹膝盖 + 柔道扫踢' },
-      { danger: '在床上惊醒发现入侵者', response: '利用枕头/被子致盲 + 蹬腿保持距离' },
-      { danger: '狭窄走廊遭遇战', response: '利用墙壁支撑前踢 (Teep)' },
-      { danger: '保护身后的家人', response: '身体阻挡 + 指挥家人撤退/报警' },
-      { danger: '厨房遭遇持刀歹徒', response: '利用椅子/厨具投掷 + 寻找长武器' }
+      { danger: '开门瞬间被歹徒强行冲撞闯入', response: '身体重心顶门 + 猛踹膝盖 (Stop Kick) + 柔道大外刈 (Osoto Gari)' },
+      { danger: '深夜在卧室惊醒发现入侵者逼近床边', response: '投掷枕头/台灯致盲 + 蹬腿保持距离 (Front Kick) + 寻找隐蔽武器' },
+      { danger: '在狭窄走廊与持刀歹徒遭遇', response: '利用墙壁支撑正蹬 (Teep) + 撤退至安全屋 + 锁门' },
+      { danger: '必须保护身后的家人/孩子', response: '人体盾牌站位 (Human Shield) + 指挥家人撤退/报警 + 殊死搏斗' },
+      { danger: '在厨房遭遇袭击', response: '利用椅子阻挡 (Barrier) + 投掷厨具/开水 + 寻找刀具反击' },
+      { danger: '歹徒试图从阳台/窗户爬入', response: '攻击手指/手部 (Joint Manipulation) + 关窗夹击 + 推落' },
+      { danger: '全家撤离至安全屋但歹徒试图破门', response: '利用家具堵门 + 侧向站位 (Tactical Angle) 防止穿透射击 + 准备伏击' },
+      { danger: '在沙发/客厅区域发生扭打', response: '利用家具作为掩体 + 柔道扫踢破坏重心 (De-Ashibarai) + 简易武器打击' },
+      { danger: '夜间黑暗环境中听到异响', response: '战术手电强光致盲 (Strobe) + 保持静默 + 确认身份' },
+      { danger: '歹徒挟持一名家庭成员作为人质', response: '举手安抚情绪 + 寻找瞬间机会突袭 (头部/持械手) (-1 极高风险)' }
     ],
     techniques: [
       { 
@@ -1261,17 +1301,22 @@ export const THEMES: Theme[] = [
     hooks: ['雨伞、自拍杆的战术应用', '菲律宾魔杖 (Kali) 入门', '以长制短的智慧'],
     description: '融合菲律宾魔杖 (Kali/Escrima) 与 KMCN深圳马伽术 (Krav Maga) 民用短棍技术。教授如何利用手中的雨伞、登山杖进行有效防身防御，保持安全距离。',
     principles: [
-      '武器即肢体的延伸 (Extension)',
-      '打击手部 (Defang the Snake)',
-      '利用流动性化解力量 (Flow)',
-      '控制距离 (Range Control)'
+      '肢体延伸 (Extension): 将短棍、雨伞视为手臂的延伸，大幅增加防御半径与打击力度。',
+      '去牙战术 (Defang the Snake): 优先打击对方持械手(蛇牙)，使其丧失攻击能力而非硬拼。',
+      '流动卸力 (Flow): 利用菲律宾魔杖的流动性，通过旋转卸掉对方重武器的冲击力。',
+      '距离控制 (Range Control): 始终保持在长兵器的打击范围内，而在对方徒手攻击范围外。'
     ],
     scenarios: [
-      { danger: '对方持木棍攻击', response: '屋顶式格挡 (Roof Block) + 击打手腕' },
-      { danger: '对方试图抢夺你的棍子', response: '螺旋缠绕 (Snake Disarm) + 关节控制' },
-      { danger: '遭遇持刀攻击', response: '利用棍长优势击打持刀手 (Defanging)' },
-      { danger: '使用雨伞作为盾牌', response: '撑开雨伞致盲 + 前刺' },
-      { danger: '近身被缠抱', response: 'Punyo (棍尾) 击打面部/锁骨' }
+      { danger: '对方持木棍/铁管从上向下劈击', response: '菲律宾魔杖屋顶式格挡 (Roof Block) + 击打持械手腕' },
+      { danger: '对方试图抓住你手中的棍子/雨伞', response: '蛇形缠绕缴械 (Snake Disarm) + 关节控制 + 击打面部' },
+      { danger: '遭遇持刀歹徒挥舞攻击', response: '利用长距离优势击打持刀手 (Defanging the Snake) + 保持移动' },
+      { danger: '手持长柄雨伞面对威胁', response: '突然撑开雨伞致盲 + 刺刀式突刺面部/喉咙' },
+      { danger: '在极近距离被对方贴身缠抱', response: '利用棍尾 (Punyo) 锤击面部/锁骨 + 勾啄眼球' },
+      { danger: '对方持棍横扫腰部', response: '竖棍格挡 (Wing Block) + 击打手背 + 扫棍反击' },
+      { danger: '被多名歹徒围攻', response: 'X型连续劈砍 (Figure 8) 制造防御圈 + 寻找缺口逃离' },
+      { danger: '手中只有短小的战术笔/自拍杆', response: '加强拳头硬度 + 锤击太阳穴/手背 + 戳击软组织' },
+      { danger: '对方冲撞试图夺取武器', response: '双手持棍猛力推击胸口 (Power Push) + 后撤步' },
+      { danger: '利用短棍进行地面压制', response: '棍身卡喉/关节施压 (Choke/Lock) + 膝盖压制' }
     ],
     techniques: [
       { 
@@ -1421,17 +1466,22 @@ export const THEMES: Theme[] = [
     hooks: ['五秒制服：从接触到手铐', '古流柔术逮捕技', '不仅是打倒，是彻底控制'],
     description: '针对执法人员。重点在于如何在保护自己武器的同时，利用古流柔术的关节锁和投技，迅速将嫌疑人从站立控制到地面并完成上铐。',
     principles: [
-      '武器留存第一 (Retention)',
-      '控制中轴线 (Centerline)',
-      '疼痛服从原则 (Pain Compliance)',
-      '团队配合逮捕 (Contact & Cover)'
+      '武器留存 (Weapon Retention): 在近身格斗中，保护自己的配枪不被抢夺是最高优先级。',
+      '中轴控制 (Centerline): 破坏对方脊柱与中轴线平衡，使其无法发力，从而实施抓捕。',
+      '疼痛服从 (Pain Compliance): 利用关节技和压点控制制造剧痛，迫使嫌疑人放弃抵抗。',
+      '战术协同 (Contact & Cover): 始终保持一人控制(Contact)、一人掩护(Cover)的战术站位。'
     ],
     scenarios: [
-      { danger: '嫌疑人推搡并试图抢枪', response: '武器留存 + 肘击面部 + 脇固 (Waki Gatame)' },
-      { danger: '嫌疑人双手抱胸拒捕', response: '直臂压制 (Arm Bar) 强制分离手臂' },
-      { danger: '嫌疑人挥拳抵抗逮捕', response: '潜避 (Duck Under) + 拿背 + 裸绞控制' },
-      { danger: '地面压制时嫌疑人翻身', response: '膝盖压腹 (Knee on Belly) + 警棍控制' },
-      { danger: '被嫌疑人抱住腰部', response: '强力推脸 (Cross Face) + 腕缄 (Kimura)' }
+      { danger: '嫌疑人在盘查时突然推搡并试图抢枪', response: '武器留存 (Retention) 下压固定 + 肘击面部 + 脇固 (Waki Gatame)' },
+      { danger: '嫌疑人双手抱胸抗拒执法', response: '直臂压制 (Arm Bar) 强制分离手臂 + 施压带倒' },
+      { danger: '嫌疑人挥拳抵抗逮捕', response: '潜避 (Duck Under) + 拿背 + 站立裸绞 (RNC) 控制' },
+      { danger: '地面压制时嫌疑人激烈翻滚挣扎', response: '膝盖压腹 (Knee on Belly) 控制呼吸 + 警棍击打大腿神经' },
+      { danger: '被嫌疑人死死抱住腰部', response: '强力推脸 (Cross Face) 制造痛感 + 腕缄 (Kimura) 锁臂' },
+      { danger: '嫌疑人倒地后隐藏双手拒绝背手', response: '鹅颈腕锁 (Goose Neck) + 警棍撬压 + 拇指痛点控制' },
+      { danger: '押解途中嫌疑人突然头撞反抗', response: '折腕提拉 + 扫腿摔 (Sweep) + 膝盖压颈' },
+      { danger: '双人小组面对暴恐分子持刀冲锋', response: '一人持枪掩护 (Cover) + 一人侧翼突入控制 (Contact)' },
+      { danger: '在狭窄楼道进行搜身', response: '控制嫌疑人额头贴墙 + 破坏重心 (Spread Eagle) + 单手搜身' },
+      { danger: '嫌疑人假装配合突然掏出匕首', response: '控制持械手腕 + 肘关节反折 + 夺刀制服' }
     ],
     techniques: [
       { 
@@ -1577,17 +1627,22 @@ export const THEMES: Theme[] = [
     hooks: ['幽灵行动：无声暗杀技术', '战场刺杀术：一击必杀', '匕首格斗的高级应用'],
     description: '纯军事用途。如何从背后接近敌人并实施致命打击（模拟），以及防止自己被偷袭。包含匕首格斗和绞杀技术。',
     principles: [
-      '隐秘接近 (Stealth)',
-      '瞬间破坏呼吸与发声 (Silence)',
-      '最大化杀伤效率 (Lethality)',
-      '心理脱敏 (Psychological)'
+      '静默接近 (Stealth): 控制重心滚动步态，在进入攻击距离前绝不发出任何声响。',
+      '阻断发声 (Silence): 攻击的第一瞬间必须破坏气管或捂住口鼻，防止目标发出警报。',
+      '致命效率 (Lethality): 选择颈动脉、肾脏等致死部位，追求一击必杀，不留后患。',
+      '心理脱敏 (Psychological): 克服杀戮本能的迟疑，将敌人视为需要清除的战术目标。'
     ],
     scenarios: [
-      { danger: '需从背后解决敌方哨兵', response: '裸绞 (RNC) + 肾脏穿刺 (模拟)' },
-      { danger: '哨兵突然转身', response: '双手拍击武器 + 喉部重击 + 双腿抱摔 (Double Leg)' },
-      { danger: '近距离遭遇敌方匕首突袭', response: '菲律宾 Kali 夺刀 + 颈动脉切割 (模拟)' },
-      { danger: '狭窄战壕内的遭遇战', response: '头盔撞击 + 戳眼 + 战术刀具应用' },
-      { danger: '被敌人从后捂嘴抹脖', response: '控制持刀手 + 柔道背负投 + 反刺' }
+      { danger: '夜间潜入需从背后无声解决敌方哨兵', response: '战术捂嘴 (Muzzle Hold) + 肾脏穿刺 + 颈动脉切割 (Sentry Removal)' },
+      { danger: '接近时哨兵突然转身发现', response: '双手拍击控制武器 + 喉部重击 + 双腿抱摔 (Double Leg)' },
+      { danger: '近距离遭遇敌方匕首突袭', response: '菲律宾 Kali 夺刀 + 反刺腋下动脉 + 连续刺击' },
+      { danger: '狭窄战壕内的遭遇战 (Trench Fight)', response: '头盔撞击面部 + 戳眼 + 战术刀具连续刺击' },
+      { danger: '被敌人从后捂嘴试图割喉', response: '双手控制持刀手腕 + 柔道背负投 (Seoi Nage) + 反杀' },
+      { danger: '在地面扭打中被敌人骑乘压制', response: '腰部顶起破坏平衡 + 战术折刀隐蔽出刀 + 划割股动脉' },
+      { danger: '利用头盔带进行绞杀', response: '从后抓住头盔下沿 + 猛力后拉勒颈 + 膝撞脊柱' },
+      { danger: '主武器卡壳，敌人持枪冲锋', response: '枪口戳击 (Muzzle Thump) + 快速切换手枪/匕首' },
+      { danger: '处理倒地但未死亡的敌人', response: '控制双手 + 确认解除武装 + 致命补刀 (模拟)' },
+      { danger: '双人小组清除房间内多名敌人', response: '闪光弹投掷 + 同步突入 + 快速双击 (Double Tap)' }
     ],
     techniques: [
       { 
@@ -1733,17 +1788,22 @@ export const THEMES: Theme[] = [
     hooks: ['总统保镖战术：替人挡子弹的科学', '撤离专线：从袭击圈中杀出血路', '保镖必修：阵型与观察'],
     description: '针对保镖和特勤人员。不仅要能打，还要能边打边移动VIP。包括阵型（Diamond Formation）和紧急撤离。',
     principles: [
-      '身体覆盖 (Cover the Body)',
-      '撤离优于战斗 (Evacuate)',
-      '保持射击界限 (Fields of Fire)',
-      '宁可自己受伤，不能VIP受伤'
+      '肉盾原则 (Body Cover): 在袭击发生的0.5秒内，必须用身体完全覆盖VIP，充当防弹盾牌。',
+      '撤离优先 (Evacuate First): 任务目标是VIP活着离开，而非击毙袭击者，能跑绝不恋战。',
+      '射击界限 (Fields of Fire): 在混乱的人群中开火必须极其谨慎，严防误伤VIP和平民。',
+      '牺牲精神 (Sacrifice): 宁可自己承受子弹与刀锋，也绝不能让VIP受到任何伤害。'
     ],
     scenarios: [
-      { danger: '人群中突然有人冲向VIP', response: '肉盾冲撞 (Body Block) + 推开VIP' },
-      { danger: '枪声响起 (狙击手)', response: '按倒VIP (Down) + 覆盖身体 + 拖拽掩体' },
-      { danger: 'VIP被拉住衣服', response: '切断攻击者手臂 (Chop) + 强力推离' },
-      { danger: '护送车辆遭遇伏击', response: '车辆反伏击驾驶 + 下车火力压制' },
-      { danger: '撤离路线被堵死', response: 'CQB 突击开路 (Aggressive Clearing)' }
+      { danger: '人群中突然有人持刀冲向VIP', response: '肉盾冲撞 (Body Block) + 强力推开VIP + 制服袭击者' },
+      { danger: '广场枪声响起 (遭遇狙击手)', response: '按倒VIP (Down) + 身体完全覆盖 (Cover) + 拖拽至掩体' },
+      { danger: 'VIP被狂热粉丝拉住衣服不放', response: '手刀切断手臂控制 (Chop) + 强力推离 + 快速带离' },
+      { danger: '护送车辆遭遇伏击堵截', response: '车辆反伏击驾驶 (J-Turn) + 下车火力压制 + 转移' },
+      { danger: '撤离路线被人群/障碍物堵死', response: 'CQB 战术突击开路 (Aggressive Clearing) + 暴力撞击' },
+      { danger: 'VIP受到自杀式炸弹袭击威胁', response: '识别引爆征兆 + 将VIP推向反方向 + 扑向炸弹 (Sacrifice)' },
+      { danger: '在室内宴会厅遭遇混乱', response: '菱形阵型 (Diamond Formation) 收缩 + 360度警戒撤离' },
+      { danger: '上下车过程中遭遇袭击', response: '车门作为掩体 + 按压VIP头部入车 + 快速关门驶离' },
+      { danger: 'VIP因惊恐僵硬无法移动', response: '抓提腰带强行拖拽 (Belt Drag) + 语言吼叫刺激' },
+      { danger: '护卫队员中弹倒地', response: '补位填补防御缺口 + 保持阵型完整 + 呼叫支援 (-1 通讯)' }
     ],
     techniques: [
       { 
@@ -1889,17 +1949,22 @@ export const THEMES: Theme[] = [
     hooks: ['近室扫荡：当子弹打光时', '枪械格斗术 (Gun Fu)', '特警突入技术'],
     description: '室内近距离战斗（CQB）。处理枪械故障、弹尽时的格斗，以及在极近距离如何使用长枪作为钝器打击，结合柔道摔法。',
     principles: [
-      '速度与暴烈 (Speed & Violence)',
-      '切角与视野 (Pieing)',
-      '武器即肢体 (Weapon as Limb)',
-      '永远不要停止战斗 (Never Quit)'
+      '速度与暴烈 (Speed & Violence): 突入房间时必须以压倒性的速度和火力，瞬间瓦解敌人意志。',
+      '切角搜索 (Pieing): 利用切蛋糕战术(Pieing the corner)逐步暴露视野，先敌发现先敌开火。',
+      '枪即肢体 (Weapon as Limb): 当弹尽或故障时，枪身就是最坚硬的钝器，直接砸击要害。',
+      '战斗意志 (Never Quit): 即使负伤、即使倒地，只要还有一口气，就绝不停止战斗。'
     ],
     scenarios: [
-      { danger: '突入房间时被伏击抓枪管', response: '枪口下压 (Leverage) + 前冲撞击 + 射击' },
-      { danger: '拐角处遭遇敌人夺枪', response: '旋转枪身 (Whip) + 枪托砸脸' },
-      { danger: '主武器卡壳，敌人冲锋', response: '枪口戳击 (Muzzle Thump) + 拔副武器' },
-      { danger: '地面缠斗中武器被抢', response: '柔术蜘蛛防守 + 夺回控制' },
-      { danger: '在门口被堵截 (Fatal Funnel)', response: '火力压制 + 强行突入或撤退' }
+      { danger: '突入房间时被伏击，枪管被敌人抓住上推', response: '枪口杠杆下压 (Leverage) + 身体前冲撞击 + 恢复射击' },
+      { danger: '拐角处遭遇敌人试图夺枪', response: '猛烈旋转枪身 (Whip) + 枪托砸脸 (Buttstroke) + 后撤' },
+      { danger: '主武器卡壳，敌人持刀冲锋', response: '枪口戳击 (Muzzle Thump) 阻滞 + 快速拔副武器 (Transition)' },
+      { danger: '地面缠斗中长枪无法使用', response: '柔术蜘蛛防守 (Spider Guard) 控制距离 + 蹬腿 + 拔刀/枪' },
+      { danger: '在门口 (Fatal Funnel) 被火力压制', response: '切角搜索 (Pieing) + 快速闪身射击 + 投掷震撼弹' },
+      { danger: '清理房间时遭遇藏匿在家具后的敌人', response: '近距离枪械格斗 (Gun Fu) + 弹匣角击打 + 接触射击' },
+      { danger: '单手受伤无法正常换弹', response: '利用膝盖/枪套固定枪支 + 单手换弹 (One-hand Reload)' },
+      { danger: '在狭窄走廊与多名敌人肉搏', response: '利用走廊宽度蹬墙借力 + 枪身推击 + 连续膝撞' },
+      { danger: '敌人试图从墙角盲目射击', response: '控制其伸出的枪管 + 射击其手臂/手掌 + 绕过射击' },
+      { danger: '全装具状态下倒地无法快速起立', response: '利用背部着地防御 + 枪口始终指向威胁 + 战术起立' }
     ],
     techniques: [
       { 
@@ -2045,17 +2110,22 @@ export const THEMES: Theme[] = [
     hooks: ['刀对刀：零距离的噩梦', '特种部队匕首格斗术 (Tantōjutsu)', '致命解剖学应用'],
     description: '最高级别的冷兵器对抗。假设双方均持有利刃，或我方仅有一把匕首对抗武装分子。强调速度、时机与致命部位的精准打击。',
     principles: [
-      '永远不要停止移动 (Mobility)',
-      '切割优于穿刺 (Slash > Stab 在缠斗中)',
-      '控制对方持刀手是第一要务',
-      '接受轻微割伤以换取致命一击 (Sacrifice)'
+      '动态生存 (Mobility): 面对利刃，静止即死亡。必须保持不断的步伐移动，让对方难以锁定。',
+      '切割优先 (Slash > Stab): 在高压缠斗中，大幅度的切割比精准的穿刺更容易造成有效伤害。',
+      '控制刀手 (Control the Hand): 无论攻防，控制住对方持刀的手腕是活下来的唯一希望。',
+      '战术牺牲 (Sacrifice): 做好手臂被划伤的心理准备，以此换取刺入对方颈部动脉的机会。'
     ],
     scenarios: [
-      { danger: '敌方正手持刀劈砍', response: '格挡切入 + 割断二头肌/腋下' },
-      { danger: '敌方反手持刀 (Ice Pick) 捅刺', response: '双手X型格挡 + 夺刀反刺颈部' },
-      { danger: '敌方持枪近身', response: '拍开枪口 + 匕首刺入腋下/腹股沟隙缝' },
-      { danger: '地面缠斗中拔刀', response: '利用腿部控制 + 快速出刀划割' },
-      { danger: '暗哨摸排', response: '捂嘴 + 肾击 + 颈动脉切割 (Sentry Removal)' }
+      { danger: '敌方正手持刀大开大合劈砍', response: '菲律宾 Kali 格挡切入 (Gunting) + 割断二头肌/腋下' },
+      { danger: '敌方反手持刀 (Ice Pick) 连续捅刺', response: '双手X型格挡 + 夺刀 + 反刺颈部/锁骨窝' },
+      { danger: '敌方持枪近身，我方仅有匕首', response: '拍开枪口重定向 + 匕首刺入腋下/腹股沟防弹衣缝隙' },
+      { danger: '地面缠斗中我方被压制', response: '利用腿部控制 + 快速隐蔽拔刀 + 划割股动脉/跟腱' },
+      { danger: '暗哨摸排时需无声解决', response: '捂嘴 + 肾击 (Kidney Stab) + 颈动脉切割' },
+      { danger: '双方持刀对峙 (Knife on Knife)', response: '攻击对方持刀手腕 (Defanging the Snake) + 假动作诱杀' },
+      { danger: '在极近距离缠抱 (Clinch) 状态', response: '缝纫机式高频短刺 (Sewing Machine) 攻击侧腹' },
+      { danger: '敌方试图抓住我方持刀手', response: '手腕旋转划割对方手指 + 转换持刀手 (Hand Switch)' },
+      { danger: '利用衣物/外套辅助格斗', response: '弱手缠绕外套做盾牌 + 强手持刀突刺' },
+      { danger: '在光线不足环境遭遇袭击', response: '利用听觉/触觉感知 + 快速连续切割防御圈' }
     ],
     techniques: [
       { 
@@ -2201,17 +2271,22 @@ export const THEMES: Theme[] = [
     hooks: ['一支战术笔的威力', '手机、钥匙、外套的战斗属性', '就地取材的防卫艺术'],
     description: '当你赤手空拳时，身边的任何物体都能成为武器。学习如何快速识别并利用战术笔、手机、外套、甚至水瓶进行防卫。',
     principles: [
-      '识别环境中的武器 (Improvised Weapons)',
-      '硬物攻击骨骼，软物攻击眼睛',
-      '出其不意 (Element of Surprise)',
-      '投掷干扰 + 快速近身'
+      '环境武器 (Environmental Weapons): 训练那双发现武器的眼睛，笔、手机、椅子皆可杀敌。',
+      '属性打击 (Hard vs Soft): 硬物(手机)砸击骨骼关节，软物(外套)遮挡视线干扰。',
+      '出其不意 (Surprise): 在对方以为你赤手空拳时突然使用物品攻击，利用惊愕时间差。',
+      '投掷突进 (Distract & Enter): 投掷物品迫使对方眨眼或躲避，利用这0.5秒瞬间近身终结。'
     ],
     scenarios: [
-      { danger: '被抓住衣领', response: '战术笔/钥匙 刺击手背 + 戳击面部' },
-      { danger: '对方持刀逼近', response: '脱下外套缠绕手臂 (Shield) + 踢裆' },
-      { danger: '坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具' },
-      { danger: '夜路遇袭', response: '手电筒强光致盲 + 边缘砸击' },
-      { danger: '手里拿着手机被抓', response: '手机角砸击太阳穴/鼻梁' }
+      { danger: '被对方双手抓住衣领', response: '战术笔/钥匙 猛刺手背 + 戳击面部/太阳穴' },
+      { danger: '对方持刀逼近，手边只有外套', response: '迅速脱下外套缠绕弱手 (Jacket Shield) + 踢裆 + 强手突袭' },
+      { danger: '坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具/热饮 (Distraction) + 寻找出口' },
+      { danger: '夜路遇袭，手持强光手电', response: '手电筒频闪致盲 (Strobe) + 攻击头边缘砸击面部 (Hammer Strike)' },
+      { danger: '手里拿着手机被抓头发', response: '紧握手机用边角 (Phone Hammer) 猛砸太阳穴/鼻梁' },
+      { danger: '被逼入死角，手边有灭火器', response: '喷射干粉致盲 + 钢瓶底部撞击 + 制造混乱逃生' },
+      { danger: '对方冲过来，手中只有一瓶水', response: '向对方面部投掷水瓶/泼水 (Distraction) + 抱腿摔' },
+      { danger: '利用皮带应对持刀者', response: '抽出皮带挥舞扣头 (Belt Whip) 控制距离 + 威慑' },
+      { danger: '在书店/办公室遭遇袭击', response: '厚书本/杂志卷起护臂 + 笔戳击 (Stab)' },
+      { danger: '被按在地上，手边有沙土/石块', response: '抓沙扬撒眼睛 (Sand Throw) + 石块砸击面部' }
     ],
     techniques: [
       { 
@@ -2361,18 +2436,22 @@ export const THEMES: Theme[] = [
     hooks: ['Public Safety & Anti-Terror Survival: Avoidance and Escape', '遭遇恐袭时的Run-Hide-Fight', '重大公共事件处理原则'],
     description: '针对教官的公共安全与反恐生存策略。重点在于如何规避风险，以及在恐袭、枪击、持械伤人等重大公共事件中的处理原则：避免(Avoid)、逃避(Escape)、躲藏(Hide)、反击(Fight)。',
     principles: [
-      'Run-Hide-Fight (跑-藏-打)',
-      '态势感知 (Situational Awareness)',
-      '掩体与遮蔽物 (Cover vs Concealment)',
-      'OODA循环 (观察-调整-决策-行动)'
+      '跑-藏-打 (Run-Hide-Fight): 恐袭应对黄金法则：能跑先跑，跑不掉藏，藏不住才殊死一搏。',
+      '态势感知 (Situational Awareness): 时刻保持黄色警觉状态，进入陌生环境先确认安全出口。',
+      '掩体识别 (Cover vs Concealment): 区分能挡子弹的\'掩体\'(Cover)与只能挡视线的\'遮蔽物\'(Concealment)。',
+      'OODA循环 (Decision Cycle): 观察(Observe)-调整(Orient)-决策(Decide)-行动(Act)，比敌人更快循环。'
     ],
     scenarios: [
-      { danger: '火车站突发持刀无差别砍杀', response: '利用行李箱阻挡 + S型路线逃离 + 引导人群疏散' },
-      { danger: '遭遇Active Shooter (枪击)', response: '寻找防弹掩体 (混凝土/发动机) + 保持静默 + 伺机逃生' },
-      { danger: '商场内发生爆炸', response: '避开玻璃幕墙 + 匍匐前进避开烟雾 + 寻找安全出口' },
-      { danger: '被暴恐分子堵在死角无法逃脱', response: '利用身边一切硬物 (灭火器/椅子) 进行殊死一搏' },
-      { danger: '暴徒驾驶车辆冲撞人群 (Vehicle Ramming)', response: '利用粗大路障/石墩躲避 + 避免沿直线奔跑' },
-      { danger: '被劫持为人质 (Hostage)', response: '保持顺从降低存在感 + 观察劫持者规律 + 等待特警救援' }
+      { danger: '火车站突发持刀无差别砍杀事件', response: '利用行李箱阻挡 + S型路线逃离 (Zigzag Run) + 引导人群疏散 (Evacuation) (-1 疏散)' },
+      { danger: '商场/校园遭遇Active Shooter (枪击)', response: '寻找防弹掩体 (Cover) + 保持静默 + 伺机逃生 (Run-Hide-Fight) (-1 隐蔽)' },
+      { danger: '室内场所发生爆炸和火灾', response: '低姿匍匐 (Low Crawl) 避开烟雾 + 寻找安全出口 + 湿布捂鼻 (-1 消防)' },
+      { danger: '被暴恐分子堵在死角无法逃脱', response: '利用身边一切硬物 (灭火器/椅子) 进行殊死一搏 (Fight) + 突袭要害' },
+      { danger: '暴徒驾驶车辆冲撞人群 (Vehicle Ramming)', response: '利用粗大路障/石墩躲避 (Hard Cover) + 避免沿直线奔跑 + 侧向跳跃 (-1 避险)' },
+      { danger: '被劫持为人质 (Hostage Situation)', response: '保持顺从降低存在感 + 观察劫持者规律 + 等待特警救援 (-1 心理)' },
+      { danger: '在大型集会中发生群体踩踏', response: '保持拳击架姿态护胸 (Combat Stance) + 顺流移动 + 避免摔倒' },
+      { danger: '发现疑似爆炸物/可疑包裹', response: '5C原则 (Confirm, Clear, Cordon, Check, Control) + 立即撤离 (-1 排爆)' },
+      { danger: '驾车时遭遇暴徒围堵/打砸', response: '锁死车门 + 持续鸣笛 + 即使撞击也要低速驶离 (Vehicle Escape)' },
+      { danger: '遭遇化学毒气/喷雾袭击', response: '屏住呼吸 + 逆风向/高处撤离 + 紧急冲洗 (-1 生化)' }
     ],
     techniques: [
       { 
@@ -2518,16 +2597,22 @@ export const THEMES: Theme[] = [
     hooks: ['会救人比会打人更重要', '教官的红线与底线', '运动损伤的预防与急救'],
     description: '教官对学员生命安全的绝对责任。涵盖急救证书要求(CPR/AED)、运动损伤紧急处理(R.I.C.E)、训练强度控制、护具检查及热身规范。',
     principles: [
-      '安全第一 (Safety First)',
-      '预防优于治疗 (Prevention)',
-      '分级训练原则 (Graded Exposure)',
-      '急救响应 (Emergency Response)'
+      '安全红线 (Safety First): 训练安全是底线，教官必须对学员的生命健康负绝对责任。',
+      '预防机制 (Prevention): 通过热身、护具检查和场地排查，消除90%的潜在受伤风险。',
+      '分级训练 (Graded Exposure): 循序渐进增加对抗强度，严禁让初学者直接进行全速实战。',
+      '急救响应 (Emergency Response): 熟练掌握CPR/AED及运动损伤处理，做训练场上的守护者。'
     ],
     scenarios: [
-      { danger: '学员在高强度训练中心脏骤停', response: '立即CPR + 使用AED + 呼叫急救' },
-      { danger: '实战演练中学员被击晕 (KO)', response: '检查气道 + 稳定颈椎 + 侧卧位防止误吸' },
-      { danger: '关节扭伤或肌肉拉伤', response: '立即停止 + 冷敷 + 加压包扎 (R.I.C.E)' },
-      { danger: '夏季室外训练中暑', response: '移至阴凉处 + 降温 + 补充电解质' }
+      { danger: '学员在高强度训练中心脏骤停倒地', response: '立即CPR (心肺复苏) + 使用AED除颤 + 呼叫120急救 (-1 急救)' },
+      { danger: '实战演练中学员被击晕 (KO) 失去意识', response: '检查气道 + 稳定颈椎 + 复苏体位 (Recovery Position) 防止误吸 (-1 急救)' },
+      { danger: '训练中发生关节扭伤或肌肉拉伤', response: '立即停止训练 + 冷敷 + 加压包扎 (R.I.C.E原则) (-1 医疗)' },
+      { danger: '夏季室外训练学员出现中暑症状', response: '移至阴凉处 + 降温 + 补充电解质水 (-1 医疗)' },
+      { danger: '学员在对抗中出现过度恐慌/过度通气', response: '隔离休息 + 引导战术呼吸 (Box Breathing) + 心理安抚 (-1 心理)' },
+      { danger: '发现学员未佩戴护齿进行实战', response: '立即叫停 (STOP) + 强制佩戴护具 + 安全教育 (-1 规范)' },
+      { danger: '学员头部受到撞击出现脑震荡迹象', response: '瞳孔/意识检查 (Concussion Check) + 禁止继续训练 + 送医 (-1 医疗)' },
+      { danger: '训练场地面有水渍/汗水导致滑倒风险', response: '暂停训练 + 清理场地 + 检查环境安全 (-1 场控)' },
+      { danger: '学员出现低血糖晕厥', response: '平卧抬高双腿 + 补充糖分 + 观察恢复情况 (-1 医疗)' },
+      { danger: '颈部绞杀训练中出现喉喉软骨损伤', response: '冰敷颈部 + 密切观察呼吸 + 及时送医 (-1 医疗)' }
     ],
     techniques: [
       { 
@@ -2673,17 +2758,22 @@ export const THEMES: Theme[] = [
     hooks: ['标准马伽术 vs 高级特色技能', '教官级动作标准', '全能战术专家'],
     description: '教官必须掌握的完整技术体系。分为“标准马伽术”（站架、打击、防御、解脱、受身）与“高级/特色技能”（菲律宾短棍、夺刀术、简易武器、VIP保护）。',
     principles: [
-      '动作标准性 (Standardization)',
-      '本能反应 (Instinctive)',
-      '全领域作战 (All Domains)',
-      '以技服人 (Skill Mastery)'
+      '标准规范 (Standardization): 教官的动作就是学员的标尺，必须展示教科书般的技术细节。',
+      '本能反应 (Instinctive): 马伽术核心在于将技术转化为压力下的本能，而非死记硬背。',
+      '全域作战 (All Domains): 掌握从徒手到器械、从站立到地面的全方位战斗技能体系。',
+      '以技服人 (Skill Mastery): 保持高水平的实战能力，是赢得学员尊重与信任的基石。'
     ],
     scenarios: [
-      { danger: '演示标准马伽术打击', response: '展示直拳/掌底/肘击/膝撞的力学原理' },
-      { danger: '演示被抓握与抱摔的解脱', response: '展示360防御 + 抓腕解脱 + 倒地受身' },
-      { danger: '高级课程：面对持刀歹徒', response: '演示空手入白刃 (夺刀) 及其风险控制' },
-      { danger: '特色课程：使用短棍/雨伞', response: '展示菲律宾魔杖 (Kali) 的打击与缴械' },
-      { danger: '团队保护任务 (VIP)', response: '展示三人小组的菱形阵型与撤离技术' }
+      { danger: '学员要求演示标准马伽术打击发力', response: '展示直拳/掌底/肘击/膝撞的生物力学原理与穿透力 (Striking Mechanics)' },
+      { danger: '演示被抓握与抱摔的解脱全流程', response: '分解展示360防御 + 抓腕解脱 + 倒地受身 (Breakfalls)' },
+      { danger: '高级课程：面对持刀歹徒的夺刀教学', response: '展示空手入白刃 (Disarm) + 风险控制 + 压力测试' },
+      { danger: '特色课程：使用短棍/雨伞进行防卫', response: '展示菲律宾魔杖 (Kali) 的X型打击、缴械与流动练习 (Flow)' },
+      { danger: '团队保护任务 (VIP) 战术演示', response: '展示三人小组的菱形阵型 (Diamond) + 撤离技术 + 挡弹' },
+      { danger: '地面格斗教学与示范', response: '展示地面防御姿态 + 虾行 (Shrimping) + 战术起立的标准动作' },
+      { danger: '应对多名攻击者 (Zombie Drill)', response: '展示步法移动 (Stacking) + 连续打击 + 寻找出口' },
+      { danger: '控制与带离技术示范', response: '展示鹅颈腕锁 (Goose Neck) + 痛点控制 + 强制押解' },
+      { danger: '简易武器使用教学', response: '展示战术笔/手机/外套的攻防应用与转换' },
+      { danger: '全速全力的压力对抗演示', response: '在疲劳状态下保持技术动作不变形 + 战术决策' }
     ],
     techniques: [
       { 
@@ -2829,16 +2919,22 @@ export const THEMES: Theme[] = [
     hooks: ['军事演习级压力测试', '眩晕与黑暗中的战斗', '极限体能下的决策'],
     description: '模拟极端环境下的生存与反击能力。教官必须通过连续极限体能（Tabata）、暗黑盲斗、眩晕对抗等高压测试，证明其在力竭时的战斗意志。',
     principles: [
-      '适应压力 (Stress Inoculation)',
-      '本能反应 (Instinct)',
-      '永不放弃 (Never Quit)',
-      '快速决策 (Quick Decision)'
+      '压力接种 (Stress Inoculation): 在可控环境中模拟极端高压，让学员对肾上腺素反应脱敏。',
+      '本能触发 (Trigger Instinct): 在大脑缺氧和体能透支时，依靠肌肉记忆做出最直接的反应。',
+      '永不放弃 (Never Quit): 培养\'只要心脏还在跳动，战斗就未结束\'的钢铁意志。',
+      '极限决策 (Under-fire Decision): 训练在混乱、噪音和疲劳干扰下，依然能做出正确战术选择。'
     ],
     scenarios: [
-      { danger: '多名暴徒连续围堵推搡 (Zombie Drill)', response: '力竭状态下连续反击 + 寻找空档突围' },
-      { danger: '完全黑暗中被突然勒颈', response: '触觉本能反应 + 瞬间解脱' },
-      { danger: '原地旋转10圈后面对攻击 (眩晕)', response: '恢复平衡 + 准确打击目标' },
-      { danger: '人群中突发不明袭击', response: 'OODA快速识别敌友 + 决策反击/逃跑' }
+      { danger: '多名暴徒连续围堵推搡 (Zombie Drill)', response: '力竭状态下连续反击 + 避免纠缠 + 寻找空档突围 (Stacking)' },
+      { danger: '完全黑暗中被突然勒颈/抱摔', response: '触觉本能反应 (Sensory) + 瞬间解脱 + 打击要害' },
+      { danger: '原地旋转10圈后面对随机攻击 (眩晕测试)', response: '克服前庭失衡 + 恢复格斗姿态 + 准确打击目标' },
+      { danger: '在极度疲劳 (Tabata后) 下进行复杂决策', response: 'OODA快速识别敌友/武器 + 决策反击或逃跑' },
+      { danger: '被压在地面遭受多人踢打', response: '龟缩防守 (Turtle) 护头 + 抓住时机翻滚 + 战术起立' },
+      { danger: '单手/单腿“受伤”状态下的格斗', response: '利用剩余肢体战斗 + 调整战术策略 + 绝不放弃' },
+      { danger: '在噪音/闪光干扰下进行精细操作 (如换弹/止血)', response: '屏蔽感官干扰 + 专注核心任务 + 肌肉记忆执行' },
+      { danger: '遭遇突然的冷水泼洒或窒息感体验', response: '战术呼吸控制心率 + 保持冷静 + 恢复行动能力' },
+      { danger: '全装具负重状态下的长距离奔袭与格斗', response: '克服体能极限 + 合理分配体力 + 完成任务' },
+      { danger: '面对持刀者的全速全力进攻 (Shark Tank)', response: '生存第一 + 牺牲非要害部位 + 创造反杀机会' }
     ],
     techniques: [
       { 
@@ -2984,16 +3080,22 @@ export const THEMES: Theme[] = [
     hooks: ['让小白听得懂，高手练得爽', '三明治沟通法', '四步教学标准流程'],
     description: '教官的核心竞争力。掌握KMCN标准教学四步法：讲解、示范、引导、纠错。学会针对不同学员（男/女/青少年）的沟通技巧与纠错艺术。',
     principles: [
-      '因材施教 (Adaptability)',
-      '正向反馈 (Positive Reinforcement)',
-      '循序渐进 (Progression)',
-      '安全可控 (Safety Control)'
+      '因材施教 (Adaptability): 针对不同体能、性别和心理素质的学员，灵活调整教学策略。',
+      '正向反馈 (Positive Feedback): 善用\'三明治沟通法\'，在纠错的同时保护学员的自信心。',
+      '循序渐进 (Progression): 遵循\'讲解-示范-引导-纠错\'的标准流程，科学构建技能树。',
+      '控场能力 (Class Control): 敏锐察觉课堂气氛与风险，用气场与口令掌控训练节奏。'
     ],
     scenarios: [
-      { danger: '学员动作错误且产生挫败感', response: '三明治沟通法 (表扬-纠错-鼓励)' },
-      { danger: '复杂技术学员无法掌握', response: '分解动作教学 (拆解步骤)' },
-      { danger: '学员练习时动作过大有危险', response: '立即叫停 (Freeze) + 强调控制' },
-      { danger: '面对不同水平的混班教学', response: '分层教学 + 设立不同目标' }
+      { danger: '学员动作错误且产生挫败感', response: '示范三明治沟通法 (Feedback) + 引导分解练习 (-1 教学)' },
+      { danger: '复杂技术学员无法掌握/动作变形', response: '动作降阶 (Regression) + 慢速分解示范 (Breakdown) (-1 教学)' },
+      { danger: '学员练习时动作过大有危险', response: '立即叫停 (Freeze) + 示范正确控制力度 + 安全教育 (-1 控场)' },
+      { danger: '面对不同水平的混班教学', response: '分层教学 + 设立不同格斗目标 (初级练动作/高级练压力) (-1 教学)' },
+      { danger: '学员提出质疑或挑战教官权威', response: '专业解答原理 + 邀请进行受控实战验证 (Sparring) + 保持风度' },
+      { danger: '课堂气氛沉闷学员注意力不集中', response: '引入游戏化格斗热身 (Gamification) + 增加互动提问 (-1 教学)' },
+      { danger: '处理身体僵硬/紧张的学员', response: '触觉引导放松 + 战术呼吸指导 (Breathing) + 幽默化解 (-1 教学)' },
+      { danger: '异性学员教学中的身体接触问题', response: '遵循接触规范 (ASK-SHOW-TOUCH) + 使用教具辅助 (-1 规范)' },
+      { danger: '突发教学事故或器材损坏', response: '启动应急预案 + 调整教学内容 + 确保安全 (-1 应急)' },
+      { danger: '课后学员咨询心理创伤问题', response: '倾听与共情 + 不做心理医生 + 推荐专业援助 (-1 心理)' }
     ],
     techniques: [
       { 
@@ -3139,16 +3241,22 @@ export const THEMES: Theme[] = [
     hooks: ['刑法第20条深度解析', '正当防卫的边界', '攻击者心理画像'],
     description: '懂法才能保命。深度解析中国刑法第20条（正当防卫），区分防卫过当与互殴。分析“捕食者”与“社交暴力”的心理特征，制定对应策略。',
     principles: [
-      '严禁补刀 (Stop when safe)',
-      '证据保留 (Evidence)',
-      '避免冲突 (Avoidance)',
-      '心理博弈 (Psychology)'
+      '防卫边界 (Stop When Safe): 威胁一旦消除必须立即停止打击，严禁报复性\'补刀\'，防止防卫过当。',
+      '证据意识 (Evidence): 在冲突中要有意识地寻找监控、证人，并利用手机录音录像取证。',
+      '冲突降级 (De-escalation): 最好的防身术是不打，利用语言和肢体语言化解潜在暴力。',
+      '心理博弈 (Psychology): 洞察犯罪分子的筛选机制，通过自信体态避免成为\'软目标\'。'
     ],
     scenarios: [
-      { danger: '制服歹徒后对方已丧失能力', response: '立即停止打击 + 报警 + 保持警戒' },
-      { danger: '遭遇路怒症社交暴力', response: '识别非捕食者意图 + 语言化解' },
-      { danger: '遭遇有预谋的抢劫 (捕食者)', response: '打破其计划 + 制造混乱 + 逃离' },
-      { danger: '冲突后的现场处理', response: '寻找目击者 + 调取监控 + 正确笔录' }
+      { danger: '制服歹徒后对方已丧失能力，是否继续打击', response: '立即停止打击 (Stop) + 保持战术警戒 (Scan) + 报警 (防卫过当红线) (-1 法律)' },
+      { danger: '遭遇路怒症或醉汉的社交暴力 (非捕食者)', response: '识别非致命意图 + 栅栏式站位 (Fence Stance) + 语言降级撤离 (-1 法律)' },
+      { danger: '遭遇有预谋的抢劫/绑架 (捕食者)', response: '打破其计划 (Disrupt) + 制造混乱 + 全力反击逃生 (All out Fight)' },
+      { danger: '冲突后的现场处理与警察笔录', response: '表明受害者身份 + 强调"我很害怕" + 指出凶器/证据 (-1 法律)' },
+      { danger: '对方言语挑衅但未动手', response: '保持栅栏式站位 (Fence) + 录音取证 + 避免互殴 (-1 法律)' },
+      { danger: '被多人围堵但尚未发生肢体冲突', response: '寻找监控区域 + 保持移动 (Mobility) + 大声呼救吸引证人 (-1 策略)' },
+      { danger: '在正当防卫中使用器械/武器', response: '仅在生命受威胁时使用 + 威胁消除立即停止 + 解释合理性 (-1 法律)' },
+      { danger: '面对未成年人霸凌/攻击', response: '以控制/解脱为主 (Control/Escape) + 避免造成严重身体伤害 (-1 法律)' },
+      { danger: '通过微表情/肢体语言识别攻击前兆', response: '握拳/咬牙/拍口袋 -> 提前预警 + 准备战斗 (Prepare to Fight) (-1 心理)' },
+      { danger: '如何避免成为犯罪分子的目标 (硬目标)', response: '自信体态 (Posture) + 态势感知 (Awareness) + 避免低头看手机 (-1 心理)' }
     ],
     techniques: [
       { 

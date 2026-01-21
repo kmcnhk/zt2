@@ -360,7 +360,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
   useEffect(() => {
       if (videoRef.current) {
           videoRef.current.load();
-          // videoRef.current.play().catch(e => console.log("Auto-play prevented", e)); // 禁止自动播放
       }
   }, [selectedTechnique]);
 
@@ -396,14 +395,10 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
   //  🎨 Display Logic Helpers
   // ----------------------------------------------------------------------------------
   
-  // 1. 获取主题简称 (去除冒号后的部分)
-  // 例: "女子防身特辑：反强暴..." -> "女子防身特辑"
   const getShortTitle = () => {
       return theme.title.split('：')[0].trim();
   };
   
-  // 2. 生成当前视频的 Key
-  // 例: "女子防身特辑 1"
   const getCurrentVideoKey = () => {
       if (!selectedTechnique) return null;
       const index = theme.techniques.findIndex(t => t.name === selectedTechnique.name);
@@ -411,10 +406,8 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
       return `${getShortTitle()} ${index + 1}`;
   };
 
-  // 3. 获取视频 URL
   const currentVideoUrl = getVideoUrl(theme.category, getCurrentVideoKey());
   
-  // 4. 当前播放的标题 (视频播放器上方显示)
   const currentPlayingTitle = selectedTechnique 
       ? `${getCurrentVideoKey()} - ${selectedTechnique.name}`
       : "课程总览 (Course Overview)";
@@ -434,7 +427,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
         "获得单项学习积分"
     ];
 
-    // 1. CIVILIAN (民用)
     if (theme.category === 'CIVILIAN') {
         if (theme.difficulty === 'BEGINNER') {
             price = '39.8';
@@ -449,7 +441,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
         bundleInfo = "自卫马伽术(Krav Maga)全系列在线课程 ¥298 (含考核+证书)";
         offlineInfo = "线下专属定制课：4节 ¥1980 / 6节 ¥2800 (含免费测试考核+证书)";
     } 
-    // 2. MILITARY (军警)
     else if (theme.category === 'MILITARY') {
         if (theme.difficulty === 'BEGINNER') {
              price = '188'; 
@@ -466,7 +457,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
         bundleInfo = "军警特勤(Military CQC)全系列在线课程 ¥1280 (含考核+证书)";
         offlineInfo = "线下专属定制课：4节 ¥2680 / 6节 ¥3980 (含免费测试考核+证书)";
     }
-    // 3. INSTRUCTOR (教官)
     else if (theme.category === 'INSTRUCTOR') {
          if (theme.difficulty === 'BEGINNER') {
             price = '100';
@@ -499,7 +489,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
 
   const renderPricing = () => (
     <div className="flex flex-col gap-4">
-       {/* Main Single Theme Price */}
        <div className="flex justify-between items-end border-b border-white/10 pb-4">
            <div className="flex-1">
                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">
@@ -519,7 +508,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
            </div>
        </div>
        
-       {/* Bundle Note (Highlighted) */}
        {pricing.bundleInfo && (
            <div className="bg-gradient-to-r from-km-red/20 to-transparent border-l-2 border-km-red p-2.5 rounded-r">
                <div className="flex items-center gap-2 mb-1">
@@ -532,7 +520,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
            </div>
        )}
 
-       {/* Features List */}
        <div className="space-y-2 py-1">
            {pricing.features.map((feat, i) => (
                <div key={i} className="flex items-center gap-2 text-xs text-gray-300">
@@ -552,9 +539,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
     </div>
   );
 
-  // ----------------------------------------------------------------------------------
-  //  🎨 Render Logic
-  // ----------------------------------------------------------------------------------
   const renderContent = () => (
     <div className="flex flex-col h-full bg-[#0F0F0F] text-gray-300 overflow-y-auto custom-scrollbar">
       
@@ -583,7 +567,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
       {/* === 2. TACTICAL PRINCIPLES (NEW 2x2 GRID) === */}
       <div className="w-full px-4 lg:px-12 mb-8">
           <div className="max-w-5xl mx-auto">
-             {/* Revised Header: Bigger and Bilingual */}
              <div className="flex flex-col md:flex-row items-start md:items-end gap-2 mb-6 border-b-2 border-km-red pb-3">
                 <div className="flex items-center gap-3">
                     <div className="p-2 bg-km-red rounded-lg shadow-[0_0_15px_rgba(220,38,38,0.5)]">
@@ -600,18 +583,14 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                 </div>
              </div>
              
-             {/* Changed to grid-cols-2 for a 2x2 layout when there are 4 items */}
              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                  {theme.principles.map((p, i) => (
                      <div key={i} className="relative bg-neutral-900/60 border-l-4 border-km-red rounded-r-lg p-4 overflow-hidden group hover:bg-neutral-900 transition-colors">
-                         {/* Giant Watermark Number */}
                          <span className="absolute -right-2 -top-4 text-6xl font-black text-white/5 group-hover:text-white/10 transition-colors select-none z-0">
                              {`0${i+1}`}
                          </span>
-                         {/* Content */}
                          <div className="relative z-10 flex flex-col h-full justify-center min-h-[50px]">
                              <div className="w-8 h-0.5 bg-km-red/50 mb-1.5 group-hover:w-12 transition-all duration-500"></div>
-                             {/* Ultra compact line height as requested (leading-none for ~50% height visual feel compared to loose) */}
                              <p className="text-base font-bold text-gray-100 leading-tight shadow-black drop-shadow-sm group-hover:text-white">
                                  {p}
                              </p>
@@ -626,7 +605,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
       <div className="w-full px-4 mb-10">
           <div className="max-w-5xl mx-auto bg-black rounded-xl overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row h-auto md:h-[450px]">
               
-              {/* Video Stage */}
               <div className="flex-1 relative bg-black flex items-center justify-center border-r border-white/10 group aspect-video md:aspect-auto">
                   <video 
                       ref={videoRef}
@@ -637,7 +615,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                   >
                       <source src={currentVideoUrl} type="video/mp4" />
                   </video>
-                  {/* Overlay Info */}
                   <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/90 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                      <div className="flex items-center gap-2 mb-1">
                         <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
@@ -649,7 +626,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                   </div>
               </div>
 
-              {/* Compact Playlist */}
               <div className="w-full md:w-64 bg-neutral-900/95 flex flex-col border-t md:border-t-0 z-10 h-64 md:h-full">
                   <div className="p-3 border-b border-white/10 bg-white/5 flex items-center justify-between shrink-0">
                       <h3 className="text-sm font-bold text-gray-200 flex items-center uppercase tracking-widest">
@@ -674,7 +650,6 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
 
                        {theme.techniques.map((t, i) => {
                            const isActive = selectedTechnique?.name === t.name;
-                           // 核心修改：生成 "主题名 + 序号" 格式的标题用于播放列表
                            const displayName = `${getShortTitle()} ${i + 1}`;
 
                            return (
@@ -699,7 +674,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
           </div>
       </div>
 
-      {/* === EXPERT ADVICE BANNER (NEW) === */}
+      {/* === EXPERT ADVICE BANNER === */}
       <div className="max-w-5xl mx-auto px-4 mb-10 w-full">
           <div className="relative bg-gradient-to-br from-neutral-900 to-black border border-blue-500/30 rounded-xl p-6 md:p-8 overflow-hidden group">
               <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -769,7 +744,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
           </div>
       </div>
 
-      {/* === 4. THREAT & RESPONSE (Battle Matrix) === */}
+      {/* === 4. THREAT & RESPONSE (UPDATED TABLE FORMAT) === */}
       <div className="max-w-6xl mx-auto w-full px-4 mb-12">
            <div className="flex items-center gap-2 mb-6 border-b border-white/10 pb-2">
                <ShieldAlert className="w-6 h-6 md:w-8 md:h-8 text-km-red" />
@@ -778,44 +753,40 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                </h3>
            </div>
            
-           <div className="grid grid-cols-1 gap-4">
-               {theme.scenarios.map((s, i) => (
-                   <div key={i} className="flex flex-col md:flex-row md:items-stretch bg-neutral-900 border border-white/5 rounded-lg overflow-hidden hover:border-white/20 transition-colors group shadow-lg">
-                       
-                       {/* Left: Threat */}
-                       <div className="w-full md:w-5/12 p-5 bg-gradient-to-r from-red-950/30 to-transparent flex items-start gap-4 border-b md:border-b-0 md:border-r border-white/5 relative">
-                           <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-600"></div>
-                           <div className="p-2 bg-red-900/20 rounded-lg shrink-0">
-                              <AlertTriangle className="w-5 h-5 text-red-500" />
-                           </div>
-                           <div>
-                               <div className="text-[10px] font-bold text-red-500 uppercase tracking-widest mb-1">Danger / Threat</div>
-                               <span className="text-sm font-bold text-white group-hover:text-red-100 transition-colors leading-relaxed">
-                                   {s.danger}
-                               </span>
-                           </div>
-                       </div>
-                       
-                       {/* Connector (Desktop) */}
-                       <div className="hidden md:flex items-center justify-center w-12 bg-black/40 text-gray-600 relative">
-                           <div className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
-                           <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-km-red group-hover:translate-x-1 transition-all duration-300" />
-                       </div>
-
-                       {/* Right: Response */}
-                       <div className="flex-1 p-5 bg-gradient-to-l from-blue-950/20 to-transparent flex items-start gap-4">
-                           <div className="p-2 bg-blue-900/20 rounded-lg shrink-0">
-                               <Sword className="w-5 h-5 text-blue-400" />
-                           </div>
-                           <div>
-                               <div className="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-1">Tactical Response</div>
-                               <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors leading-relaxed">
-                                   {s.response}
-                               </span>
-                           </div>
-                       </div>
-                   </div>
-               ))}
+           <div className="overflow-x-auto rounded-lg border border-white/10 shadow-xl bg-neutral-900">
+               <table className="w-full text-left border-collapse">
+                   <thead>
+                       <tr className="bg-neutral-950 text-gray-400 border-b border-white/10">
+                           <th className="p-4 text-[10px] font-black uppercase tracking-widest w-12 text-center">#</th>
+                           <th className="p-4 text-[10px] font-black uppercase tracking-widest text-km-red w-5/12">🚨 高危实战场景 (Real-world Threat)</th>
+                           <th className="p-4 text-[10px] font-black uppercase tracking-widest text-blue-400">⚔️ 战术与技术方案 (Tactical Solution)</th>
+                       </tr>
+                   </thead>
+                   <tbody className="divide-y divide-white/5">
+                       {theme.scenarios.map((s, i) => (
+                           <tr key={i} className="group hover:bg-white/5 transition-colors">
+                               <td className="p-4 text-xs font-mono text-gray-600 text-center font-bold">
+                                   {String(i + 1).padStart(2, '0')}
+                               </td>
+                               <td className="p-4 align-top">
+                                   <div className="text-sm font-bold text-white group-hover:text-red-100 transition-colors leading-relaxed">
+                                       {s.danger}
+                                   </div>
+                               </td>
+                               <td className="p-4 align-top">
+                                   <div className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors leading-relaxed">
+                                       {s.response.split(/( [+|] )/).map((part, index) => {
+                                          if (part.trim() === '+' || part.trim() === '|') {
+                                              return <span key={index} className="text-blue-500/50 font-black mx-1">|</span>;
+                                          }
+                                          return <span key={index}>{part}</span>;
+                                       })}
+                                   </div>
+                               </td>
+                           </tr>
+                       ))}
+                   </tbody>
+               </table>
            </div>
       </div>
 
