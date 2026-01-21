@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Theme, Technique } from '../types';
 import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Target, Flame, Info, Lock, Key, Zap, Medal, Gift, Play, ChevronRight, List, MonitorPlay, Clock, Layout, BookOpen, Quote, Pause, MousePointer2, Award, CheckSquare, ArrowRight, ShoppingBag, Sword, User } from 'lucide-react';
@@ -480,7 +481,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
          } else {
             price = '300'; originalPrice = '498';
          }
-         bundleInfo = "KMCN马伽术教官认证课程包含完整的教学法与风控体系";
+         bundleInfo = "28800元 马伽术教官认证课程包含完整的教学技术体系+认证考核与教官必备的教学法";
          offlineInfo = "马伽术教官线下集训营请联系客服咨询排期";
     }
 

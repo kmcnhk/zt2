@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react';
 import { THEMES } from './data';
 import { Theme, Difficulty } from './types';
 import ThemeCard from './components/ThemeCard';
 import DetailView from './components/DetailView';
 import UserProfile from './components/UserProfile';
-import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone, BarChart3, Filter, User } from 'lucide-react';
+import { SwitchCamera, ShieldAlert, Target, Shield, GraduationCap, Phone, BarChart3, Filter, User, ExternalLink } from 'lucide-react';
 
 const App: React.FC = () => {
   const [mode, setMode] = useState<'CIVILIAN' | 'MILITARY' | 'INSTRUCTOR'>('CIVILIAN');
@@ -22,11 +23,13 @@ const App: React.FC = () => {
   });
 
   // Background images for different modes
-  let bgImage = "https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=2070&auto=format&fit=crop"; // Civilian Default
+  let bgImage = "https://images.unsplash.com/photo-1517438322307-e67111335449?q=80&w=2071&auto=format&fit=crop"; // Civilian
   if (isMilitary) {
-    bgImage = "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=2000&auto=format&fit=crop"; // Tactical
+    // Military - Now using the Firearms image (previously Instructor)
+    bgImage = "https://images.unsplash.com/photo-1595590424283-b8f17842773f?q=80&w=2070&auto=format&fit=crop"; 
   } else if (isInstructor) {
-    bgImage = "https://images.unsplash.com/photo-1517438322307-e67111335449?q=80&w=2071&auto=format&fit=crop"; // Professional Training
+    // Instructor - Now using the Tactical image (previously Military)
+    bgImage = "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=2000&auto=format&fit=crop"; 
   }
 
   // ---------------------------------------------------------------------------
@@ -87,6 +90,7 @@ const App: React.FC = () => {
 
             {/* Right Side: Mode Switcher & Profile */}
             <div className="flex items-center gap-4">
+              
               {/* Mode Switcher */}
               <div className="hidden md:flex items-center gap-2 bg-neutral-900/80 rounded-full p-1 border border-white/10 shadow-inner">
                  <button 
@@ -132,6 +136,17 @@ const App: React.FC = () => {
                   </button>
               </div>
 
+              {/* Added: External Link Button (Desktop) - Moved after Mode Switcher */}
+              <a 
+                href="https://www.kmcn.vip/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hidden xl:flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:border-km-red text-gray-300 hover:text-white transition-all text-xs font-bold uppercase tracking-wider group"
+              >
+                <span>马伽术教学</span>
+                <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-km-red transition-colors" />
+              </a>
+
               {/* Profile Icon */}
               <button 
                 onClick={() => setShowProfile(true)}
@@ -176,10 +191,10 @@ const App: React.FC = () => {
           className="absolute inset-0 z-0 transition-opacity duration-700 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('${bgImage}')`,
-            opacity: 0.4
+            opacity: 0.7
           }}
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/90 via-black/70 to-km-black" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/50 to-km-black" />
 
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <div className={`inline-block mb-4 px-3 py-1 rounded border bg-black/40 backdrop-blur text-xs font-bold tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(220,38,38,0.2)]
@@ -300,7 +315,21 @@ const App: React.FC = () => {
                     "The goal is not the rank, but getting home safe."
                 </p>
             </div>
-            <div className="mt-12 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-bold">
+            
+            {/* Added: External Link in Footer */}
+            <div className="mt-12 mb-4">
+              <a 
+                href="https://www.kmcn.vip/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-bold text-gray-400 hover:text-km-red transition-colors flex items-center justify-center gap-2 group"
+              >
+                <span>马伽术教学（全系技术教学+马伽术教官培训）</span>
+                <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-km-red transition-colors" />
+              </a>
+            </div>
+
+            <div className="mt-4 text-[10px] uppercase tracking-[0.2em] text-gray-600 font-bold">
                 &copy; 2026 KMCN | KRAV MAGA ELITE TRAINING
             </div>
         </div>
