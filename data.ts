@@ -180,16 +180,16 @@ export const THEMES: Theme[] = [
       '地面生存 (Ground Survival): 绝不让背部平贴地面超过3秒，利用虾行(Shrimping)创造空间起立。'
     ],
     scenarios: [
-      { danger: '在电梯内被陌生男子从背后强行熊抱', response: '攻击手背小关节 (Small Joint Manipulation) + 猛踩脚面 + 肘击后撤' },
-      { danger: '被暴力扯住头发向车内或暗处拖拽', response: '双手固定发根减痛 + 顺势转身 + 肘击/膝撞 (Strike) + 逃离' },
-      { danger: '被按在墙角双手掐脖（甚至双脚离地）', response: '合气道二教 (Nikkyo) 强力折腕 + 膝撞腹股沟 (Knee to Groin)' },
-      { danger: '歹徒将受害者扑倒并处于骑乘位掐脖 (强暴体位)', response: '巴西柔术起桥 (Upa/Bridge) 翻转逃脱 + 肘击面部' },
-      { danger: '手腕被强力抓住无法挣脱', response: '针对虎口弱点旋转解脱 (Thumb Release) + 掌根击下巴' },
-      { danger: '被对方压在身下双手按住手腕 (十字架姿态)', response: '巴西柔术雪天使 (Snow Angel) 摆脱 + 膝肘连接防守' },
-      { danger: '遭遇色狼正面袭胸或搂抱腰部', response: '拇指压迫天突穴 (喉咙窝) + 掌根推击 (Palm Strike) + 战术呼救 (-1 辅助)' },
-      { danger: '被推倒在地，歹徒试图进入两腿之间 (Guard)', response: '地面剪刀扫 (Scissor Sweep) + 蹬腿踹脸 (Up Kick)' },
-      { danger: '在夜跑时被从后方勒住脖子拖行', response: '下巴内收防窒息 + 攻击腹股沟 + 柔道过肩摔 (Seoi Nage) 变体' },
-      { danger: '对方试图强行亲吻或啃咬面部', response: '双拇指挤压眼球 (Eye Gouge) + 猛推鼻梁 + 膝撞' }
+      { danger: '遭遇背部环抱 (Bearhug from behind)', response: '重心下沉 (Base) + 头部后撞 (Headbutt) + 攻击指关节 (Small Joint) + 柔道背负投 (Seoi Nage)' },
+      { danger: '头发被恶意抓扯 (Hair Grab)', response: '双手按压固定发根 (Trap) + 顺势转身 (Pivot) + 泰拳肘击 (Elbow) + 膝撞' },
+      { danger: '被按在墙上掐脖子 (Choke against wall)', response: '合气道二教 (Nikkyo) 折腕控制 + 泰拳膝撞腹股沟 (Knee Strike) + 逃离' },
+      { danger: '地面被骑乘压制 (Ground Mount)', response: '巴西柔术起桥 (Upa/Bridge) 破坏重心 + 翻转上位 + 肘击 (Ground and Pound)' },
+      { danger: '手腕被抓/强行拉走 (Wrist Grab/Drag)', response: '利用杠杆针对虎口解脱 (Leverage) + 泰拳扫踢 (Low Kick) + 掌根击打' },
+      { danger: '遭遇正面熊抱 (Bearhug from front)', response: '拇指压迫眼球/喉咙 (Pressure Point) + 膝撞裆部 (Groin Strike) + 猛推分离' },
+      { danger: '双手抓双腕压制 (Double Wrist Pin)', response: '巴西柔术雪天使 (Snow Angel) 动作解脱 + 蹬腿踹脸 (Up Kick) + 战术起立' },
+      { danger: '遭遇前方勒颈/头锁 (Headlock)', response: '攻击腹股沟 + 柔道谷落 (Tani Otoshi) 反摔 / 手刀打击人中' },
+      { danger: '遭遇背后勒颈 (Rear Choke)', response: '下巴内收保护气管 + 转身进入对方怀中 + 泰拳肘击肋部 + 柔术大外刈 (Osoto Gari)' },
+      { danger: '遭遇刀具威胁 (Knife Threat)', response: '举手示弱分散注意 + 瞬间踢裆 (Groin Kick) + 马伽术360防御 (360 Defense) + 逃离' }
     ],
     techniques: [
       { 
@@ -220,7 +220,7 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "地面起桥逃脱 (Trap and Roll)",
           setup: "柔道垫。",
-          phase1_technical: "1. 封锁：单手抓住对方手腕，同侧脚勾住对方脚踝。\n2. 起桥：双脚蹬地，臀部爆发力向上顶起。\n3. 翻转：向封锁侧翻滚，形成上位压制。",
+          phase1_technical: "1. 封锁：单手抓住对方手腕，同侧脚勾住对方脚踝。\n2. 起桥：双脚蹬地，臀部爆发力向上顶起。\n3. 翻转：向封锁侧翻滚，形成上位。",
           phase2_stress: "被骑乘位压制打脸时的反应：对方模拟地面打击，防守者需护头并寻找时机起桥翻转。",
           critical_checkpoints: "1. 封锁必须牢固，破坏其支撑点。\n2. 起桥高度决定成败。"
         }
@@ -341,16 +341,16 @@ export const THEMES: Theme[] = [
       '寻求援助 (Seek Help): 战术撤退并向成年人/老师求助是智慧的表现，而非软弱。'
     ],
     scenarios: [
-      { danger: '在走廊被霸凌者故意推搡挑衅', response: '战术站位 (Fighting Stance) + 双手前推建立边界 + 侧滑步' },
-      { danger: '被同学从侧面使用夹颈摔 (Headlock) 勒住并嘲笑', response: '双手下拉创造空隙 + 攻击腹股沟 (Groin Strike) + 向后翻转解脱' },
-      { danger: '被多人围堵在厕所或死角', response: '猛推正前方一人 (Push) + 突然爆发冲刺 (Sprint) + 高声呼救 (-1)' },
-      { danger: '书包带被强行拉扯试图拽倒', response: '顺势转身卸力 + 旋转解脱背包 (Backpack Release) + 推开距离' },
-      { danger: '被按在地上羞辱或殴打', response: '龟缩防御 (Turtle) 护头 + 寻找机会抓握/咬合 + 战术起立' },
-      { danger: '被抓住衣领并抵在墙上威胁', response: '双手扣腕破坏重心 (Pluck) + 掌根推击下巴 + 侧向滑步逃离' },
-      { danger: '遭遇言语侮辱和推搡升级', response: '保持冷静眼神对视 (Eye Contact) + 战术后撤 (Tactical Retreat) + 寻找老师 (-1)' },
-      { danger: '被抓住手腕试图强制带走', response: '针对虎口弱点旋转解脱 (Thumb Release) + 响亮求救指令' },
-      { danger: '对方试图使用断头台 (Guillotine) 勒颈', response: '一手挂颈一手推胯 (Frame) + 保持背部挺直 + 侧向移动解脱' },
-      { danger: '面对持棍棒/椅子的冲动攻击', response: '利用书包做盾牌 (Backpack Shield) + 蛇形跑位逃离 (Zigzag Run)' }
+      { danger: '在走廊被霸凌者故意推搡挑衅', response: '战术站位 (Fighting Stance) + 双手前推建立边界 + 语言震慑' },
+      { danger: '被同学从侧面使用夹颈摔 勒住并嘲笑', response: '双手下拉创造空隙 + 攻击腹股沟 (Groin Strike) + 柔道谷落 (Tani Otoshi) 反摔' },
+      { danger: '被多人围堵在厕所或死角', response: '猛推正前方一人 (Push) + 突然爆发冲刺 (Sprint) + 寻找出口 (Exit Strategy)' },
+      { danger: '书包带被强行拉扯试图拽倒', response: '顺势转身卸力 + 旋转解脱背包 (Backpack Release) + 泰拳正蹬 (Teep) 控制距离' },
+      { danger: '被按在地上羞辱或殴打', response: '龟缩防御 (Turtle) 护头 + 巴西柔术起桥 (Bridge/Upa) 翻转 + 战术起立' },
+      { danger: '被抓住衣领并抵在墙上威胁', response: '合气道二教 (Nikkyo) 折腕控制 + 泰拳膝撞 (Knee Strike) + 逃离' },
+      { danger: '遭遇言语侮辱和推搡升级王八拳击打', response: '马伽术360防御 (360 Defense) + 同时反击 (Simultaneous Strike) + 连击逃离' },
+      { danger: '被抓住手腕试图强制带走', response: '针对虎口弱点旋转解脱 (Thumb Release) + 合气道四方投 (Shiho Nage) 牵引' },
+      { danger: '对方试图使用裸绞勒颈', response: '双手下拉对方手臂 (Pluck) 保护气管 + 转身进入对方防守 + 肘击 (Elbow) + 大外刈 (Osoto Gari)' },
+      { danger: '面对持棍棒/椅子的冲动攻击', response: '利用书包做盾牌 (Backpack Shield) + 蛇形跑位逃离 (Zigzag Run) + 寻找老师/安保' }
     ],
     techniques: [
       { 
@@ -663,16 +663,17 @@ export const THEMES: Theme[] = [
       '控制持械手 (Control the Weapon): 近身搏斗中，控制对方持刀手比击打对方面部更重要。'
     ],
     scenarios: [
-      { danger: '歹徒将刀抵在腹部低声索要钱财', response: '举手示弱分散注意 + 瞬间抓腕小手返 (Kote Gaeshi) + 逃离' },
-      { danger: '火车站突发暴徒持砍刀无差别冲入人群', response: 'S型奔跑逃离 (Zigzag Run) + 寻找混凝土掩体 (Cover) + 引导疏散' },
-      { danger: '被逼入死角，对方持刀挥舞逼近', response: '脱下背包做盾牌 (Shield) + 正蹬 (Teep) 阻击 + 投掷物品' },
-      { danger: '对方突然反手持刀从下向上捅刺 (Ice Pick)', response: '身体后弓 (Hollow Out) + 双手X型下压格挡 + 膝撞头部' },
-      { danger: '歹徒正手持刀从上向下劈砍 (Psycho Stab)', response: '360度手臂格挡 (360 Defense) + 同时直拳击打面部 + 缠抱控制' },
-      { danger: '身边有灭火器/椅子等环境物品', response: '喷射灭火器致盲/投掷椅子干扰 + 创造逃生通道' },
-      { danger: '被歹徒从背后持刀勒颈挟持', response: '双手控制持刀手臂 (2-on-1) + 身体下沉转体 + 肘击肋部' },
-      { danger: '在倒地状态下对方持刀扑上来', response: '双腿蹬踹控制距离 (Ground Kicks) + 保护重要脏器' },
-      { danger: '对方试图夺取你的防御武器（如背包）', response: '低位侧踹膝盖 (Oblique Kick) + 猛拉背包破坏重心' },
-      { danger: '遭遇多名持刀歹徒围攻', response: '利用地形限制对方展开 (Stacking) + 寻找出口绝不恋战' }
+      { danger: '刀抵腹部索要钱财', response: '举手示弱分散注意 (Passive Stance) + 瞬间抓握手腕/枪管 (Redirect) + 踢裆 (Groin Kick) + 夺刀/逃离' },
+      { danger: '疯狗模式：暴徒持砍刀冲入人群', response: '寻找长物 (椅子/背包) 阻挡 + 360度防御 (360 Defense) + 泰拳扫踢 (Low Kick) 破坏移动 + 逃离' },
+      { danger: '被逼入死角无路可逃', response: '脱下外套/背包做盾牌 (Shield) + 正蹬 (Teep) 保持距离 + 投掷物品干扰 + 寻找突围时机' },
+      { danger: '对方持刀上挑/上捅', response: '身体后弓 (Hollow Out) + 双手X型下压格挡 (X-Block) + 膝撞面部 (Knee Strike) + 控制持刀手' },
+      { danger: '深夜尾随：背后的割喉式锁颈威胁', response: '双手下拉对方手臂 (Pluck) 保护气管 + 转身进入对方怀中 + 攻击腹股沟 + 柔道背负投 (Seoi Nage)' },
+      { danger: '路怒升级：正面的凶狠推搡与突然拔刀直刺', response: '马伽术360防御 (Inside Defense) + 直拳打击面部 (Simultaneous Strike) + 俄式缠臂 (Russian Tie) 控制' },
+      { danger: '致命冰锥：高举过头的垂直如雨点般扎刺', response: '上架格挡 (Upper Block) + 冲撞入怀 (Burst in) + 连续膝撞/肘击 + 夺刀' },
+      { danger: '绑架现场：从背后被刀抵住肾脏区并强行拖拽', response: '配合移动 + 寻找重心转换瞬间 + 转身拍挡 (Redirect) + 肘击肋部 + 逃离' },
+      { danger: '倒地绝境：被打倒在地，对方骑乘欲刺', response: '巴西柔术起桥 (Bridge/Upa) 破坏平衡 + 抓手腕控制 + 翻转上位 + 地面砸击 (Ground & Pound)' },
+      { danger: '歹徒正手持刀从上向下劈砍', response: '360度防御 (360 Defense) + 进身 (Burst) + 颈部/面部打击 + 缠抱控制' },
+      { danger: '远距离对峙：左右挥舞恐吓与逼近反手刀', response: '保持距离 (Distance Management) + 寻找掩体/武器 + 侧向移动 (Lateral Movement) + 正蹬阻击 (Teep)' }
     ],
     techniques: [
       { 
@@ -886,7 +887,7 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "剪刀扫摔",
           setup: "柔道垫。",
-          phase1_technical: "1. 框架：一腿横拦胸口，一腿贴地。\n2. 破坏：拉拽衣领和袖子。\n3. 剪切：双腿像剪刀一样交错用力扫倒对方。",
+          phase1_technical: "1. 框架：一腿膝盖横拦对方胸口，一腿贴地。\n2. 破坏：拉拽衣领和袖子。\n3. 剪切：双腿像剪刀一样交错用力扫倒对方。",
           phase2_stress: "动态扫摔：对方试图站起时，顺势施展剪刀扫。",
           critical_checkpoints: "1. 破坏重心在前。\n2. 动作要连贯。"
         }
@@ -1314,7 +1315,7 @@ export const THEMES: Theme[] = [
       { danger: '在极近距离被对方贴身缠抱', response: '利用棍尾 (Punyo) 锤击面部/锁骨 + 勾啄眼球' },
       { danger: '对方持棍横扫腰部', response: '竖棍格挡 (Wing Block) + 击打手背 + 扫棍反击' },
       { danger: '被多名歹徒围攻', response: 'X型连续劈砍 (Figure 8) 制造防御圈 + 寻找缺口逃离' },
-      { danger: '手中只有短小的战术笔/自拍杆', response: '加强拳头硬度 + 锤击太阳穴/手背 + 戳击软组织' },
+      { danger: '手里只有短小的战术笔/自拍杆', response: '加强拳头硬度 + 锤击太阳穴/手背 + 戳击软组织' },
       { danger: '对方冲撞试图夺取武器', response: '双手持棍猛力推击胸口 (Power Push) + 后撤步' },
       { danger: '利用短棍进行地面压制', response: '棍身卡喉/关节施压 (Choke/Lock) + 膝盖压制' }
     ],
@@ -1492,7 +1493,7 @@ export const THEMES: Theme[] = [
           setup: "佩戴模拟训练枪（蓝枪）及枪套，配对练习。",
           phase1_technical: "1. 下压(Clamp)：当嫌疑人手触碰枪柄，立即用同侧手猛力下压其手，将其手'钉'在枪套上。\n2. 降低重心(Base)：向持枪侧后撤步，降低重心防止被推倒。\n3. 攻击(Attack)：利用闲置手肘击嫌疑人面部，或膝撞其腹股沟，直至其松手。",
           phase2_stress: "360度抢夺：闭眼站立，听到口令后睁眼，应对来自不同方向的抢枪尝试。必须在5秒内完成解脱并拉开距离拔枪警戒。",
-          critical_checkpoints: "1. 绝不松开按压枪套的手。\n2. 身体必须随对方拉力转动，不要硬抗。\n3. 解脱后立即建立'反应间隙' (Reactionary Gap)。"
+          critical_checkpoints: "1. 绝不松开按压枪套的手。\n2. 身体必须随对方拉力转动，不要硬抗。\n3. 解脱后立即建立'反应间隙' (Reactionary Gap)."
         }
       },
       { 
