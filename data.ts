@@ -492,37 +492,59 @@ export const THEMES: Theme[] = [
     id: 'civ-4',
     category: 'CIVILIAN',
     difficulty: 'INTERMEDIATE',
-    title: '路怒症与车内防卫：狭小空间的生死时速',
-    hooks: ['别让方向盘成为你的棺材板', '车内关节技：坐姿下的反制', '路怒终结者'],
-    description: '专门针对驾驶员和乘客的安全。包含被拉出车外、车窗被砸、后座勒颈等高危场景。重点是狭窄空间内的关节折叠与控制。',
+    title: '电梯/车内/走廊：狭小空间自卫',
+    hooks: ['死角求生：无处可逃时的战斗', '贴身短打：肘膝与头槌的艺术', '环境武器：利用狭窄空间反制'],
+    description: '针对电梯、车厢、楼道走廊等无法逃跑的狭窄封闭空间。重点在于如何在极近距离下，利用肘膝、头槌及被动柔术技巧（墙壁/地面利用）进行反击与控制。',
     principles: [
-      '第一道防线 (First Line): 养成上车即落锁的习惯，这是防止外部入侵的最有效手段。',
-      '狭窄空间 (Confined Space): 车内格斗空间受限，多使用肘击、膝撞、头槌及咬合技术。',
-      '车辆武器化 (Vehicle as Weapon): 车辆本身就是2吨重的巨型武器，遇到围堵应果断撞击逃生。',
-      '离车时机 (Egress Timing): 只有在车辆无法移动或起火时才选择弃车，解安全带需防卡死。'
+      '极近距离 (Close Quarters): 空间受限无法蓄力发长拳，必须转为肘、膝、头槌及撕咬等短兵相接手段。',
+      '墙壁利用 (Wall Strategy): 墙壁既是绝路也是盟友。利用墙壁作为支撑防止被摔，或将对方挤压至墙上限制其发力。',
+      '中线突破 (Centerline): 在无法迂回的空间里，必须第一时间控制中线，利用爆发力强行突破或实施缠抱控制。',
+      '疯狂侵略 (Aggression): 在死角无路可退时，恐惧会让你冻结。必须用压倒性的进攻欲望（疯狗模式）打破对方的心理防线。'
     ],
     scenarios: [
-      { danger: '路怒者疯狂拍打车窗并试图拉开车门', response: '确认中控锁 + 挂倒档/转向 + 快速驶离 (Vehicle Escape)' },
-      { danger: '车门被拉开，遭强行拖拽出车外', response: '腿部勾住方向盘/门框固定 (Hook) + 蹬踹面部 + 手臂十字固 (Armbar)' },
-      { danger: '后座乘客突然使用绳索/手臂勒颈抢劫', response: '双手下拉创造呼吸空间 (Pluck) + 掰折小指 (Small Joint) + 转身肘击' },
-      { danger: '副驾驶歹徒持刀威胁颈部/腰部', response: '合气道二教 (Nikkyo) 控制持刀手腕 + 猛撞仪表盘/挡风玻璃' },
-      { danger: '歹徒从驾驶窗伸手进来抢夺车钥匙/方向盘', response: '利用车窗升起夹住手臂 (Trap) + 猛推手肘反关节 + 击打面部' },
-      { danger: '车辆被逼停，对方持棒球棍砸窗', response: '身体向中心倾斜躲避玻璃 + 双脚猛踹挡风玻璃逃生 (Defensive Kick)' },
-      { danger: '被强行推入后备箱绑架', response: '寻找内部逃生拉手 (Emergency Latch) + 踢坏尾灯求救 + 破坏锁扣 (-1 机械操作)' },
-      { danger: '安全带卡死无法解脱，车辆起火/落水', response: '使用战术笔/割刀切断安全带 + 破窗锤击打边角逃生 (-1 工具使用)' },
-      { danger: '停车时有人试图强行拉开副驾门抢包', response: '猛烈推开车门撞击对方 (Door Weaponizing) + 鸣笛示警' },
-      { danger: '在此刻被压制在驾驶位无法动弹', response: '利用头枕撞击对方头部 + 咬合反击 (Biting) + 拇指压迫眼球' }
+      { danger: '电梯内陌生人突然逼近企图施暴', response: '泰拳箍颈肘击 (Clinch Elbow) + 头槌 (Headbutt) + 猛推至角落' },
+      { danger: '在驾驶位被拉开车门强行拖拽', response: '勾住方向盘固定 (Anchor) + 蹬踹面部 + 柔术十字固 (Armbar)' },
+      { danger: '狭窄走廊遭遇持刀歹徒堵截', response: '利用背包/外套做盾牌 + 正蹬 (Teep) 控制距离 + 寻找房间躲避' },
+      { danger: '车内后座歹徒使用绳索勒颈', response: '双手下拉创造空隙 (Pluck) + 转身肘击/咬合 + 柔道背负投 (Seoi Nage) 意念动作' },
+      { danger: '被按在电梯墙角双手掐脖', response: '合气道二教 (Nikkyo) 折腕 + 泰拳膝撞腹股沟 + 旋转换位逃离' },
+      { danger: '在楼道转角突然遭遇棍棒袭击', response: '冲刺近身 (Burst in) + 泰拳内围膝撞 + 夺棍打击' },
+      { danger: '副驾驶乘客抢夺方向盘/攻击', response: '手臂格挡 + 肘击面部 + 指关节钻压 (Pressure Point)' },
+      { danger: '在狭小空间倒地被骑乘压制', response: '柔术起桥 (Bridge) 撞墙借力 + 翻转上位 + 地面锤拳 (Hammer Fist)' },
+      { danger: '遭遇背后熊抱且无后退空间', response: '踩踏脚面 (Stomp) + 头部后撞 (Headbutt) + 攻击手指 (Small Joint)' },
+      { danger: '对方堵住唯一出口门禁', response: '诈降分散注意 + 爆发性踢裆 (Groin Kick) + 猛撞开路' }
     ],
     techniques: [
       { 
-        name: '安全带防御', 
-        details: '利用安全带做勒颈或防御盾', 
+        name: '头槌 (Headbutt)', 
+        details: '近距离"第五肢"打击', 
         drill: {
-          drillName: "安全带缠绕战术",
-          setup: "模拟车辆座椅。",
-          phase1_technical: "1. 阻挡：拉出安全带作为盾牌阻挡刀刺。\n2. 缠绕：将安全带绕过对方颈部。\n3. 拉紧：利用身体后仰拉紧安全带勒晕对方。",
-          phase2_stress: "被压制状态下的操作：在狭窄空间内，在对方压制下完成操作。",
-          critical_checkpoints: "1. 速度要快。\n2. 利用身体重量。"
+          drillName: "战术头槌",
+          setup: "头盔或软靶。",
+          phase1_technical: "1. 抓握：双手抓住对方衣领或双肩。\n2. 拉撞：将对方拉向自己，同时额头撞击对方鼻梁。\n3. 连续：撞击后接膝撞。",
+          phase2_stress: "贴身缠斗反击：在被死死抱住无法出拳时，使用头槌开路。",
+          critical_checkpoints: "1. 用额头硬骨撞击面部软骨。\n2. 不要闭眼。"
+        }
+      },
+      { 
+        name: '短肘击 (Short Elbow)', 
+        details: '狭小空间的面部切割', 
+        drill: {
+          drillName: "电梯内短肘",
+          setup: "手靶，墙角。",
+          phase1_technical: "1. 折叠：手臂完全折叠。\n2. 旋转：利用腰部微小的旋转带动肘部。\n3. 划割：肘尖像刀片一样划过目标。",
+          phase2_stress: "背靠墙反击：背部贴墙，利用短肘击退逼近者。",
+          critical_checkpoints: "1. 另一只手护头。\n2. 发力短促有力。"
+        }
+      },
+      { 
+        name: '墙壁防守', 
+        details: '利用墙壁作为支点', 
+        drill: {
+          drillName: "Wall Pin Escape",
+          setup: "墙壁。",
+          phase1_technical: "1. 支撑：背部贴墙，降低重心。\n2. 楔入：将膝盖或手肘楔入两人之间。\n3. 旋转：利用墙壁反作用力旋转身体换位。",
+          phase2_stress: "被壁咚掐脖：在窒息压力下完成墙壁解脱。",
+          critical_checkpoints: "1. 不要背部完全离墙。\n2. 保护头部。"
         }
       },
       { 
@@ -548,50 +570,6 @@ export const THEMES: Theme[] = [
         }
       },
       { 
-        name: '短肘击', 
-        details: '狭小空间的面部切割', 
-        drill: {
-          drillName: "车厢内短肘",
-          setup: "手靶，并在狭窄走廊进行。",
-          phase1_technical: "1. 折叠：手臂完全折叠。\n2. 旋转：利用腰部微小的旋转带动肘部。\n3. 划割：肘尖像刀片一样划过目标。",
-          phase2_stress: "副驾驶侵犯时的反击：模拟副驾驶座有人扑过来，使用短肘反击。",
-          critical_checkpoints: "1. 注意不要撞到车窗自伤。\n2. 另一只手要护头。"
-        }
-      },
-      { 
-        name: '头枕撞击', 
-        details: '抓对方头发撞击硬物', 
-        drill: {
-          drillName: "环境撞击术",
-          setup: "模拟环境（软包）。",
-          phase1_technical: "1. 控制：双手抓住对方头发或耳朵。\n2. 引导：猛力将对方头部拉向硬物（A柱、方向盘）。\n3. 连续：连续撞击直到对方失去意识。",
-          phase2_stress: "纠缠状态下的连续撞击：在无法使用拳脚时，利用环境武器。",
-          critical_checkpoints: "1. 发力要猛。\n2. 选择坚硬的撞击点。"
-        }
-      },
-      { 
-        name: '车门夹击', 
-        details: '利用车门撞击对方身体/四肢', 
-        drill: {
-          drillName: "车门武器化",
-          setup: "模拟车门。",
-          phase1_technical: "1. 观察：确认对方肢体在车门范围内。\n2. 猛推/拉：利用全身力量猛推车门撞击，或猛拉车门夹击。\n3. 补刀：撞击后接蹬腿。",
-          phase2_stress: "对方试图强行入车：在对方手抓车门框时猛烈关门。",
-          critical_checkpoints: "1. 配合脚踹效果更好。\n2. 注意不要夹到自己手。"
-        }
-      },
-      { 
-        name: '钥匙穿刺', 
-        details: '握持钥匙攻击软组织', 
-        drill: {
-          drillName: "钥匙防卫",
-          setup: "钥匙。",
-          phase1_technical: "1. 握持：像匕首一样握持钥匙，露出尖端。\n2. 攻击：连续刺击对方面部、眼睛或手背。\n3. 逃离：造成剧痛后立即弃车逃跑。",
-          phase2_stress: "被拖拽时的近身反击：模拟被拖出车外，利用钥匙攻击对方手部。",
-          critical_checkpoints: "1. 握紧防止滑落。\n2. 不要掉落钥匙（如果是车钥匙）。"
-        }
-      },
-      { 
         name: '后方勒颈解脱', 
         details: '针对气管的解脱术', 
         drill: {
@@ -606,48 +584,70 @@ export const THEMES: Theme[] = [
         name: '手腕二教 (Nikkyo)', 
         details: '狭窄空间内的手腕强控', 
         drill: {
-          drillName: "车内二教",
+          drillName: "狭义二教",
           setup: "狭窄空间。",
-          phase1_technical: "1. 抓握：控制对方伸过来的手背。\n2. 切压：利用另一手切压手腕关节。\n3. 施压：将对方手腕下压至仪表台或档位杆上。",
-          phase2_stress: "对方指指点点时的控制：当路怒者伸手进车窗指责时实施控制。",
-          critical_checkpoints: "1. 利用仪表台做支点。\n2. 身体重心下压。"
+          phase1_technical: "1. 抓握：控制对方伸过来的手背。\n2. 切压：利用另一手切压手腕关节。\n3. 施压：将对方手腕下压至墙面或物体上。",
+          phase2_stress: "对方指指点点时的控制：当对方伸手侵犯空间时实施控制。",
+          critical_checkpoints: "1. 利用环境做支点。\n2. 身体重心下压。"
         }
       },
       { 
-        name: '快速离车术', 
-        details: '解开安全带的战术动作', 
+        name: '箍颈膝撞', 
+        details: '泰拳内围核心技术', 
         drill: {
-          drillName: "战术离车",
-          setup: "安全带。",
-          phase1_technical: "1. 清理：左手扫开衣摆，露出卡扣。\n2. 解扣：右手按下卡扣，左手同时推开车门。\n3. 翻滚：身体向外翻滚出车，保持低姿态。",
-          phase2_stress: "车辆侧翻模拟：在模拟侧翻或受困状态下快速离车。",
-          critical_checkpoints: "1. 防止被安全带缠绕。\n2. 出车后立即寻找掩体。"
+          drillName: "Clinch Knee",
+          setup: "手靶。",
+          phase1_technical: "1. 控制：双手扣住对方后脑，手肘夹紧。\n2. 破坏：向下拉拽对方头部。\n3. 撞击：提膝猛撞面部或胸口。",
+          phase2_stress: "狭路相逢：在走廊遭遇，直接冲入内围连续膝撞。",
+          critical_checkpoints: "1. 破坏对方平衡。\n2. 送胯发力。"
         }
       },
       { 
-        name: '鸣笛震慑', 
-        details: '持续鸣笛制造心理压力', 
+        name: '咬合技术', 
+        details: '绝境中的原始反击', 
         drill: {
-          drillName: "声波战术",
-          setup: "模拟。",
-          phase1_technical: "1. 持续：手掌长按喇叭不放。\n2. 灯光：配合远光灯闪烁。\n3. 呼救：引起路人注意。",
-          phase2_stress: "夜间遇袭：在黑暗中利用声光制造混乱。",
-          critical_checkpoints: "1. 持续不间断。\n2. 不要犹豫。"
+          drillName: "Tactical Biting",
+          setup: "软胶护具。",
+          phase1_technical: "1. 寻找：针对颈部、手臂内侧敏感部位。\n2. 咬合：用门牙和犬齿撕咬。\n3. 配合：疼痛产生瞬间推开对方。",
+          phase2_stress: "被压制到底：在完全无法动弹时使用咬合。",
+          critical_checkpoints: "1. 仅限生死关头。\n2. 咬住后摇头撕扯。"
         }
       },
       { 
-        name: '挡风玻璃踢击', 
-        details: '双脚踹破玻璃逃生', 
+        name: '拇指压迫', 
+        details: '针对眼球/咽喉的压迫', 
         drill: {
-          drillName: "破窗逃生",
-          setup: "软垫模拟玻璃。",
-          phase1_technical: "1. 姿势：背靠座椅，双脚抬起。\n2. 目标：瞄准挡风玻璃的边角（最脆弱处）。\n3. 发力：双脚同时猛烈蹬踹。",
-          phase2_stress: "落水逃生模拟：在模拟车辆进水（时间紧迫）的情况下破窗。",
-          critical_checkpoints: "1. 攻击边角而非中心。\n2. 清理残渣防止割伤。"
+          drillName: "Dirty Fighting",
+          setup: "假人。",
+          phase1_technical: "1. 寻找：眼窝或喉结旁。\n2. 施压：拇指钻入并持续施压。\n3. 目的：迫使对方后仰松手。",
+          phase2_stress: "贴身死缠：对方死抱不放，通过压眼迫使其松开。",
+          critical_checkpoints: "1. 力量持续深入。\n2. 配合吼叫。"
+        }
+      },
+      { 
+        name: '踩踏 (Stomp)', 
+        details: '针对脚面/胫骨的近身足技', 
+        drill: {
+          drillName: "Close Range Stomp",
+          setup: "硬底鞋。",
+          phase1_technical: "1. 抬脚：快速抬起脚跟。\n2. 踩踏：用脚跟猛跺对方脚面。\n3. 铲踢：顺势铲踢胫骨。",
+          phase2_stress: "背后熊抱解脱：被抱住时连续踩踏。",
+          critical_checkpoints: "1. 发力狠辣。\n2. 破坏对方根基。"
+        }
+      },
+      { 
+        name: '门禁突围', 
+        details: '利用冲撞打开通路', 
+        drill: {
+          drillName: "Doorway Breakthrough",
+          setup: "手靶阻挡。",
+          phase1_technical: "1. 干扰：投掷物品或踢裆。\n2. 冲撞：沉肩，利用全身重量冲撞。\n3. 逃离：撞开后全速逃离。",
+          phase2_stress: "唯一出口被堵：在压力下寻找时机突破堵截。",
+          critical_checkpoints: "1. 不要犹豫。\n2. 动量最大化。"
         }
       }
     ],
-    tags: ['反劫车', '车内格斗', '狭窄空间']
+    tags: ['狭窄空间', '车内格斗', '电梯防卫']
   },
   {
     id: 'civ-5',
@@ -876,7 +876,7 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "虾行逃脱 (Hip Escape)",
           setup: "柔道垫。",
-          phase1_technical: "1. 支点：一脚蹬地，肩膀着地。\n2. 折叠：臀部向后上方顶出，身体成虾状。\n3. 恢复：将膝盖插入对方身体之间，恢复防守。",
+          phase1_technical: "1. 支点：一脚蹬地，肩膀着地。\n2. 折叠：臀部向后上方顶出，身体成虾状。\n3. 恢复：利用空间将膝盖插入对方身体之间，恢复防守。",
           phase2_stress: "侧压逃脱：在对方体重完全压制下，利用虾行创造空间。",
           critical_checkpoints: "1. 不要平躺。\n2. 动作幅度要大。"
         }
@@ -1137,59 +1137,59 @@ export const THEMES: Theme[] = [
     id: 'civ-8',
     category: 'CIVILIAN',
     difficulty: 'INTERMEDIATE',
-    title: '居家入侵与家庭保卫：最后的堡垒',
-    hooks: ['当危险敲响家门', '家庭防卫计划：保护挚爱', '狭窄走廊与卧室的战斗'],
-    description: '针对入室抢劫、盗窃演变成的暴力。如何利用家里的地形和物品，配合柔道摔法和器械保护家人。',
+    title: '家庭入侵：被堵在封闭空间如何绝地反击',
+    hooks: ['当危险敲响家门', '卧室/浴室/厨房的绝境求生', '利用环境武器反杀'],
+    description: '针对入室抢劫、盗窃演变成的暴力。重点在于当被堵在卧室、浴室等死角时，如何利用有限空间和身边物品（台灯、毛巾、门）进行殊死一搏。',
     principles: [
-      '安全屋策略 (Safe Room): 全家应约定一个坚固房间作为避难所，配备通讯工具与防卫器械。',
-      '家庭暗号 (Family Code): 设立紧急暗号，一旦喊出，全员立即执行既定的撤离或躲避计划。',
-      '扼守咽喉 (Choke Point): 楼梯口是最佳战术防守点，利用高低差优势阻击入侵者。',
-      '固守待援 (Stand Ground): 除非家人受威胁，否则绝不主动离开安全屋去搜寻入侵者。'
+      '环境武器化 (Weaponize Environment): 在家中没有"手无寸铁"一说，台灯、书本、椅子、毛巾皆可杀敌。',
+      '扼守咽喉 (Choke Point Strategy): 楼梯口和房门是最佳伏击点，利用狭窄地形“一夫当关”，阻断多人进攻。',
+      '保护家人 (Family Defense): 将家人置于身后或安全屋，自己充当最后一道防线，战斗意志必须绝对坚决。',
+      '疯狂反击 (Aggressive Counter): 在退无可退的死角，防守就是等死。必须像疯狗一样爆发，利用咬合、插眼等手段争取一线生机。'
     ],
     scenarios: [
-      { danger: '开门瞬间被歹徒强行冲撞闯入', response: '身体重心顶门 + 猛踹膝盖 (Stop Kick) + 柔道大外刈 (Osoto Gari)' },
-      { danger: '深夜在卧室惊醒发现入侵者逼近床边', response: '投掷枕头/台灯致盲 + 蹬腿保持距离 (Front Kick) + 寻找隐蔽武器' },
-      { danger: '在狭窄走廊与持刀歹徒遭遇', response: '利用墙壁支撑正蹬 (Teep) + 撤退至安全屋 + 锁门' },
-      { danger: '必须保护身后的家人/孩子', response: '人体盾牌站位 (Human Shield) + 指挥家人撤退/报警 + 殊死搏斗' },
-      { danger: '在厨房遭遇袭击', response: '利用椅子阻挡 (Barrier) + 投掷厨具/开水 + 寻找刀具反击' },
-      { danger: '歹徒试图从阳台/窗户爬入', response: '攻击手指/手部 (Joint Manipulation) + 关窗夹击 + 推落' },
-      { danger: '全家撤离至安全屋但歹徒试图破门', response: '利用家具堵门 + 侧向站位 (Tactical Angle) 防止穿透射击 + 准备伏击' },
-      { danger: '在沙发/客厅区域发生扭打', response: '利用家具作为掩体 + 柔道扫踢破坏重心 (De-Ashibarai) + 简易武器打击' },
-      { danger: '夜间黑暗环境中听到异响', response: '战术手电强光致盲 (Strobe) + 保持静默 + 确认身份' },
-      { danger: '歹徒挟持一名家庭成员作为人质', response: '举手安抚情绪 + 寻找瞬间机会突袭 (头部/持械手) (-1 极高风险)' }
+      { danger: '卧室惊醒发现歹徒逼近床边', response: '投掷枕头干扰 + 蹬踹保持距离 (Front Kick) + 寻找台灯/书本作为武器' },
+      { danger: '被堵在狭窄浴室无路可逃', response: '利用毛巾绞杀/鞭打 + 湿滑地面扫腿 + 攻击要害' },
+      { danger: '在厨房遭遇持刀歹徒', response: '利用椅子阻挡 + 投掷热汤/调料 + 寻找刀具/平底锅反击' },
+      { danger: '歹徒试图强行撞开卧室门', response: '身体重心顶门 + 猛踹膝盖 (Stop Kick) + 准备伏击' },
+      { danger: '被按在沙发上掐脖子', response: '合气道二教折腕 (Nikkyo) + 咬合手臂 + 膝撞顶出空间' },
+      { danger: '在楼梯口遭遇多人入侵', response: '居高临下蹬踹 (Teep) + 推人制造多米诺效应 + 撤回高处' },
+      { danger: '歹徒抓住家人作为人质', response: '伪装妥协靠近 + 突袭持械手 (Disarm) + 猛烈攻击面部' },
+      { danger: '被逼入墙角遭遇棍棒殴打', response: '龟缩防守护头 + 突进抱腰摔 (Takedown) + 地面锤击' },
+      { danger: '夜间黑暗中遭遇突袭', response: '战术手电致盲/砸击 + 听声辨位 + 连续肘击' },
+      { danger: '歹徒试图从窗户/阳台爬入', response: '关窗夹击手指 + 攻击抓握手 + 利用重力推落' }
     ],
     techniques: [
       { 
         name: '门禁阻挡', 
-        details: '身体重心顶门技术', 
+        details: '利用身体与腿法封锁入口', 
         drill: {
           drillName: "门禁防守",
           setup: "门。",
-          phase1_technical: "1. 姿势：弓步，肩膀和脚抵住门。\n2. 发力：利用腿部蹬地力量死顶。\n3. 呼救：同时大声呼救。",
-          phase2_stress: "强力破门测试：搭档在门外用力推撞，防守者必须顶住。",
+          phase1_technical: "1. 姿势：弓步，肩膀和脚抵住门。\n2. 发力：利用腿部蹬地力量死顶。\n3. 攻击：当门缝被推开时，猛踹对方膝盖。",
+          phase2_stress: "强力破门测试：搭档在门外用力推撞，防守者必须顶住并寻找反击机会。",
           critical_checkpoints: "1. 重心要低。\n2. 脚要防滑。"
         }
       },
       { 
-        name: '走廊阻击', 
-        details: '狭长地带的腿法应用', 
+        name: '楼梯阻击', 
+        details: '利用高低差优势进行蹬踹', 
         drill: {
-          drillName: "走廊正蹬",
-          setup: "狭窄通道（如两排椅子中间）。",
-          phase1_technical: "1. 支撑：双手可扶墙保持平衡。\n2. 蹬踹：连续正蹬阻断对方前进。\n3. 后退：边打边退至安全屋。",
-          phase2_stress: "狭路相逢：在仅容一人的通道内阻击持刀进攻者。",
-          critical_checkpoints: "1. 利用墙壁稳定身体。\n2. 不要让对方近身。"
+          drillName: "高地防守 (Stairway Defense)",
+          setup: "楼梯或台阶。",
+          phase1_technical: "1. 站位：站在高处，居高临下。\n2. 踢击：使用泰拳正蹬 (Teep) 攻击对方面部或胸口。\n3. 推落：利用重力将对方推下楼梯。",
+          phase2_stress: "楼梯口攻防：死守楼梯口，不让入侵者上来。",
+          critical_checkpoints: "1. 利用地形优势。\n2. 注意自身平衡。"
         }
       },
       { 
-        name: '简易武器', 
-        details: '台灯/灭火器的战术使用', 
+        name: '简易武器-台灯', 
+        details: '利用台灯底座砸击或灯泡致盲', 
         drill: {
           drillName: "居家武器化",
-          setup: "各种居家物品（模型）。",
-          phase1_technical: "1. 识别：快速识别手边可用的硬物。\n2. 投掷：先投掷干扰，再近身攻击。\n3. 打击：利用物品尖角打击要害。",
-          phase2_stress: "随机物品测试：给什么用什么，进行模拟防御。",
-          critical_checkpoints: "1. 物品是消耗品。\n2. 制造机会逃跑。"
+          setup: "台灯模型。",
+          phase1_technical: "1. 识别：快速抓取床头台灯。\n2. 投掷/砸击：先利用灯罩干扰，再用底座砸击。\n3. 距离：利用电线作为软兵器抽打。",
+          phase2_stress: "随机物品测试：在黑暗中摸索到什么用什么。",
+          critical_checkpoints: "1. 物品是消耗品。\n2. 制造逃跑机会。"
         }
       },
       { 
@@ -1198,84 +1198,73 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "光战术 (Light Discipline)",
           setup: "高流明手电，暗室。",
-          phase1_technical: "1. 频闪：开启爆闪模式对准眼睛。\n2. 移动：照一下换个位置，不要暴露自己。\n3. 打击：利用手电攻击头攻击。",
+          phase1_technical: "1. 频闪：开启爆闪模式对准眼睛。\n2. 移动：照一下换个位置，不要暴露自己。\n3. 砸击：利用手电攻击头砸击面部。",
           phase2_stress: "暗夜遭遇：在全黑环境中利用手电致盲并制服入侵者。",
           critical_checkpoints: "1. 举高手电远离头部（防止对方射击光源）。\n2. 闪完即动。"
         }
       },
       { 
-        name: '下路攻击', 
-        details: '针对膝盖胫骨的破坏', 
+        name: '毛巾绞杀', 
+        details: '利用湿毛巾/衣物进行勒颈', 
         drill: {
-          drillName: "低位破坏",
-          setup: "踢靶。",
-          phase1_technical: "1. 铲踢：脚刃铲击对方胫骨/膝盖。\n2. 踩踏：用力踩踏脚面。\n3. 扫踢：扫击脚踝破坏平衡。",
-          phase2_stress: "对抗中破坏下盘：在纠缠中不断攻击下盘。",
-          critical_checkpoints: "1. 隐蔽性高。\n2. 破坏移动能力。"
+          drillName: "浴室绞杀术",
+          setup: "毛巾。",
+          phase1_technical: "1. 缠绕：将毛巾绕过对方颈部。\n2. 交叉：双手交叉抓握毛巾两端。\n3. 收紧：背部发力，像拧干衣服一样勒紧。",
+          phase2_stress: "湿滑环境格斗：在模拟湿滑地面上进行绞杀控制。",
+          critical_checkpoints: "1. 动作要快。\n2. 利用体重下压。"
         }
       },
       { 
-        name: '楼梯防御', 
-        details: '利用高低差踢击', 
+        name: '厨房防御', 
+        details: '利用椅子与锅具', 
         drill: {
-          drillName: "高地防守",
-          setup: "楼梯或台阶。",
-          phase1_technical: "1. 站位：站在高处，居高临下。\n2. 踢击：向下踢击对方面部或胸口。\n3. 推落：利用重力将对方推下楼梯。",
-          phase2_stress: "楼梯口攻防：死守楼梯口，不让入侵者上来。",
-          critical_checkpoints: "1. 利用地形优势。\n2. 注意自身平衡。"
+          drillName: "厨房战术",
+          setup: "椅子，平底锅。",
+          phase1_technical: "1. 阻挡：利用椅子腿推击对方，保持距离。\n2. 投掷：投掷调料瓶或热汤。\n3. 补刀：利用平底锅边缘砸击头部。",
+          phase2_stress: "狭小空间持刀防御：对方持刀逼近，利用厨房环境周旋。",
+          critical_checkpoints: "1. 椅子腿对准喉咙。\n2. 保护动脉。"
         }
       },
       { 
-        name: '藏械策略', 
-        details: '家中防御武器的放置', 
+        name: '沙发/床铺解脱', 
+        details: '被压制在软体家具上的反击', 
         drill: {
-          drillName: "武器部署",
-          setup: "居家环境图纸。",
-          phase1_technical: "1. 规划：在玄关、卧室、客厅隐蔽处放置防卫工具。\n2. 记忆：形成肌肉记忆，闭眼能摸到。\n3. 快速取用：练习3秒内取用。",
-          phase2_stress: "突发状况取械：模拟警报响起，从床上跳起取械。",
-          critical_checkpoints: "1. 隐蔽但易取。\n2. 避免被儿童触及。"
+          drillName: "Furniture Escape",
+          setup: "沙发/床垫。",
+          phase1_technical: "1. 支点：寻找硬支撑点（扶手/床架）。\n2. 破坏：利用合气道二教折腕或咬合。\n3. 翻转：利用臀部力量将对方顶翻。",
+          phase2_stress: "窒息反击：被按在柔软表面掐脖，利用反关节技解脱。",
+          critical_checkpoints: "1. 不要陷在软垫里。\n2. 攻击要害。"
         }
       },
       { 
-        name: '安全屋流程', 
-        details: '快速撤退与固守', 
-        drill: {
-          drillName: "全家撤离演练",
-          setup: "房间。",
-          phase1_technical: "1. 集合：清点人数。\n2. 撤退：进入安全屋并锁门。\n3. 防御：堵门、报警、持械待命。",
-          phase2_stress: "限时撤离：全家在30秒内完成所有动作。",
-          critical_checkpoints: "1. 保持安静。\n2. 坚守不出。"
-        }
-      },
-      { 
-        name: '近身肘击', 
-        details: '极近距离的打击', 
+        name: '近身肘膝', 
+        details: '死角内的泰拳短打', 
         drill: {
           drillName: "贴身短打",
           setup: "手靶。",
-          phase1_technical: "1. 爆发：在极近距离爆发肘击。\n2. 连击：左右连肘。\n3. 缠抱：结合缠抱膝撞。",
-          phase2_stress: "贴身扭打：在被抱住时使用肘击开路。",
+          phase1_technical: "1. 爆发：在极近距离爆发肘击。\n2. 连击：左右连肘接膝撞。\n3. 缠抱：结合缠抱控制对方头部撞墙。",
+          phase2_stress: "墙角突围：被逼入死角，利用肘膝开路。",
           critical_checkpoints: "1. 转腰发力。\n2. 攻击面部。"
         }
       },
       { 
-        name: '家具掩体', 
-        details: '利用沙发/床做防御', 
+        name: '咬合与插眼', 
+        details: '绝境中的肮脏格斗', 
         drill: {
-          drillName: "掩体利用",
-          setup: "家具。",
-          phase1_technical: "1. 阻隔：始终保持家具在两人中间。\n2. 绕行：围绕家具移动。\n3. 投掷：扔枕头、台灯干扰。",
-          phase2_stress: "绕桌游斗：利用桌子与持刀者周旋。",
-          critical_checkpoints: "1. 保持距离。\n2. 不要被逼入死角。"
+          drillName: "Dirty Fighting",
+          setup: "护具。",
+          phase1_technical: "1. 插眼：拇指猛力钻入眼窝。\n2. 咬合：寻找颈部或手臂内侧撕咬。\n3. 疯狂：展现出绝对的攻击性。",
+          phase2_stress: "绝对压制：在完全无法动弹时使用。",
+          critical_checkpoints: "1. 仅限生死关头。\n2. 制造剧痛。"
         }
       },
       { 
-        name: '双人战术', 
+        name: '双人协同', 
         details: '夫妻/室友配合制敌', 
         drill: {
-          drillName: "双人协同",
+          drillName: "Team Defense",
           setup: "两人一组。",
-          phase1_technical: "1. 站位：一人在前防御，一人在后报警/保护孩子。\n2. 支援：必要时利用长物支援前方。\n3. 沟通：使用暗号。",
+          phase1_technical: "1. 站位：一人在前防御，一人在后报警/保护孩子。\n2. 支援：必要时利用长物支援前方。\n3. 沟通：使用家庭暗号。",
           phase2_stress: "模拟入侵：两人配合应对一名入侵者。",
           critical_checkpoints: "1. 保护背后。\n2. 默契配合。"
         }
@@ -1289,6 +1278,17 @@ export const THEMES: Theme[] = [
           phase1_technical: "1. 关键信息：地址、人数、武器、目前状况。\n2. 保持通话：不要挂断（除非有危险）。\n3. 免提：开启免提，解放双手。",
           phase2_stress: "高压报警：在心跳极快、极度紧张下清晰报警。",
           critical_checkpoints: "1. 地址最重要。\n2. 声音清晰。"
+        }
+      },
+      { 
+        name: '安全屋撤离', 
+        details: '全家快速撤退流程', 
+        drill: {
+          drillName: "Safe Room Drill",
+          setup: "房间。",
+          phase1_technical: "1. 集合：清点人数。\n2. 撤退：进入安全屋并锁门/堵门。\n3. 待援：持械待命，绝不主动开门。",
+          phase2_stress: "限时撤离：全家在30秒内完成所有动作。",
+          critical_checkpoints: "1. 保持安静。\n2. 坚守不出。"
         }
       }
     ],
@@ -3174,7 +3174,7 @@ export const THEMES: Theme[] = [
           phase1_technical: "1. 夸张：夸张模仿学员错误（如掉手、抬头）。\n2. 对比：立即展示正确动作。\n3. 提问：问学员区别在哪里。",
           phase2_stress: "即兴纠错：在不伤害学员自尊的前提下幽默纠错。",
           critical_checkpoints: "1. 幽默感。\n2. 尊重。"
-        }
+        } 
       },
       { 
         name: '辅助器材', 
@@ -3248,7 +3248,7 @@ export const THEMES: Theme[] = [
       '心理博弈 (Psychology): 洞察犯罪分子的筛选机制，通过自信体态避免成为\'软目标\'。'
     ],
     scenarios: [
-      { danger: '制服歹徒后对方已丧失能力，是否继续打击', response: '立即停止打击 (Stop) + 保持战术警戒 (Scan) + 报警 (防卫过当红线) (-1 法律)' },
+      { danger: '制服歹徒后对方已丧失能力，是否继续打击', response: '立即停止打击 (Stop) +保持战术警戒 (Scan) + 报警 (防卫过当红线) (-1 法律)' },
       { danger: '遭遇路怒症或醉汉的社交暴力 (非捕食者)', response: '识别非致命意图 + 栅栏式站位 (Fence Stance) + 语言降级撤离 (-1 法律)' },
       { danger: '遭遇有预谋的抢劫/绑架 (捕食者)', response: '打破其计划 (Disrupt) + 制造混乱 + 全力反击逃生 (All out Fight)' },
       { danger: '冲突后的现场处理与警察笔录', response: '表明受害者身份 + 强调"我很害怕" + 指出凶器/证据 (-1 法律)' },
