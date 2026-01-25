@@ -19,16 +19,16 @@ export const THEMES: Theme[] = [
       '扫描环境 (Scan & Run): 击倒对手后立即环顾四周确认无同伙，迅速撤离现场。'
     ],
     scenarios: [
-      { danger: '深夜大排档遭遇醉汉无预警挥舞王八拳进攻', response: '马伽术360防御 (360 Defense) + 泰拳箍颈膝撞 (Clinch & Knee) + 猛推逃离' },
       { danger: '争吵中对方突然伸手用力推搡胸部试图挑起斗殴', response: '古流柔术小手返 (Kote Gaeshi) 折腕控制 + 截拳道侧踹膝关节' },
       { danger: '对方双手死死揪住衣领并试图用头撞击', response: '合气道天大落 (Tenchin Nage) 破坏重心 + 肘击面部 (Elbow Slash)' },
-      { danger: '被对方从侧面使用夹颈摔 (Headlock) 勒住脖子', response: '攻击腹股沟 (Groin Strike) + 手刀攻击人中穴 + 柔道谷落 (Tani Otoshi) 反摔' },
-      { danger: '对方试图使用抱腿摔 (Double Leg Takedown) 扑倒', response: '摔跤术 Sprawl (防摔下压) + 断头台 (Guillotine) 站立绞杀' },
+      { danger: '深夜大排档遭遇醉汉无预警挥舞王八拳进攻', response: '马伽术360防御 (360 Defense) + 泰拳箍颈膝撞 (Clinch & Knee) + 猛推逃离' },
       { danger: '倒地后对方站立试图足球踢头部', response: '马伽术地面防御姿态 (Ground Stance) + 蹬腿破坏膝关节 + 战术起立' },
+      { danger: '被对方从侧面使用夹颈摔勒住脖子', response: '攻击腹股沟 (Groin Strike) + 手刀攻击人中穴 + 柔道谷落 (Tani Otoshi) 反摔' },
       { danger: '被对方单手抓住手腕并试图强行拖拽', response: '合气道二教 (Nikkyo) 螺旋解脱 + 铁锤拳 (Hammer Fist) 击打鼻梁' },
-      { danger: '对方从背后突袭实施连臂熊抱 (Bearhug)', response: '重心下沉 (Base) + 头部后撞面部 + 柔道背负投 (Seoi Nage)' },
+      { danger: '对方从背后突袭实施连臂熊抱', response: '重心下沉 (Base) + 头部后撞面部 + 柔道背负投 (Seoi Nage)' },
       { danger: '被对方逼入墙角双手掐脖窒息', response: '双手合扣破坏拇指 (Pluck) + 泰拳低扫 (Low Kick) + 掌根推击下巴' },
-      { danger: '面对持啤酒瓶的流氓挑衅逼近', response: '战术后撤步 + 寻找长物 (椅子/棍) + 正蹬 (Teep) 控制距离' }
+      { danger: '被歹徒单手掐脖威胁', response: '旋转防御解脱 (Rotational Defense) + 泰拳平肘 (Horizontal Elbow) + 战术后撤' },
+      { danger: '对方试图使用抱腿摔', response: '摔跤术 Sprawl (防摔下压) + 断头台 (Guillotine) 站立绞杀' }
     ],
     techniques: [
       { 
@@ -350,7 +350,8 @@ export const THEMES: Theme[] = [
       { danger: '遭遇言语侮辱和推搡升级王八拳击打', response: '马伽术360防御 (360 Defense) + 同时反击 (Simultaneous Strike) + 连击逃离' },
       { danger: '被抓住手腕试图强制带走', response: '针对虎口弱点旋转解脱 (Thumb Release) + 合气道四方投 (Shiho Nage) 牵引' },
       { danger: '对方试图使用裸绞勒颈', response: '双手下拉对方手臂 (Pluck) 保护气管 + 转身进入对方防守 + 肘击 (Elbow) + 大外刈 (Osoto Gari)' },
-      { danger: '面对持棍棒/椅子的冲动攻击', response: '利用书包做盾牌 (Backpack Shield) + 蛇形跑位逃离 (Zigzag Run) + 寻找老师/安保' }
+      { danger: '面对持棍棒/椅子的冲动攻击', response: '利用书包做盾牌 (Backpack Shield) + 蛇形跑位逃离 (Zigzag Run) + 寻找老师/安保' },
+      { danger: '遭遇人贩子从后方捂嘴强行拖拽', response: '双手下拉扒开捂嘴手 (Pluck) + 咬合手指 (Biting) + 重心下沉 (Dead Weight) + 肘击肋部' }
     ],
     techniques: [
       { 
@@ -503,15 +504,16 @@ export const THEMES: Theme[] = [
     ],
     scenarios: [
       { danger: '电梯内陌生人突然逼近企图施暴', response: '泰拳箍颈肘击 (Clinch Elbow) + 头槌 (Headbutt) + 猛推至角落' },
-      { danger: '在驾驶位被拉开车门强行拖拽', response: '勾住方向盘固定 (Anchor) + 蹬踹面部 + 柔术十字固 (Armbar)' },
-      { danger: '狭窄走廊遭遇持刀歹徒堵截', response: '利用背包/外套做盾牌 + 正蹬 (Teep) 控制距离 + 寻找房间躲避' },
-      { danger: '车内后座歹徒使用绳索勒颈', response: '双手下拉创造空隙 (Pluck) + 转身肘击/咬合 + 柔道背负投 (Seoi Nage) 意念动作' },
-      { danger: '被按在电梯墙角双手掐脖', response: '合气道二教 (Nikkyo) 折腕 + 泰拳膝撞腹股沟 + 旋转换位逃离' },
-      { danger: '在楼道转角突然遭遇棍棒袭击', response: '冲刺近身 (Burst in) + 泰拳内围膝撞 + 夺棍打击' },
-      { danger: '副驾驶乘客抢夺方向盘/攻击', response: '手臂格挡 + 肘击面部 + 指关节钻压 (Pressure Point)' },
-      { danger: '在狭小空间倒地被骑乘压制', response: '柔术起桥 (Bridge) 撞墙借力 + 翻转上位 + 地面锤拳 (Hammer Fist)' },
-      { danger: '遭遇背后熊抱且无后退空间', response: '踩踏脚面 (Stomp) + 头部后撞 (Headbutt) + 攻击手指 (Small Joint)' },
-      { danger: '对方堵住唯一出口门禁', response: '诈降分散注意 + 爆发性踢裆 (Groin Kick) + 猛撞开路' }
+      { danger: '车门被拉开，遭强行拖拽出车外', response: '勾住方向盘固定 (Anchor) + 蹬踹面部 + 柔术十字固 (Armbar)' },
+      { danger: '后座乘客突然使用绳索/手臂勒颈抢劫', response: '双手下拉创造空隙 (Pluck) + 转身肘击/咬合 + 柔道背负投 (Seoi Nage) 意念动作' },
+      { danger: '副驾驶歹徒持刀威胁颈部/腰部', response: '控制持刀手腕 (2-on-1) + 肘击面部 + 指关节钻压 (Pressure Point)' },
+      { danger: '【电梯】对方强势正面双手掐脖', response: '合气道二教 (Nikkyo) 折腕 + 泰拳膝撞腹股沟 + 旋转换位逃离' },
+      { danger: '小空间内敌人抓住自己的手腕限制行动并试图控制', response: '针对虎口弱点螺旋解脱 + 泰拳短肘击 (Short Elbow) + 膝撞' },
+      { danger: '【电梯】角落被壁咚/搂抱强吻', response: '掌根推击下巴 (Palm Strike) + 膝撞腹股沟 + 旋转换位 (Pivot)' },
+      { danger: '狭小空间内被敌人从背后袭击进行抱摔', response: '降低重心 (Base) + 肘击脊柱/后脑 (Elbow Strike) + 转身面对' },
+      { danger: '车内或走廊中遭遇持刀攻击者刺击或划伤', response: '利用座椅/背包阻挡 + 泰拳正蹬 (Teep) 阻击 + 寻找掩体' },
+      { danger: '面对对方死死搂抱', response: '咬合颈部/耳朵 (Biting) + 拇指压迫眼球 (Gouge) + 膝撞' },
+      { danger: '持械歹徒左右挥砍', response: '冲刺近身 (Burst in) + 360度防御 + 泰拳内围膝撞 + 夺械' }
     ],
     techniques: [
       { 
@@ -825,16 +827,16 @@ export const THEMES: Theme[] = [
       '战术起立 (Technical Stand-up): 地面格斗的终极目标是安全站起，而非在地面降服对手。'
     ],
     scenarios: [
-      { danger: '被击倒在地，对方站立准备实施足球踢 (Soccer Kick)', response: '地面防御姿态 (Ground Stance) + 蹬腿阻击胫骨 + 战术起立' },
-      { danger: '对方试图扑入你的两腿之间 (Guard) 进行打击', response: '巴西柔术蹬离 (Up Kick) + 剪刀扫 (Scissor Sweep) + 站起' },
-      { danger: '被大体重对手骑乘位 (Mount) 压制并殴打面部', response: '手臂护头 + 巴西柔术起桥 (Upa/Bridge) + 翻转逃脱' },
-      { danger: '被侧压控制 (Side Control) 无法动弹', response: '铁肘推颈 + 虾行逃脱 (Shrimping) 恢复防守 + 膝盖顶入' },
-      { danger: '多人围攻并进行踢踩', response: '龟缩防守 (Turtle) 护住后脑脏器 + 翻滚靠近墙壁/障碍物' },
-      { danger: '对方在地面试图实施断头台绞杀', response: '手臂过肩搭扣 (Von Flue Choke预备) + 侧向移动身体解脱' },
-      { danger: '被背后裸绞 (RNC) 拖入地面', response: '保护气管 + 转身进入对方防守 + 咬合/攻击腹股沟' },
-      { danger: '倒地后对方试图抢夺腰间/口袋物品', response: '将身体压在物品侧 + 单手护头 + 腿部连续蹬踹 (Kicks)' },
-      { danger: '在狭窄空间（如洗手间）倒地', response: '利用墙壁蹬腿借力 + 抱腿摔 (Single Leg Takedown) 反击' },
-      { danger: '从楼梯滚落后遭遇追击', response: '利用高低差蹬踹对方膝盖 + 迅速占据高位' }
+      { danger: '被摔倒在地后迅速站起击退对方', response: '战术起立 (Technical Stand-up) + 蹬腿阻击 + 泰拳扫踢 (Low Kick)' },
+      { danger: '被击倒在地，对方站立准备实施足球踢', response: '地面防御姿态 (Ground Stance) + 旋转跟踪 + 蹬腿破坏膝关节' },
+      { danger: '对方试图扑入你的两腿之间进行打击', response: '巴西柔术蹬离 (Up Kick) + 剪刀扫 (Scissor Sweep) + 战术起立' },
+      { danger: '被大体重对手骑乘位压制并殴打面部', response: '手臂护头 + 巴西柔术起桥 (Upa) + 翻转逃脱' },
+      { danger: '被侧压控制无法动弹', response: '铁肘推颈 (Frame) + 虾行逃脱 (Shrimping) + 膝盖顶入' },
+      { danger: '【骑乘】对方掏出匕首抵住脖子骑在你身上', response: '控制持刀手腕 (2-on-1) + 爆发起桥翻转 + 夺刀/逃离' },
+      { danger: '被背后裸绞即将拖入地面', response: '下拉手臂保护气管 (Pluck) + 转身进入对方防守 + 咬合/攻击腹股沟' },
+      { danger: '在地面上被掐脖压制-木村锁起身反控制', response: '起桥破坏重心 + 腕缄 (Kimura) 锁臂 + 翻转上位控制' },
+      { danger: '【突袭】背后被猛推/绊倒瞬间-倒地受身', response: '古流柔术受身 (Ukemi) + 保护头部 + 迅速转身面对威胁' },
+      { danger: '被壮汉强力冲击抱腿摔倒-锁颈舍身后倒起身制服', response: '断头台 (Guillotine) 闭锁 + 舍身技 (Sacrifice Throw) + 翻转上位' }
     ],
     techniques: [
       { 
