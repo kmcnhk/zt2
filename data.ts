@@ -1311,16 +1311,17 @@ export const THEMES: Theme[] = [
       '距离控制 (Range Control): 始终保持在长兵器的打击范围内，而在对方徒手攻击范围外。'
     ],
     scenarios: [
-      { danger: '对方持木棍/铁管从上向下劈击', response: '菲律宾魔杖屋顶式格挡 (Roof Block) + 击打持械手腕' },
-      { danger: '对方试图抓住你手中的棍子/雨伞', response: '蛇形缠绕缴械 (Snake Disarm) + 关节控制 + 击打面部' },
-      { danger: '遭遇持刀歹徒挥舞攻击', response: '利用长距离优势击打持刀手 (Defanging the Snake) + 保持移动' },
-      { danger: '手持长柄雨伞面对威胁', response: '突然撑开雨伞致盲 + 刺刀式突刺面部/喉咙' },
-      { danger: '在极近距离被对方贴身缠抱', response: '利用棍尾 (Punyo) 锤击面部/锁骨 + 勾啄眼球' },
-      { danger: '对方持棍横扫腰部', response: '竖棍格挡 (Wing Block) + 击打手背 + 扫棍反击' },
-      { danger: '被多名歹徒围攻', response: 'X型连续劈砍 (Figure 8) 制造防御圈 + 寻找缺口逃离' },
-      { danger: '手里只有短小的战术笔/自拍杆', response: '加强拳头硬度 + 锤击太阳穴/手背 + 戳击软组织' },
-      { danger: '对方冲撞试图夺取武器', response: '双手持棍猛力推击胸口 (Power Push) + 后撤步' },
-      { danger: '利用短棍进行地面压制', response: '棍身卡喉/关节施压 (Choke/Lock) + 膝盖压制' }
+      { danger: '对方持木棍/铁管从上向下劈击', response: '菲律宾魔杖屋顶式格挡 (Roof Block) + 进身蛇形缠绕 (Snake) + 夺棍反击' },
+      { danger: '对方试图抓住你手中的棍子', response: '棍尾 (Punyo) 螺旋解脱 + 刺击面部 + 泰拳低扫 (Low Kick)' },
+      { danger: '遭遇持刀歹徒挥舞攻击-击打持刀手', response: '肢体破坏 (Defanging the Snake) + 距离控制 + 连续抽击手腕' },
+      { danger: '面对持棍袭击歹徒-各种防御方式', response: '360度棍身格挡 + 进身入位 + 泰拳内围膝撞 (Clinch Knee)' },
+      { danger: '对方持棍横扫腰部+竖棍格挡', response: '竖棍格挡 (Wing Block) + 顺势滑棍击打手指 + 棍尾砸击' },
+      { danger: '被多名歹徒围攻+X型连续劈砍', response: '8字形连续打击 (Figure 8) + 移动步法 (Triangle Footwork) + 寻找出口' },
+      { danger: '对方冲撞试图夺取武器+双手持棍推击胸口', response: '双手持棍猛力推击 (Power Push) + 后撤步 + 棍头扫击' },
+      { danger: '对方持棍左右挥砍+近身+大外刈', response: '进身格挡 (Crash) + 缠抱控制手臂 + 柔道大外刈 (Osoto Gari) 摔倒' },
+      { danger: '持棍歹徒自上而下全力一击', response: '侧闪 (Slip) + 合气道入身投 (Irimi Nage) 借力打力 + 夺棍' },
+      { danger: '公园夜间发现嫌疑人-从背后控制', response: '静步接近 + 短棍锁喉 (Choke) + 古流柔术关节控制 (Joint Lock)' },
+      { danger: '被人持械戳击腹部-闪身体做杠杆夺棍', response: '侧身闪避 + 腋下夹棍 (Trap) + 身体旋转杠杆夺棍 (Leverage Disarm)' }
     ],
     techniques: [
       { 
@@ -1765,7 +1766,7 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "Body Drag",
           setup: "假人（负重）。",
-          phase1_technical: "1. 抓握：抓背心提手或腋下。\n2. 发力：倒退走，利用腿部力量。\n3. 隐藏：拖入掩体。",
+          phase1_technical: "1. 抓握：抓背心提手或腋下。\n2. 发力：倒退走，利用腿部蹬地。\n3. 隐藏：拖入掩体。",
           phase2_stress: "负重拖拽：全装具状态下拖拽成人体重。",
           critical_checkpoints: "1. 保持警戒。\n2. 保护腰部。"
         }
