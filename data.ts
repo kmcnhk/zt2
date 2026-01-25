@@ -828,13 +828,14 @@ export const THEMES: Theme[] = [
     ],
     scenarios: [
       { danger: '被摔倒在地后迅速站起击退对方', response: '战术起立 (Technical Stand-up) + 蹬腿阻击 + 泰拳扫踢 (Low Kick)' },
+      { danger: '在狭小空间倒地被骑乘压制-柔术起桥翻转上位', response: '手臂护头 + 巴西柔术起桥 (Upa/Bridge) + 翻转逃脱' },
       { danger: '被击倒在地，对方站立准备实施足球踢', response: '地面防御姿态 (Ground Stance) + 旋转跟踪 + 蹬腿破坏膝关节' },
       { danger: '对方试图扑入你的两腿之间进行打击', response: '巴西柔术蹬离 (Up Kick) + 剪刀扫 (Scissor Sweep) + 战术起立' },
-      { danger: '被大体重对手骑乘位压制并殴打面部', response: '手臂护头 + 巴西柔术起桥 (Upa) + 翻转逃脱' },
-      { danger: '被侧压控制无法动弹', response: '铁肘推颈 (Frame) + 虾行逃脱 (Shrimping) + 膝盖顶入' },
-      { danger: '【骑乘】对方掏出匕首抵住脖子骑在你身上', response: '控制持刀手腕 (2-on-1) + 爆发起桥翻转 + 夺刀/逃离' },
+      { danger: '被大体重对手骑乘位压制并殴打面部', response: '手臂护头 (Cover) + 破坏重心 + 巴西柔术起桥 (Upa) + 翻转逃脱' },
+      { danger: '被侧压控制无法动弹', response: '铁肘推颈 (Frame) + 虾行逃脱 (Shrimping) + 膝盖顶入恢复防守' },
+      { danger: '【骑乘】对方掏出匕首抵住脖子-骑在你身上', response: '控制持刀手腕 (2-on-1) + 爆发起桥翻转 + 夺刀/逃离' },
       { danger: '被背后裸绞即将拖入地面', response: '下拉手臂保护气管 (Pluck) + 转身进入对方防守 + 咬合/攻击腹股沟' },
-      { danger: '在地面上被掐脖压制-木村锁起身反控制', response: '起桥破坏重心 + 腕缄 (Kimura) 锁臂 + 翻转上位控制' },
+      { danger: '在地面上被压制-木村锁起身反控制', response: '起桥破坏重心 + 腕缄 (Kimura) 锁臂 + 翻转上位控制' },
       { danger: '【突袭】背后被猛推/绊倒瞬间-倒地受身', response: '古流柔术受身 (Ukemi) + 保护头部 + 迅速转身面对威胁' },
       { danger: '被壮汉强力冲击抱腿摔倒-锁颈舍身后倒起身制服', response: '断头台 (Guillotine) 闭锁 + 舍身技 (Sacrifice Throw) + 翻转上位' }
     ],
@@ -988,16 +989,16 @@ export const THEMES: Theme[] = [
       '夺取武器 (Disarm): 利用杠杆原理将武器从对方手中剥离，并立即拉开距离上膛。'
     ],
     scenarios: [
-      { danger: '歹徒正面手枪指头（处决式威胁）', response: '侧闪拍挡重定向 (Redirect) + 抓握套筒防复进 + 踢裆夺枪' },
+      { danger: '歹徒正面手枪指头', response: '侧闪拍挡重定向 (Redirect) + 抓握套筒防复进 + 踢裆夺枪' },
       { danger: '手枪抵住后背/后脑', response: '举手诱骗 + 快速转身扫开枪管 + 腋下夹紧手臂 (Trap) + 卷腕夺枪' },
       { danger: '歹徒持枪挟持人质（枪指侧面太阳穴）', response: '双手举起 + 猛转体推开枪口 + 古流柔术小手返 (Kote Gaeshi)' },
       { danger: '遭遇长枪/步枪正面指胸威胁', response: '切入内围拍开枪管 (C-Clamp) + 刺刀式突进 + 膝撞腹股沟' },
-      { danger: '枪击发生时寻找掩体', response: '辨别Cover(防弹)与Concealment(遮挡) + 匍匐移动' },
       { danger: '在极近距离歹徒试图拔枪', response: '双手封堵枪套 (Jamming) + 头槌攻击 + 膝撞' },
       { danger: '夺枪过程中双方激烈争夺', response: '利用枪管作为杠杆猛戳面部 + 咬合手臂 (Biting) + 撕扯扳机指' },
-      { danger: '歹徒持枪从侧面逼近', response: '利用余光观察 + 转身拍挡 + 俄式缠臂 (Russian Tie) 控制' },
-      { danger: '被歹徒强迫跪下处决', response: '利用起身假动作 + 扑腿抱摔 + 夺枪' },
-      { danger: '夺枪成功后对方试图反扑', response: '拉开距离 (Create Distance) + 拍击弹匣/上膛 (Tap-Rack) + 射击/警戒' }
+      { danger: '歹徒持枪侧面指头持枪威胁', response: '利用余光观察 + 转身拍挡 + 俄式缠臂 (Russian Tie) 控制' },
+      { danger: '被歹徒强迫跪下处决+低头同时双手向上反方向夺枪', response: '瞬间低头双手上格挡 + 转身扑腿抱摔 + 地面夺枪' },
+      { danger: '夺枪成功后对方试图反扑', response: '拉开距离 (Create Distance) + 拍击弹匣/上膛 (Tap-Rack) + 射击/警戒' },
+      { danger: '正面指头（极近距离）-爆发偏头双手拍击', response: '爆发性侧闪偏头 + 双手合拍枪身 + 扭腕夺枪' }
     ],
     techniques: [
       { 
