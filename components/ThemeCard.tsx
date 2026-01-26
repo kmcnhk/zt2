@@ -22,6 +22,9 @@ const ThemeCard: React.FC<Props> = ({ theme, onClick, isMilitary }) => {
     'ADVANCED': '高阶专家'
   };
 
+  // Safe access for tags: Ensure it falls back to empty array if undefined
+  const tags = theme.tags || [];
+
   return (
     <div 
       onClick={() => onClick(theme)}
@@ -72,7 +75,7 @@ const ThemeCard: React.FC<Props> = ({ theme, onClick, isMilitary }) => {
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
-          {theme.tags.slice(0, 3).map(tag => (
+          {tags.slice(0, 3).map(tag => (
             <span key={tag} className={`text-[10px] uppercase font-bold px-2.5 py-1 rounded-full bg-neutral-900 text-gray-500 border border-neutral-800 group-hover:border-neutral-700 transition-colors`}>
               {tag}
             </span>
