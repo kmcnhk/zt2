@@ -37,18 +37,19 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "街头格斗终结者 12": TEMP_LINK,
 
     // 2. 女子防身特辑
-    "女子防身特辑 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
-    "女子防身特辑 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/946516651253642699130507926/f2GvtjMt9J8A.mp4",
-    "女子防身特辑 3": TEMP_LINK,
-    "女子防身特辑 4": TEMP_LINK,
-    "女子防身特辑 5": TEMP_LINK,
-    "女子防身特辑 6": TEMP_LINK,
-    "女子防身特辑 7": TEMP_LINK,
-    "女子防身特辑 8": TEMP_LINK,
-    "女子防身特辑 9": TEMP_LINK,
-    "女子防身特辑 10": TEMP_LINK,
-    "女子防身特辑 11": TEMP_LINK,
-    "女子防身特辑 12": TEMP_LINK,
+    "遭遇背部环抱+从后方被熊抱 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "头发被恶意抓扯 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "被按在墙上掐脖子 3": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "地面被骑乘压制掐脖 4": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "手腕被强力抓握/拉走 5": "https://yun.kmcn.vip/c3364607vodcq1304509294/b3dc89275145403704243041003/PqGGTP47ARcA.mp4",
+    "遭遇正面熊抱+正面熊抱 6": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "双手抓双腕压制 7": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "遭遇前方勒颈/头锁 8": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "遭遇背后勒颈 9": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "遭遇刀具威胁近距离 10": "https://yun.kmcn.vip/c3364607vodcq1304509294/093d7b8d1253642699128246783/Ql4pbYL1LScA.mp4",
+    "被从背后熊抱抱起-双脚离地 11": "https://yun.kmcn.vip/c3364607vodcq1304509294/093d7b8d1253642699128246783/Ql4pbYL1LScA.mp4",
+    "被侧面搂住脖颈 12": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+
 
     // 3. 校园铁盾
     "校园铁盾 1": TEMP_LINK,
