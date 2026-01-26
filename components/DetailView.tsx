@@ -8,7 +8,7 @@ import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Tar
 // ==========================================
 // 默认主题主视频 (当找不到具体技术视频时播放)
 const MAIN_VIDEO_CONFIG = {
-  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4",
+  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/336f82c45145403714467265465/MF8q4AOZngcA.mp4",
   MILITARY: "https://yun.kmcn.vip/c3364607vodcq1304509294/a4cc02a25145403714465718516/qJDTuUB1A1cA.mp4",
   INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/e61cf0a45145403714466219197/EP5d7XBa1xIA.mp4"
 };
