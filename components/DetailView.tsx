@@ -8,13 +8,13 @@ import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Tar
 // ==========================================
 // 默认主题主视频 (当找不到具体技术视频时播放)
 const MAIN_VIDEO_CONFIG = {
-  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4",
-  MILITARY: "https://yun.kmcn.vip/c3364607vodcq1304509294/61ab3db31253642699129716849/wyAEZp2NgKAA.mp4",
-  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4"
+  CIVILIAN: "https://yun.kmcn.vip/c3364607vodcq1304509294/336f82c45145403714467265465/MF8q4AOZngcA.mp4",
+  MILITARY: "https://yun.kmcn.vip/c3364607vodcq1304509294/a4cc02a25145403714465718516/qJDTuUB1A1cA.mp4",
+  INSTRUCTOR: "https://yun.kmcn.vip/c3364607vodcq1304509294/e61cf0a45145403714466219197/EP5d7XBa1xIA.mp4"
 };
 
 // 临时通用链接 (统一替换为指定视频)
-const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4";
+const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a41253642699132774530/xGjcuANdENoA.mp4";
 
 // 💡 提示：在此处配置分集视频路径 (第 18 行开始)
 // 键(Key)格式：主题简称 + 空格 + 序号 (例如: "女子防身特辑 1")
@@ -23,35 +23,15 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     // ================= CIVILIAN (民用主题 9个) =================
     
     // 1. 街头格斗终结者
-    "街头格斗终结者 1": TEMP_LINK,
-    "街头格斗终结者 2": TEMP_LINK,
-    "街头格斗终结者 3": TEMP_LINK,
-    "街头格斗终结者 4": TEMP_LINK,
-    "街头格斗终结者 5": TEMP_LINK,
-    "街头格斗终结者 6": TEMP_LINK,
-    "街头格斗终结者 7": TEMP_LINK,
-    "街头格斗终结者 8": TEMP_LINK,
-    "街头格斗终结者 9": TEMP_LINK,
+    "街头格斗终结者 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/5c2c1b035145403704245694159/b7vv19qaskUA.mp4",
     "街头格斗终结者 10": TEMP_LINK,
-    "街头格斗终结者 11": TEMP_LINK,
-    "街头格斗终结者 12": TEMP_LINK,
 
     // 2. 女子防身特辑
-    "女子防身特辑 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/e3f0848b1253642699345268209/WI3tCB9vmMwA.mp4",
-    "女子防身特辑 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/946516651253642699130507926/f2GvtjMt9J8A.mp4",
-    "女子防身特辑 3": TEMP_LINK,
-    "女子防身特辑 4": TEMP_LINK,
-    "女子防身特辑 5": TEMP_LINK,
-    "女子防身特辑 6": TEMP_LINK,
-    "女子防身特辑 7": TEMP_LINK,
-    "女子防身特辑 8": TEMP_LINK,
-    "女子防身特辑 9": TEMP_LINK,
+    "女子防身特辑 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
     "女子防身特辑 10": TEMP_LINK,
-    "女子防身特辑 11": TEMP_LINK,
-    "女子防身特辑 12": TEMP_LINK,
 
     // 3. 校园铁盾
-    "校园铁盾 1": TEMP_LINK,
+    "校园铁盾 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
     "校园铁盾 2": TEMP_LINK,
     "校园铁盾 3": TEMP_LINK,
     "校园铁盾 4": TEMP_LINK,
@@ -61,8 +41,6 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "校园铁盾 8": TEMP_LINK,
     "校园铁盾 9": TEMP_LINK,
     "校园铁盾 10": TEMP_LINK,
-    "校园铁盾 11": TEMP_LINK,
-    "校园铁盾 12": TEMP_LINK,
     
     // 4. 路怒症与车内防卫
     "路怒症与车内防卫 1": TEMP_LINK,
