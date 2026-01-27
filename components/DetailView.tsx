@@ -22,27 +22,47 @@ const TEMP_LINK = "https://yun.kmcn.vip/c3364607vodcq1304509294/3380d6a412536426
 const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     // ================= CIVILIAN (民用主题 9个) =================
     
-    // 1. 街头格斗终结者
-    "街头格斗终结者 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/5c2c1b035145403704245694159/b7vv19qaskUA.mp4",
-    "街头格斗终结者 10": TEMP_LINK,
+    // 1. 街头格斗终结者：从被动挨打到瞬间反杀
+    "1 争吵中对方突然伸手用力推搡胸部试图挑起斗殴": "https://yun.kmcn.vip/c3364607vodcq1304509294/5c2c1b035145403704245694159/b7vv19qaskUA.mp4",
+    "2 对方双手死死揪住衣领并试图用头撞击": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "3 深夜大排档遭遇醉汉无预警挥舞王八拳进攻": "https://yun.kmcn.vip/c3364607vodcq1304509294/3d9fb6581253642699122330027/Qlo06N4r0EsA.mp4",
+    "4 倒地后对方站立试图足球踢头部": "https://yun.kmcn.vip/c3364607vodcq1304509294/97149fff1253642699130657320/XMXh05QPlgEA.mp4",
+    "5 被对方从侧面使用夹颈摔勒住脖子": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "6 被对方单手抓住手腕并试图强行拖拽": "https://yun.kmcn.vip/c3364607vodcq1304509294/b3dc89275145403704243041003/PqGGTP47ARcA.mp4",
+    "7 对方从背后突袭实施连臂熊抱": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "8 被对方逼入墙角双手掐脖窒息": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "9 被歹徒单手掐脖威胁": "https://yun.kmcn.vip/c3364607vodcq1304509294/2a1a28a41253642699132364850/3AuVza5iZksA.mp4",
+    "10 对方试图使用抱腿摔": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "11 被人从侧面双手掐脖": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "12 面对持刀歹徒左右挥砍": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
 
-    // 2. 女子防身特辑
-    "女子防身特辑 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
-    "女子防身特辑 10": TEMP_LINK,
+    // 2. 女子防身特辑女子防身特辑：反强暴与关节技逃脱
+    "1 遭遇背部环抱+从后方被熊抱": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "2 头发被恶意抓扯": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "3 被按在墙上掐脖子": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "4 地面被骑乘压制掐脖": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "5 手腕被强力抓握/拉走": "https://yun.kmcn.vip/c3364607vodcq1304509294/b3dc89275145403704243041003/PqGGTP47ARcA.mp4",
+    "6 遭遇正面熊抱+正面熊抱": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "7 双手抓双腕压制": "https://yun.kmcn.vip/c3364607vodcq1304509294/946471011253642699130506365/74Q92jRgpNkA.mp4",
+    "8 遭遇前方勒颈/头锁": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "9 遭遇背后勒颈": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "10 遭遇刀具威胁近距离": "https://yun.kmcn.vip/c3364607vodcq1304509294/093d7b8d1253642699128246783/Ql4pbYL1LScA.mp4",
+    "11 被从背后熊抱抱起-双脚离地": "https://yun.kmcn.vip/c3364607vodcq1304509294/093d7b8d1253642699128246783/Ql4pbYL1LScA.mp4",
+    "12 被侧面搂住脖颈": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
 
-    // 3. 校园铁盾
-    "校园铁盾 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
-    "校园铁盾 2": TEMP_LINK,
-    "校园铁盾 3": TEMP_LINK,
-    "校园铁盾 4": TEMP_LINK,
-    "校园铁盾 5": TEMP_LINK,
-    "校园铁盾 6": TEMP_LINK,
-    "校园铁盾 7": TEMP_LINK,
-    "校园铁盾 8": TEMP_LINK,
-    "校园铁盾 9": TEMP_LINK,
-    "校园铁盾 10": TEMP_LINK,
-    "校园铁盾 11": TEMP_LINK,
-    "校园铁盾 12": TEMP_LINK,
+    // 3. 校园铁盾：青少年反霸凌与自信
+    "1 在走廊被霸凌者故意推搡挑衅": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "2 被同学从侧面使用夹颈摔勒住并嘲笑": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "3 被多人围堵在厕所或死角": "https://yun.kmcn.vip/c3364607vodcq1304509294/64cb11a61253642699136632085/avGdXzsRTy0A.mp4",
+    "4 书包带被强行拉扯试图拽倒": "https://yun.kmcn.vip/c3364607vodcq1304509294/0b8fe1a51253642699128341653/cnnKKy7FmaAA.mp4",
+    "5 被按在地上羞辱或殴打": "https://yun.kmcn.vip/c3364607vodcq1304509294/3d9fb6581253642699122330027/Qlo06N4r0EsA.mp4",
+    "6 被抓住衣领并抵在墙上威胁": "https://yun.kmcn.vip/c3364607vodcq1304509294/b3dc89275145403704243041003/PqGGTP47ARcA.mp4",
+    "7 遭遇言语侮辱和推搡升级王八拳击打": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "8 被抓住手腕试图强制带走": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "9 对方试图使用裸绞勒颈": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "10 面对持棍棒/椅子的冲动攻击": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "11 后方被人贩子捂嘴拖拽": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
+    "12 【防拐】被从背后熊抱抱起（双脚离地）": "https://yun.kmcn.vip/c3364607vodcq1304509294/9714a8e61253642699130657552/jTtLqMeaThUA.mp4",
     
     // 4. 路怒症与车内防卫
     "路怒症与车内防卫 1": TEMP_LINK,
