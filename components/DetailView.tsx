@@ -41,6 +41,8 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "校园铁盾 8": TEMP_LINK,
     "校园铁盾 9": TEMP_LINK,
     "校园铁盾 10": TEMP_LINK,
+    "校园铁盾 11": TEMP_LINK,
+    "校园铁盾 12": TEMP_LINK,
     
     // 4. 路怒症与车内防卫
     "路怒症与车内防卫 1": TEMP_LINK,
@@ -56,7 +58,7 @@ const VIDEO_PLAYLIST_MAP: Record<string, string> = {
     "路怒症与车内防卫 11": TEMP_LINK,
     "路怒症与车内防卫 12": TEMP_LINK,
 
-    // 5. 刀锋之下
+    // 5. 刀锋之下 (UPDATED LINKS)
     "刀锋之下 1": "https://yun.kmcn.vip/c3364607vodcq1304509294/0eda21165145403704244649111/9QBTM61V8a4A.mp4",
     "刀锋之下 2": "https://yun.kmcn.vip/c3364607vodcq1304509294/0eda21165145403704244649111/9QBTM61V8a4A.mp4",
     "刀锋之下 3": "https://yun.kmcn.vip/c3364607vodcq1304509294/0eda21165145403704244649111/9QBTM61V8a4A.mp4",
