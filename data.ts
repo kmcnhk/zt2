@@ -1,4 +1,5 @@
 
+
 import { Theme } from './types';
 
 export const THEMES: Theme[] = [
@@ -198,7 +199,7 @@ export const THEMES: Theme[] = [
         drill: {
           drillName: "女子二教防身术 (Nikkyo Self-Defense)",
           setup: "配对练习，模拟抓胸或抓肩。",
-          phase1_technical: "1. 固定：单手按住对方抓握的手背，使其贴紧自己身体。\n2. 切割：另一只手如刀般切入对方肘窝与手腕连接处，强行弯曲其手腕。\n3. 螺旋：身体下沉并向对方后方旋转，施加螺旋压力致其跪地。",
+          phase1_technical: "1. 固定：单手按住对方抓握的手背，使其贴紧自己身体。\n2. 固定：单手按住对方抓握的手背，使其贴紧自己身体。\n2. 切割：另一只手如刀般切入对方肘窝与手腕连接处，强行弯曲其手腕。\n3. 螺旋：身体下沉并向对方后方旋转，施加螺旋压力致其跪地。",
           phase2_stress: "墙角解脱：防守者背靠墙，攻击者双手掐脖。防守者需在窒息压力下（模拟），迅速锁定一只手腕实施二教，并膝撞面部逃离。",
           critical_checkpoints: "1. 必须利用身体重量下压，而非仅靠臂力。\n2. 保持对方手肘角度小于90度。\n3. 疼痛产生后立即推开对方逃跑，不要持续纠缠。"
         }
@@ -1468,7 +1469,7 @@ export const THEMES: Theme[] = [
     difficulty: 'INTERMEDIATE',
     title: 'FBI特工必修：近身控制与逮捕术 (CQC)',
     hooks: ['五秒制服：从接触到手铐', '古流柔术逮捕技', '不仅是打倒，是彻底控制'],
-    description: '针对执法人员。重点在于如何在保护自己武器的同时，利用古流柔术的关节锁和投技，迅速将嫌疑人从站立控制到地面并完成上铐。',
+    description: '针对执法人员与特工的高风险环境设计。重点在于应对突发近身袭击、持械威胁以及暴力拒捕时的瞬间控制。融合马伽术的爆发力、合气道的关节控制、古流柔术的擒拿与菲律宾棍术的器械防御。',
     principles: [
       '武器留存 (Weapon Retention): 在近身格斗中，保护自己的配枪不被抢夺是最高优先级。',
       '中轴控制 (Centerline): 破坏对方脊柱与中轴线平衡，使其无法发力，从而实施抓捕。',
@@ -1476,152 +1477,142 @@ export const THEMES: Theme[] = [
       '战术协同 (Contact & Cover): 始终保持一人控制(Contact)、一人掩护(Cover)的战术站位。'
     ],
     scenarios: [
-      { danger: '嫌疑人在盘查时突然推搡并试图抢枪', response: '武器留存 (Retention) 下压固定 + 肘击面部 + 脇固 (Waki Gatame)' },
-      { danger: '嫌疑人双手抱胸抗拒执法', response: '直臂压制 (Arm Bar) 强制分离手臂 + 施压带倒' },
-      { danger: '嫌疑人挥拳抵抗逮捕', response: '潜避 (Duck Under) + 拿背 + 站立裸绞 (RNC) 控制' },
-      { danger: '地面压制时嫌疑人激烈翻滚挣扎', response: '膝盖压腹 (Knee on Belly) 控制呼吸 + 警棍击打大腿神经' },
-      { danger: '被嫌疑人死死抱住腰部', response: '强力推脸 (Cross Face) 制造痛感 + 腕缄 (Kimura) 锁臂' },
-      { danger: '嫌疑人倒地后隐藏双手拒绝背手', response: '鹅颈腕锁 (Goose Neck) + 警棍撬压 + 拇指痛点控制' },
-      { danger: '押解途中嫌疑人突然头撞反抗', response: '折腕提拉 + 扫腿摔 (Sweep) + 膝盖压颈' },
-      { danger: '双人小组面对暴恐分子持刀冲锋', response: '一人持枪掩护 (Cover) + 一人侧翼突入控制 (Contact)' },
-      { danger: '在狭窄楼道进行搜身', response: '控制嫌疑人额头贴墙 + 破坏重心 (Spread Eagle) + 单手搜身' },
-      { danger: '嫌疑人假装配合突然掏出匕首', response: '控制持械手腕 + 肘关节反折 + 夺刀制服' }
+      { danger: '攻击者突然抱住警员', response: '重心下沉 (Base) + 泰拳箍颈膝撞 (Clinch Knee) + 猛推分离' },
+      { danger: '嫌疑人用刀威胁，进行挥砍', response: '菲律宾魔杖去牙 (Defanging) / 360防御 + 俄式缠臂 (2-on-1) + 夺刀' },
+      { danger: '近距离扑倒警员或军人，试图进行压制-舍身', response: '柔道巴投 (Tomoe Nage) 借力摔 + 转换上位控制' },
+      { danger: '【盘查】嫌疑人突然掏刀突袭直刺', response: '马伽术内围防御 (Inside Defense) + 同时反击 + 控制持械手' },
+      { danger: '【抓捕】抓捕时对方激烈反抗（不配合）', response: '古流柔术脇固 (Waki Gatame) + 强力施压 + 强制下跪' },
+      { danger: '地面压制，X锁腿', response: '巴西柔术X型锁腿 (X-Leg Lock) + 警棍辅助 + 限制移动' },
+      { danger: '地面压制-压肩控制', response: '柔道袈裟固 (Kesa Gatame) + 膝盖压头 + 施加痛感' },
+      { danger: '对实施袭击人背后直接裸绞控制', response: '潜行接近 + 站立裸绞 (RNC) + 拖入死角/控制倒地' },
+      { danger: '被嫌疑人死死抱住腰部', response: '强力推脸 (Cross Face) + 柔术腕缄 (Kimura) + 转身摔' },
+      { danger: '【搜查】开门瞬间对方持枪指头', response: '火线重定向 (Redirect) + 突进控制枪管 + 夺枪 (Disarm)' },
+      { danger: '嫌疑人持刀威胁拒捕', response: '利用警棍/外物保持距离 + 菲律宾魔杖击打持刀手 + 战术协同' }
     ],
     techniques: [
       { 
-        name: '武器留存 (Weapon Retention)', 
-        details: '枪套防御/双手固守',
+        name: '箍颈膝撞 (Clinch Knee)', 
+        details: '泰拳内围核心，破坏平衡并重创腹股沟/面部',
         drill: {
-          drillName: "Holster Retention Drill (枪套防抢训练)",
-          setup: "佩戴模拟训练枪（蓝枪）及枪套，配对练习。",
-          phase1_technical: "1. 下压(Clamp)：当嫌疑人手触碰枪柄，立即用同侧手猛力下压其手，将其手'钉'在枪套上。\n2. 降低重心(Base)：向持枪侧后撤步，降低重心防止被推倒。\n3. 攻击(Attack)：利用闲置手肘击嫌疑人面部，或膝撞其腹股沟，直至其松手。",
-          phase2_stress: "360度抢夺：闭眼站立，听到口令后睁眼，应对来自不同方向的抢枪尝试。必须在5秒内完成解脱并拉开距离拔枪警戒。",
-          critical_checkpoints: "1. 绝不松开按压枪套的手。\n2. 身体必须随对方拉力转动，不要硬抗。\n3. 解脱后立即建立'反应间隙' (Reactionary Gap)."
+          drillName: "内围毁灭者",
+          setup: "手靶或泰拳护具。",
+          phase1_technical: "1. 控制：双手扣死对方后脑（Plum Clinch）。\n2. 破坏：猛力下压破坏对方重心。\n3. 撞击：提膝猛撞对方腹股沟或面部。",
+          phase2_stress: "被抱住时的反击：在被对方死死抱住腰部时，制造空间进行连续膝撞。",
+          critical_checkpoints: "1. 手肘夹紧保护中线。\n2. 送胯发力。"
+        }
+      },
+      { 
+        name: '360度夺刀 (360 Disarm)', 
+        details: '马伽术经典全方位防御与俄式控制',
+        drill: {
+          drillName: "360格挡与夺刀",
+          setup: "橡胶刀。",
+          phase1_technical: "1. 格挡：手臂90度外格，同时进身打击。\n2. 缠绕：迅速使用俄式缠臂（2-on-1）控制持刀手。\n3. 夺取：利用杠杆折腕夺刀。",
+          phase2_stress: "连续劈砍防御：应对疯狂连续劈砍，寻找时机切入控制。",
+          critical_checkpoints: "1. 格挡必须痛击对方前臂。\n2. 控制要死，不能松手。"
+        }
+      },
+      { 
+        name: '舍身技 (Tomoe Nage)', 
+        details: '柔道借力打力，利用冲力抛摔', 
+        drill: {
+          drillName: "巴投实战应用",
+          setup: "柔道垫。",
+          phase1_technical: "1. 诱导：当对方猛力前冲扑倒时。\n2. 蹬腹：单脚蹬住对方腹部，身体主动后倒。\n3. 抛摔：利用对方冲力和自身体重将其向后抛出。",
+          phase2_stress: "被扑倒瞬间的反杀：在即将被扑倒的瞬间使用舍身技。",
+          critical_checkpoints: "1. 核心收紧。\n2. 蹬腿要有爆发力。"
+        }
+      },
+      { 
+        name: '内围防御 (Inside Defense)', 
+        details: '针对直线突刺的瞬间反应', 
+        drill: {
+          drillName: "直刺防御反射",
+          setup: "橡胶刀。",
+          phase1_technical: "1. 拍挡：手掌向内拍击对方手腕/前臂。\n2. 侧身：身体微转避开刀锋。\n3. 进击：同时另一手直拳击打面部。",
+          phase2_stress: "近距离突袭：在极近距离应对突然的直刺。",
+          critical_checkpoints: "1. 动作幅度极小化。\n2. 必须同时反击。"
         }
       },
       { 
         name: '脇固 (Waki Gatame)', 
-        details: '利用腋下夹紧手臂折断肘关节', 
+        details: '古流柔术利用腋下夹紧破坏肘关节', 
         drill: {
           drillName: "站立脇固控制",
           setup: "无器械。",
-          phase1_technical: "1. 抓腕：双手控制对方手腕，拉直其手臂。\n2. 夹臂：将对方手臂夹在腋下，大臂压住肘关节。\n3. 施压：身体前倾下压，折断其肘部（模拟）。",
-          phase2_stress: "指指点点反制：当嫌疑人手指指点点时，迅速施展脇固。",
-          critical_checkpoints: "1. 夹紧不要松。\n2. 步法配合身体前压。"
+          phase1_technical: "1. 捕捉：抓住对方手腕，拉直其手臂。\n2. 夹紧：将对方手臂紧夹在腋下。\n3. 施压：身体下沉并前压，折断（模拟）对方肘部。",
+          phase2_stress: "抓捕中的反抗：对方试图抽手逃跑时，顺势施展脇固。",
+          critical_checkpoints: "1. 夹得越紧越好。\n2. 利用全身重量。"
         }
       },
       { 
-        name: '腕缄 (Kimura)', 
-        details: '针对肩关节的强力锁技', 
+        name: 'X型锁腿 (Leg Lock)', 
+        details: '地面战术中对下肢的绝对控制', 
         drill: {
-          drillName: "站立Kimura",
-          setup: "无器械。",
-          phase1_technical: "1. 抓腕：一手抓腕。\n2. 穿梭：另一手穿过腋下抓自己手腕 (Figure 4)。\n3. 旋转：将对方手臂向其背后旋转，破坏肩关节。",
-          phase2_stress: "抱腰反制：在对方抱腰时，利用腕缄控制并摔倒。",
-          critical_checkpoints: "1. 肘部贴紧身体。\n2. 利用旋转力。"
+          drillName: "地面X锁控制",
+          setup: "柔道垫。",
+          phase1_technical: "1. 缠绕：双腿交叉缠绕对方一条腿。\n2. 伸展：挺胯伸展，对膝关节施压。\n3. 限制：控制对方移动，等待支援或上铐。",
+          phase2_stress: "地面压制：在混乱的地面格斗中控制嫌疑人下肢。",
+          critical_checkpoints: "1. 锁死膝关节。\n2. 保持警惕防止对方另一脚踢击。"
+        }
+      },
+      { 
+        name: '压肩控制 (Shoulder Pin)', 
+        details: '利用体重锁死肩部', 
+        drill: {
+          drillName: "袈裟固压制",
+          setup: "柔道垫。",
+          phase1_technical: "1. 姿态：侧坐，抱住对方头部和一只手臂。\n2. 施压：肋骨压住对方胸口/面部。\n3. 稳定：双腿岔开保持平衡。",
+          phase2_stress: "疯狂挣扎压制：嫌疑人在地面剧烈挣扎，保持压制不动摇。",
+          critical_checkpoints: "1. 压得对方无法呼吸。\n2. 头部贴紧。"
         }
       },
       { 
         name: '裸绞 (RNC)', 
-        details: '针对颈动脉的血绞晕厥控制', 
+        details: '针对颈动脉的血绞', 
         drill: {
           drillName: "战术裸绞",
           setup: "无器械。",
-          phase1_technical: "1. V字锁：前臂和上臂形成V字夹住颈部。\n2. 加固：手掌搭在二头肌，另一手推后脑。\n3. 收紧：深吸气，收紧背部肌肉。",
-          phase2_stress: "挣扎控制：对方试图掰手指解脱，保持裸绞并施压。",
-          critical_checkpoints: "1. 不要交叉双脚（防足跟勾）。\n2. 施压要持续。"
+          phase1_technical: "1. 入位：V字手势卡住喉咙/颈动脉。\n2. 闭锁：手搭二头肌，另一手推后脑。\n3. 收紧：深吸气扩背，数秒致晕。",
+          phase2_stress: "背后突袭：潜行接近哨兵或嫌疑人实施绞杀。",
+          critical_checkpoints: "1. 肘尖对准下巴。\n2. 动作隐蔽。"
         }
       },
       { 
-        name: '膝盖压腹', 
-        details: '膝盖压制腹腔神经丛', 
+        name: '腕缄 (Kimura)', 
+        details: '利用杠杆破坏肩关节', 
         drill: {
-          drillName: "Knee on Belly (KOB)",
-          setup: "柔道垫。",
-          phase1_technical: "1. 压制：膝盖顶住腹腔神经丛。\n2. 支撑：另一腿伸直保持平衡。\n3. 拔枪：在压制状态下拔枪警戒。",
-          phase2_stress: "地面转上铐：从KOB姿态转换到俯卧上铐。",
-          critical_checkpoints: "1. 重心全在膝盖。\n2. 保持头部观察。"
-        }
-      },
-      { 
-        name: '鹅颈腕锁', 
-        details: '手腕折叠控制技术', 
-        drill: {
-          drillName: "鹅颈押解",
+          drillName: "Kimura Lock",
           setup: "无器械。",
-          phase1_technical: "1. 抓手：双手控制对方手掌。\n2. 折叠：向内猛烈折叠手腕。\n3. 顶肘：用胸口顶住对方肘部固定。",
-          phase2_stress: "押解反抗：押解途中嫌疑人反抗，加力施压迫使其踮脚。",
-          critical_checkpoints: "1. 手腕要折到底。\n2. 紧贴对方身体。"
+          phase1_technical: "1. 抓腕：一手抓对方手腕。\n2. 穿锁：另一手穿过腋下抓自己手腕（Figure 4）。\n3. 旋转：向对方背后猛烈旋转手臂。",
+          phase2_stress: "抱腰解脱：对方抱腰时，利用腕缄控制并摔倒/制服。",
+          critical_checkpoints: "1. 肘部贴紧。\n2. 旋转发力。"
         }
       },
       { 
-        name: '警棍打击', 
-        details: '击打大腿腓总神经', 
+        name: '正面夺枪 (Gun Disarm)', 
+        details: '火线重定向与夺取', 
         drill: {
-          drillName: "警棍击打区",
-          setup: "击打靶。",
-          phase1_technical: "1. 劈击：45度斜下劈击。\n2. 目标：大腿外侧腓总神经或手臂三头肌。\n3. 回收：打击后立即回收警戒。",
-          phase2_stress: "持刀冲锋阻击：在后退中精准打击持刀手或腿部。",
-          critical_checkpoints: "1. 避开头部（非致命武力）。\n2. 力量穿透。"
+          drillName: "正面夺枪流程",
+          setup: "训练用蓝枪。",
+          phase1_technical: "1. 重定向：侧身并拍击枪管，避开射击线。\n2. 控制：死握枪管/套筒。\n3. 夺取：猛烈旋转夺枪并拉开距离。",
+          phase2_stress: "突然指头威胁：在极高压下完成夺枪动作。",
+          critical_checkpoints: "1. 身体移动比手快。\n2. 绝对控制枪口指向。"
         }
       },
       { 
-        name: '战术上铐', 
-        details: '站立/跪姿/卧姿上铐流程', 
+        name: '警棍制刀 (Baton vs Knife)', 
+        details: '菲律宾棍术去牙战术', 
         drill: {
-          drillName: "三姿上铐",
-          setup: "手铐。",
-          phase1_technical: "1. 命令：命令嫌疑人背手。\n2. 接近：从侧后方盲区接近。\n3. 上铐：先控手再上铐，缺口朝前。",
-          phase2_stress: "抵抗上铐：嫌疑人抗拒背手，配合关节技强制上铐。",
-          critical_checkpoints: "1. 始终控制一只手。\n2. 检查松紧度。"
-        }
-      },
-      { 
-        name: '穴位压迫', 
-        details: '耳下/锁骨穴位剧痛控制', 
-        drill: {
-          drillName: "痛点控制 (Pressure Points)",
-          setup: "无器械。",
-          phase1_technical: "1. 定位：下颚角后方或锁骨窝。\n2. 施压：利用指关节（凤眼拳）钻压。\n3. 命令：配合大声命令。",
-          phase2_stress: "消极抵抗处理：嫌疑人瘫软在地，利用痛点使其站起。",
-          critical_checkpoints: "1. 力量要集中。\n2. 作为过渡手段。"
-        }
-      },
-      { 
-        name: '扫腿摔', 
-        details: '破坏重心扫倒嫌疑人', 
-        drill: {
-          drillName: "战术扫腿",
-          setup: "柔道垫。",
-          phase1_technical: "1. 推搡：推上半身破坏平衡。\n2. 扫击：脚掌扫击脚踝。\n3. 跟进：倒地后立即膝压。",
-          phase2_stress: "行进间扫摔：在移动中扫倒嫌疑人。",
-          critical_checkpoints: "1. 手脚同步。\n2. 扫击要有力。"
-        }
-      },
-      { 
-        name: '双人夹击', 
-        details: '团队配合摔法', 
-        drill: {
-          drillName: "Contact & Cover",
-          setup: "三人一组。",
-          phase1_technical: "1. 掩护：一人持枪掩护 (Cover)。\n2. 接触：一人上前控制 (Contact)。\n3. 配合：两人协同摔倒嫌疑人。",
-          phase2_stress: "暴起反抗：嫌疑人突然反抗，两人配合制服。",
-          critical_checkpoints: "1. 避免交叉火力。\n2. 沟通顺畅。"
-        }
-      },
-      { 
-        name: '搜身战位', 
-        details: '控制盲区防止反击', 
-        drill: {
-          drillName: "战术搜身",
-          setup: "无。",
-          phase1_technical: "1. 姿态：嫌疑人分腿，重心前倾。\n2. 控制：脚顶住嫌疑人脚内侧。\n3. 切割：手掌像刀一样切割搜索腰部。",
-          phase2_stress: "搜出武器：模拟搜出武器后的紧急处置。",
-          critical_checkpoints: "1. 破坏平衡是关键。\n2. 搜身要细致。"
+          drillName: "Defanging the Snake",
+          setup: "训练警棍，橡胶刀。",
+          phase1_technical: "1. 距离：保持在刀的攻击范围外。\n2. 打击：瞄准对方持刀手的手腕/手指。\n3. 连击：打手后迅速打击肢体或通过指令控制。",
+          phase2_stress: "持刀冲锋：嫌疑人持刀冲锋，利用警棍精准打击持刀手。",
+          critical_checkpoints: "1. 打手不打头（初期）。\n2. 步法灵活。"
         }
       }
     ],
-    tags: ['军警格斗', '逮捕术', '关节控制']
+    tags: ['FBI战术', '逮捕术', '综合格斗']
   },
   {
     id: 'mil-2',
@@ -1637,16 +1628,16 @@ export const THEMES: Theme[] = [
       '心理脱敏 (Psychological): 克服杀戮本能的迟疑，将敌人视为需要清除的战术目标。'
     ],
     scenarios: [
-      { danger: '夜间潜入需从背后无声解决敌方哨兵', response: '战术捂嘴 (Muzzle Hold) + 肾脏穿刺 + 颈动脉切割 (Sentry Removal)' },
-      { danger: '接近时哨兵突然转身发现', response: '双手拍击控制武器 + 喉部重击 + 双腿抱摔 (Double Leg)' },
-      { danger: '近距离遭遇敌方匕首突袭', response: '菲律宾 Kali 夺刀 + 反刺腋下动脉 + 连续刺击' },
-      { danger: '狭窄战壕内的遭遇战 (Trench Fight)', response: '头盔撞击面部 + 戳眼 + 战术刀具连续刺击' },
-      { danger: '被敌人从后捂嘴试图割喉', response: '双手控制持刀手腕 + 柔道背负投 (Seoi Nage) + 反杀' },
-      { danger: '在地面扭打中被敌人骑乘压制', response: '腰部顶起破坏平衡 + 战术折刀隐蔽出刀 + 划割股动脉' },
-      { danger: '利用头盔带进行绞杀', response: '从后抓住头盔下沿 + 猛力后拉勒颈 + 膝撞脊柱' },
-      { danger: '主武器卡壳，敌人持枪冲锋', response: '枪口戳击 (Muzzle Thump) + 快速切换手枪/匕首' },
-      { danger: '处理倒地但未死亡的敌人', response: '控制双手 + 确认解除武装 + 致命补刀 (模拟)' },
-      { danger: '双人小组清除房间内多名敌人', response: '闪光弹投掷 + 同步突入 + 快速双击 (Double Tap)' }
+      { danger: '夜间潜入需从背后无声解决敌方哨兵', response: '静步接近 (Stealth) + 战术捂嘴 (Muzzle Hold) + 肾脏穿刺 (Kidney Stab) + 颈动脉切割' },
+      { danger: '接近时哨兵突然转身发现', response: '泰拳箍颈 (Clinch) + 连续膝撞 + 喉部重击 + 柔道双腿抱摔 (Double Leg)' },
+      { danger: '近距离遭遇敌方匕首突袭', response: '菲律宾 Kali 格挡切入 (Gunting) + 肢体破坏 (Defanging) + 反刺腋下动脉' },
+      { danger: '狭窄战壕内的遭遇战', response: '头盔撞击面部 + 戳眼 + 战术刀具缝纫机式刺击 (Sewing Machine)' },
+      { danger: '被敌人从后捂嘴试图割喉', response: '双手控制持刀手腕 (2-on-1) + 柔道背负投 (Seoi Nage) + 地面反杀' },
+      { danger: '在地面扭打中被敌人骑乘压制', response: '巴西柔术起桥 (Upa) 破坏平衡 + 快速隐蔽拔刀 + 划割股动脉' },
+      { danger: '敌人从背后勒住脖子试图限制活动并压制', response: '沉肩收颚保护气管 + 古流柔术小手返 (Kote Gaeshi) 折指 + 转身肘击' },
+      { danger: '被敌人后面抓住自己手臂试图束缚或拖拽', response: '合气道转身入身投 (Irimi Nage) + 破坏重心 + 匕首反手刺击' },
+      { danger: '【夺刀】哨兵拔出格斗匕首拼死一搏', response: '菲律宾 Kali 去牙 (Defanging) + 空手夺白刃 (Disarm) + 夺刀后立即终结' },
+      { danger: '制服后约束与处置', response: '柔道袈裟固 (Kesa Gatame) 压制 + 战术束缚带 (Zip Tie) + 搜索武器 + 撤离' }
     ],
     techniques: [
       { 
@@ -1798,148 +1789,148 @@ export const THEMES: Theme[] = [
       '牺牲精神 (Sacrifice): 宁可自己承受子弹与刀锋，也绝不能让VIP受到任何伤害。'
     ],
     scenarios: [
-      { danger: '人群中突然有人持刀冲向VIP', response: '肉盾冲撞 (Body Block) + 强力推开VIP + 制服袭击者' },
-      { danger: '广场枪声响起 (遭遇狙击手)', response: '按倒VIP (Down) + 身体完全覆盖 (Cover) + 拖拽至掩体' },
-      { danger: 'VIP被狂热粉丝拉住衣服不放', response: '手刀切断手臂控制 (Chop) + 强力推离 + 快速带离' },
-      { danger: '护送车辆遭遇伏击堵截', response: '车辆反伏击驾驶 (J-Turn) + 下车火力压制 + 转移' },
-      { danger: '撤离路线被人群/障碍物堵死', response: 'CQB 战术突击开路 (Aggressive Clearing) + 暴力撞击' },
-      { danger: 'VIP受到自杀式炸弹袭击威胁', response: '识别引爆征兆 + 将VIP推向反方向 + 扑向炸弹 (Sacrifice)' },
-      { danger: '在室内宴会厅遭遇混乱', response: '菱形阵型 (Diamond Formation) 收缩 + 360度警戒撤离' },
-      { danger: '上下车过程中遭遇袭击', response: '车门作为掩体 + 按压VIP头部入车 + 快速关门驶离' },
-      { danger: 'VIP因惊恐僵硬无法移动', response: '抓提腰带强行拖拽 (Belt Drag) + 语言吼叫刺激' },
-      { danger: '护卫队员中弹倒地', response: '补位填补防御缺口 + 保持阵型完整 + 呼叫支援 (-1 通讯)' }
+      { danger: '人群中突然有人持刀冲向VIP', response: '肉盾冲撞 (Body Block) + 强力推开VIP + 菲律宾魔杖夺刀 (Disarm)' },
+      { danger: '孩子被陌生人抓住强行抱住或拖走', response: '攻击歹徒面部/眼睛 + 强力扒手 (Finger Peel) + 抱起孩子撤离' },
+      { danger: '保护伴侣免受推搡-小反手制服', response: '拦截手臂 (Intercept) + 古流柔术小手返 (Kote Gaeshi) + 压制控制' },
+      { danger: '伴侣或好友遭遇肢体连续攻击', response: '侧面突入 + 泰拳箍颈膝撞 (Clinch Knee) + 柔道大外刈 (Osoto Gari) 摔倒' },
+      { danger: '雇主被人枪抵住后背', response: '转身拍档火线重定向 (Redirect) + 腋下夹臂控制 + 夺枪 (Gun Disarm)' },
+      { danger: '歹徒左手勒住VIP右手持刀抵住脖子', response: '控制持刀手腕 (2-on-1) + 攻击歹徒面部 + 旋转剥离刀刃' },
+      { danger: '【凶器】歹徒持刀指向伴侣威胁', response: '泰拳正蹬 (Teep) 控制距离 + 寻找简易武器 + 侧向移动吸引注意力' },
+      { danger: '歹徒持刀或棍棒向家人逼近', response: '利用椅子/背包阻挡 + 菲律宾魔杖X型打击 (Figure 8) + 掩护家人撤退' },
+      { danger: '【抢劫】歹徒从后勒住伴侣脖子', response: '攻击歹徒腹股沟 (Groin Strike) + 抓发后拉 + 柔术裸绞 (RNC) 反制' },
+      { danger: '【危机】枪指向你的家人（第三方）', response: '身体覆盖 (Body Cover) / 跨步挡枪 + 突进控制枪管 + 夺枪反击' }
     ],
     techniques: [
       { 
-        name: '菱形阵型', 
-        details: '360度护卫站位', 
+        name: '肉盾战术 (Body Shield)', 
+        details: '马伽术要员保护核心原则', 
         drill: {
-          drillName: "Diamond Formation",
-          setup: "4-5人小组。",
-          phase1_technical: "1. 站位：前后左右各一人，VIP在中间。\n2. 观察：每个人负责90度扇区。\n3. 移动：步伐同步，像一个人一样移动。",
-          phase2_stress: "穿过人群：保持阵型穿过拥挤人群，不露空隙。",
-          critical_checkpoints: "1. 不要看VIP，看威胁。\n2. 保持间距。"
+          drillName: "Human Shield Reaction",
+          setup: "配对，一人扮VIP。",
+          phase1_technical: "1. 冲撞：用肩膀/身体猛力将VIP撞离攻击线。\n2. 覆盖：身体展开挡在威胁与VIP之间。\n3. 推进：保持身体覆盖的同时推着VIP移动。",
+          phase2_stress: "突发袭击：在行进中突然遭遇袭击，0.5秒内完成肉盾动作。",
+          critical_checkpoints: "1. 不要犹豫。\n2. 确保VIP完全被遮挡。"
         }
       },
       { 
-        name: '身体覆盖', 
-        details: '完全覆盖VIP身体', 
+        name: '小手返 (Kote Gaeshi)', 
+        details: '古流柔术/合气道关节控制', 
         drill: {
-          drillName: "Body Cover",
-          setup: "无。",
-          phase1_technical: "1. 按倒：一手按颈，一手按腰，将VIP按倒。\n2. 覆盖：身体呈大字形完全覆盖VIP。\n3. 观察：头部抬起观察威胁。",
-          phase2_stress: "枪声反应：听到枪声0.5秒内完成覆盖。",
-          critical_checkpoints: "1. 尽可能张大身体。\n2. 不要压得VIP无法呼吸。"
+          drillName: "Wrist Lock Control",
+          setup: "配对。",
+          phase1_technical: "1. 拦截：格挡对方推搡的手臂。\n2. 抓握：双手呈蛤蜊状扣住对方手掌。\n3. 折叠：向对方手背方向折叠并切下，致其跪地。",
+          phase2_stress: "保护伴侣：伴侣被推搡时，迅速介入实施小手返。",
+          critical_checkpoints: "1. 利用身体转动。\n2. 控制后保持警惕。"
         }
       },
       { 
-        name: '推离撤退', 
-        details: '强力推人撤离法', 
+        name: '第三人夺枪 (Third Party Disarm)', 
+        details: '解救被枪指住的家人', 
         drill: {
-          drillName: "Evacuation Push",
-          setup: "无。",
-          phase1_technical: "1. 抓握：抓腰带或抱腰。\n2. 姿态：低头弯腰。\n3. 奔跑：推着VIP全速奔跑。",
-          phase2_stress: "负重撤离：VIP受伤或惊慌腿软，强行拖拽撤离。",
-          critical_checkpoints: "1. 这一刻VIP是行李。\n2. 速度至上。"
-        }
-      },
-      { 
-        name: '行进间射击', 
-        details: '保护VIP同时还击', 
-        drill: {
-          drillName: "One-Handed Protection Shooting",
+          drillName: "Hostage Gun Disarm",
           setup: "蓝枪。",
-          phase1_technical: "1. 护卫：一手按住VIP头部/身体。\n2. 射击：单手持枪射击。\n3. 移动：边打边退。",
-          phase2_stress: "反向撤离射击：向后撤离时向前方目标射击。",
-          critical_checkpoints: "1. 枪口不要指到VIP。\n2. 身体挡在VIP和枪口之间。"
+          phase1_technical: "1. 接近：举手示弱接近，寻找时机。\n2. 重定向：猛击枪管改变指向，避开人质。\n3. 夺取：控制枪身，旋转夺枪并反击。",
+          phase2_stress: "高压谈判：在言语干扰下寻找夺枪窗口。",
+          critical_checkpoints: "1. 必须先移开枪口。\n2. 动作要爆发。"
         }
       },
       { 
-        name: '第三人防御', 
-        details: '处理针对他人的攻击', 
+        name: '泰拳箍颈 (Muay Thai Clinch)', 
+        details: '强力控制并膝撞', 
         drill: {
-          drillName: "Third Party Protection",
-          setup: "三人一组。",
-          phase1_technical: "1. 拦截：横向移动拦截攻击者。\n2. 阻挡：身体阻挡攻击路线。\n3. 反击：制服攻击者，队友带走VIP。",
-          phase2_stress: "自杀式袭击拦截：发现炸弹背心，必须扑向袭击者远离VIP。",
-          critical_checkpoints: "1. 牺牲精神。\n2. 也就是所谓的“挡子弹”。"
+          drillName: "Clinch Intervention",
+          setup: "护具。",
+          phase1_technical: "1. 突入：从侧面冲入两人之间。\n2. 箍颈：双手扣死攻击者后脑。\n3. 膝撞：连续膝撞腹部或大腿，迫使其停止攻击。",
+          phase2_stress: "解救好友：好友被围殴，冲入战圈控制主要攻击者。",
+          critical_checkpoints: "1. 破坏平衡。\n2. 保护自己头部。"
         }
       },
       { 
-        name: '人群分流', 
-        details: '快速穿过密集人群', 
+        name: '菲律宾魔杖夺刀 (Kali Disarm)', 
+        details: '针对持刀威胁的缴械', 
         drill: {
-          drillName: "Crowd Splitting",
-          setup: "多人模拟人群。",
-          phase1_technical: "1. 楔形：前卫组成楔形开路。\n2. 手势：温和但坚定的手势分流。\n3. 力量：必要时使用肢体力量推开。",
-          phase2_stress: "恶意人群：人群中有推搡和阻挡，保持阵型通过。",
-          critical_checkpoints: "1. 保持礼貌但强硬。\n2. 防止被冲散。"
+          drillName: "Knife Disarm Flow",
+          setup: "橡胶刀。",
+          phase1_technical: "1. 格挡：X型格挡对方持刀手。\n2. 蛇形：手臂像蛇一样缠绕对方手腕。\n3. 剥离：利用杠杆原理迫使对方松手。",
+          phase2_stress: "持刀冲锋：面对持刀冲向VIP的歹徒，实施缴械。",
+          critical_checkpoints: "1. 控制手腕是关键。\n2. 注意刀刃方向。"
         }
       },
       { 
-        name: '自杀炸弹应对', 
-        details: '识别与推离爆炸物', 
+        name: '人质解救 (Hostage Release)', 
+        details: '解救被刀抵喉的人质', 
         drill: {
-          drillName: "Suicide Bomber Response",
-          setup: "道具。",
-          phase1_technical: "1. 识别：大衣、异常出汗、紧握引爆器。\n2. 射击：头部中枢神经射击（模拟）。\n3. 掩护：无法射击时，推开VIP并扑向炸弹。",
-          phase2_stress: "瞬间决断：发现炸弹，立即做出牺牲决策。",
-          critical_checkpoints: "1. 只有一次机会。\n2. 保护VIP远离冲击波。"
+          drillName: "Knife at Throat Release",
+          setup: "橡胶刀。",
+          phase1_technical: "1. 控制：双手呈C型死死抓住持刀手腕 (2-on-1)。\n2. 攻击：同时踢击裆部或抠眼。\n3. 剥离：将刀刃强行拉离脖子并夺刀。",
+          phase2_stress: "动态解救：歹徒情绪激动拖拽人质时进行解救。",
+          critical_checkpoints: "1. 爆发力控制。\n2. 优先保证人质气管安全。"
         }
       },
       { 
-        name: '上下车程序', 
-        details: '车辆护卫流程', 
+        name: '正蹬 (Teep)', 
+        details: '泰拳控制距离技术', 
         drill: {
-          drillName: "Arrival/Departure Drill",
-          setup: "车辆。",
-          phase1_technical: "1. 扫视：下车前扫视周围。\n2. 站位：车门处形成保护圈。\n3. 掩护：利用车门作为掩体。",
-          phase2_stress: "下车伏击：VIP刚下车遭遇伏击，立即推回车内并撤离。",
-          critical_checkpoints: "1. 动作迅速。\n2. 360度警戒。"
+          drillName: "Defensive Teep",
+          setup: "脚靶。",
+          phase1_technical: "1. 提膝：迅速提膝。\n2. 蹬出：用脚前掌蹬击对方腹部/髋部。\n3. 回收：迅速收腿，保持架势。",
+          phase2_stress: "阻挡逼近：歹徒持械逼近，利用正蹬保持安全距离。",
+          critical_checkpoints: "1. 保持重心后仰。\n2. 发力干脆。"
         }
       },
       { 
-        name: '换手射击', 
-        details: '根据VIP位置切换持枪手', 
+        name: '大外刈 (Osoto Gari)', 
+        details: '柔道强力摔法', 
         drill: {
-          drillName: "Switch Hands",
-          setup: "蓝枪。",
-          phase1_technical: "1. 判断：VIP在右侧，左手持枪；VIP在左侧，右手持枪。\n2. 切换：快速换手。\n3. 目的：避免枪口掠过VIP。",
-          phase2_stress: "动态切换：在S型撤离路线中不断切换持枪手。",
-          critical_checkpoints: "1. 流畅性。\n2. 枪口意识。"
+          drillName: "Combat Takedown",
+          setup: "软垫。",
+          phase1_technical: "1. 破势：推颈破坏重心向后。\n2. 上步：支撑脚上步。\n3. 扫腿：大腿发力向后猛扫对方支撑腿。",
+          phase2_stress: "干预摔法：冲入冲突现场，直接将攻击者摔倒。",
+          critical_checkpoints: "1. 胸贴胸。\n2. 摔倒后立即控制。"
         }
       },
       { 
-        name: '战术检伤', 
-        details: '快速评估VIP伤情', 
+        name: '痛点控制 (Pain Compliance)', 
+        details: '针对手指/关节的剧痛控制', 
         drill: {
-          drillName: "Tactical Triage",
-          setup: "假人。",
-          phase1_technical: "1. 摸索：从头到脚快速摸索出血点。\n2. 观察：看手上是否有血。\n3. 止血：发现出血立即止血。",
-          phase2_stress: "黑暗检伤：在掩体后无光环境下检查VIP伤情。",
-          critical_checkpoints: "1. 速度快。\n2. 不要遗漏背部。"
+          drillName: "Finger Peel",
+          setup: "无。",
+          phase1_technical: "1. 抓握：抓住对方一根或两根手指。\n2. 施力：向反关节方向猛烈掰折。\n3. 效果：迫使对方松开抓握。",
+          phase2_stress: "解救孩子：孩子被抓，强力掰折歹徒手指解救。",
+          critical_checkpoints: "1. 动作要狠。\n2. 无需留情。"
         }
       },
       { 
-        name: '要员控制', 
-        details: '强制控制惊慌的VIP', 
+        name: '身体覆盖 (Body Cover)', 
+        details: '用身体作为防弹盾牌', 
         drill: {
-          drillName: "VIP Handling",
-          setup: "不配合的VIP。",
-          phase1_technical: "1. 抓握：抓皮带提裤子。\n2. 压头：压低头部防止中弹。\n3. 拖拽：强行拖拽僵硬的VIP。",
-          phase2_stress: "VIP恐慌冻结：VIP吓傻了不肯走，必须暴力带离。",
-          critical_checkpoints: "1. 此时不能客气。\n2. 救命要紧。"
+          drillName: "Human Shield",
+          setup: "无。",
+          phase1_technical: "1. 扑倒：将家人/VIP扑倒在地。\n2. 覆盖：身体呈大字型覆盖其上方。\n3. 观察：头部抬起观察威胁来源。",
+          phase2_stress: "枪声反应：听到枪声瞬间完成覆盖动作。",
+          critical_checkpoints: "1. 最大化覆盖面积。\n2. 保护家人头部。"
         }
       },
       { 
-        name: '肩撞开路', 
-        details: '暴力开路技术', 
+        name: '古流脇固 (Waki Gatame)', 
+        details: '利用腋下夹紧破坏肘关节', 
         drill: {
-          drillName: "Shoulder Check",
-          setup: "撞击靶。",
-          phase1_technical: "1. 姿态：沉肩。\n2. 发力：利用腿部蹬地和肩膀冲撞。\n3. 连续：连续撞开多重阻碍。",
-          phase2_stress: "封锁突破：撤离路线被堵，暴力撞开通道。",
-          critical_checkpoints: "1. 保护好肩膀。\n2. 动量不能停。"
+          drillName: "Arm Bar Control",
+          setup: "无。",
+          phase1_technical: "1. 牵引：拉直对方手臂。\n2. 夹紧：将对方手臂紧夹在腋下。\n3. 施压：身体下沉，对肘关节施加压力。",
+          phase2_stress: "制服歹徒：在混乱中控制并制服攻击者。",
+          critical_checkpoints: "1. 夹紧不放松。\n2. 利用体重。"
+        }
+      },
+      { 
+        name: '战术撤离 (Tactical Retreat)', 
+        details: '带领家人的撤退阵型', 
+        drill: {
+          drillName: "Family Evac",
+          setup: "多人。",
+          phase1_technical: "1. 站位：你在威胁与家人之间。\n2. 指令：清晰喊出“跑”或“躲”。\n3. 移动：始终保持面向威胁倒退移动。",
+          phase2_stress: "混乱撤离：在人群冲撞中保护家人撤离。",
+          critical_checkpoints: "1. 视线不离威胁。\n2. 确保家人跟上。"
         }
       }
     ],
@@ -1959,31 +1950,86 @@ export const THEMES: Theme[] = [
       '战斗意志 (Never Quit): 即使负伤、即使倒地，只要还有一口气，就绝不停止战斗。'
     ],
     scenarios: [
-      { danger: '突入房间时被伏击，枪管被敌人抓住上推', response: '枪口杠杆下压 (Leverage) + 身体前冲撞击 + 恢复射击' },
-      { danger: '拐角处遭遇敌人试图夺枪', response: '猛烈旋转枪身 (Whip) + 枪托砸脸 (Buttstroke) + 后撤' },
-      { danger: '主武器卡壳，敌人持刀冲锋', response: '枪口戳击 (Muzzle Thump) 阻滞 + 快速拔副武器 (Transition)' },
-      { danger: '地面缠斗中长枪无法使用', response: '柔术蜘蛛防守 (Spider Guard) 控制距离 + 蹬腿 + 拔刀/枪' },
-      { danger: '在门口 (Fatal Funnel) 被火力压制', response: '切角搜索 (Pieing) + 快速闪身射击 + 投掷震撼弹' },
-      { danger: '清理房间时遭遇藏匿在家具后的敌人', response: '近距离枪械格斗 (Gun Fu) + 弹匣角击打 + 接触射击' },
-      { danger: '单手受伤无法正常换弹', response: '利用膝盖/枪套固定枪支 + 单手换弹 (One-hand Reload)' },
-      { danger: '在狭窄走廊与多名敌人肉搏', response: '利用走廊宽度蹬墙借力 + 枪身推击 + 连续膝撞' },
-      { danger: '敌人试图从墙角盲目射击', response: '控制其伸出的枪管 + 射击其手臂/手掌 + 绕过射击' },
-      { danger: '全装具状态下倒地无法快速起立', response: '利用背部着地防御 + 枪口始终指向威胁 + 战术起立' }
+      { danger: '突入房间时被伏击-手枪管被敌人抓住', response: '枪口杠杆下压 (Leverage) + 身体前冲撞击 + 恢复射击' },
+      { danger: '拐角处遭遇敌人试图夺枪（步枪）', response: '猛烈旋转枪身 (Whip) + 枪托砸脸 (Buttstroke) + 后撤' },
+      { danger: '手枪抵住腰间被控制准备带离', response: '夹臂锁定 (Trap) + 转身缠腕 (Wrap) + 夺枪反制' },
+      { danger: '敌人正面持手枪威胁-左右折腕夺枪', response: '侧闪拍挡 (Redirect) + 古流柔术小手返 (Kote Gaeshi) + 夺枪' },
+      { danger: '歹徒持枪从侧面指头威胁', response: '举手示弱 + 转身拍挡 + 俄式缠臂 (Russian Tie) 控制' },
+      { danger: '最快夺枪方法！', response: '爆发性侧闪 + 双手合拍枪身 + 扭腕夺枪 (Krav Maga Burst)' },
+      { danger: '被歹徒强迫跪下处决', response: '瞬间低头双手上格挡 + 转身扑腿抱摔 + 地面夺枪' },
+      { danger: '【人质】枪指头+手臂勒颈（人体盾牌）', response: '攻击腹股沟 (Groin Strike) + 咬合手臂 + 旋转剥离枪口' },
+      { danger: '【夺枪】各种夺枪方式', response: '针对不同角度 (360 Defense) + 杠杆原理 (Leverage) + 暴力夺取' },
+      { danger: '【预判】对方试图从腰间拔枪-抢夺', response: '双手封堵枪套 (Jamming) + 头槌攻击 (Headbutt) + 膝撞' }
     ],
     techniques: [
       { 
-        name: '枪口戳击', 
-        details: '硬物击打面部/喉咙', 
+        name: '枪口杠杆 (Leverage)', 
+        details: '利用杠杆原理防止夺枪', 
         drill: {
-          drillName: "Muzzle Thump",
+          drillName: "Long Gun Leverage",
           setup: "长枪模型，靶。",
-          phase1_technical: "1. 突刺：双手持枪，用枪口猛刺。\n2. 目标：面部、喉咙、胸口。\n3. 创造距离：击退敌人后射击。",
-          phase2_stress: "卡壳反应：射击中卡壳，敌人逼近，立即戳击。",
-          critical_checkpoints: "1. 力量要大。\n2. 保持持枪姿态。"
+          phase1_technical: "1. 压低：当敌人抓住枪管上推时，猛力下压。\n2. 杠杆：以前手为支点，枪托上抬。\n3. 射击：利用身体前冲夺回控制权并射击。",
+          phase2_stress: "门后伏击：突入房间时被门后敌人抓住枪管。",
+          critical_checkpoints: "1. 核心下沉。\n2. 利用全身力量而非手臂。"
         }
       },
       { 
-        name: '枪托砸击', 
+        name: '枪身旋转 (Whip Retention)', 
+        details: '利用离心力解脱抓握', 
+        drill: {
+          drillName: "Whip Drill",
+          setup: "长枪模型。",
+          phase1_technical: "1. 旋转：以敌人抓握点为轴心。\n2. 发力：利用腰部旋转猛烈画圆。\n3. 反击：旋转同时用枪托砸击面部。",
+          phase2_stress: "死命拖拽：敌人双手死命抓住枪身拖拽，利用旋转解脱。",
+          critical_checkpoints: "1. 动作要快。\n2. 旋转半径要大。"
+        }
+      },
+      { 
+        name: '小手返夺枪 (Kote Gaeshi)', 
+        details: '古流柔术关节技夺手枪', 
+        drill: {
+          drillName: "Pistol Kote Gaeshi",
+          setup: "蓝枪。",
+          phase1_technical: "1. 拍挡：侧闪拍开枪口。\n2. 抓握：双手呈蛤蜊状扣住对方持枪手。\n3. 折叠：向对方手背方向猛烈折叠，致其松手。",
+          phase2_stress: "正面威胁：面对突然指头的枪口，实施小手返夺枪。",
+          critical_checkpoints: "1. 始终避开枪口。\n2. 折腕要有爆发力。"
+        }
+      },
+      { 
+        name: '侧面夺枪 (Side Disarm)', 
+        details: '应对侧面威胁的俄式缠臂', 
+        drill: {
+          drillName: "Side Threat Neutralization",
+          setup: "蓝枪。",
+          phase1_technical: "1. 观察：用余光确认威胁。\n2. 转身：猛烈转身，手臂挥开枪口。\n3. 缠臂：使用俄式缠臂 (Russian Tie) 控制持枪臂。",
+          phase2_stress: "突然袭击：在谈话中突然被侧面指头。",
+          critical_checkpoints: "1. 转身速度要快。\n2. 控制整个手臂。"
+        }
+      },
+      { 
+        name: '跪姿反杀 (Kneeling Counter)', 
+        details: '绝境中的地面反击', 
+        drill: {
+          drillName: "Execution Defense",
+          setup: "蓝枪，软垫。",
+          phase1_technical: "1. 诱导：假装配合，寻找时机。\n2. 格挡：双手向上格挡枪口。\n3. 抱摔：转身抱住对方双腿，将其摔倒并夺枪。",
+          phase2_stress: "处决模拟：被强迫跪下，在最后关头反击。",
+          critical_checkpoints: "1. 时机至关重要。\n2. 摔法要狠。"
+        }
+      },
+      { 
+        name: '枪套封堵 (Holster Jam)', 
+        details: '防止敌人拔枪的预判技术', 
+        drill: {
+          drillName: "Draw Prevention",
+          setup: "蓝枪，枪套。",
+          phase1_technical: "1. 识别：识别对方拔枪动作（手伸向腰间）。\n2. 封堵：双手猛按对方拔枪手，将其压回枪套。\n3. 打击：同时用头槌或膝撞攻击。",
+          phase2_stress: "拔枪竞赛：看谁先拔出枪，防守者必须封堵。",
+          critical_checkpoints: "1. 压得死死的。\n2. 破坏平衡。"
+        }
+      },
+      { 
+        name: '枪托砸击 (Buttstroke)', 
         details: '重击头骨致晕', 
         drill: {
           drillName: "Buttstroke",
@@ -1994,29 +2040,18 @@ export const THEMES: Theme[] = [
         }
       },
       { 
-        name: '弹匣角击打', 
-        details: '利用尖锐部位攻击', 
+        name: '枪口戳击 (Muzzle Thump)', 
+        details: '硬物击打面部/喉咙', 
         drill: {
-          drillName: "Magazine Strike",
-          setup: "长枪模型。",
-          phase1_technical: "1. 角度：将枪身横置。\n2. 击打：用弹匣底部尖角砸击。\n3. 目标：头顶、锁骨。",
-          phase2_stress: "贴身缠斗：在无法伸展手臂时使用。",
-          critical_checkpoints: "1. 短促有力。\n2. 痛感极强。"
+          drillName: "Muzzle Thump",
+          setup: "长枪模型，靶。",
+          phase1_technical: "1. 突刺：双手持枪，用枪口猛刺。\n2. 目标：面部、喉咙、胸口。\n3. 创造距离：击退敌人后射击。",
+          phase2_stress: "卡壳反应：射击中卡壳，敌人逼近，立即戳击。",
+          critical_checkpoints: "1. 力量要大。\n2. 保持持枪姿态。"
         }
       },
       { 
-        name: '长枪防抢', 
-        details: '利用力矩防止夺枪', 
-        drill: {
-          drillName: "Long Gun Retention",
-          setup: "长枪模型。",
-          phase1_technical: "1. 下沉：降低重心。\n2. 旋转：以对方抓握点为支点，猛烈画圆旋转枪身。\n3. 射击：枪口对准敌人瞬间射击。",
-          phase2_stress: "死命抢夺：对方双手抓住枪管死命拖拽，利用身体旋转解脱。",
-          critical_checkpoints: "1. 利用杠杆。\n2. 身体协力。"
-        }
-      },
-      { 
-        name: '主副切换', 
+        name: '主副切换 (Transition)', 
         details: '快速拔出手枪', 
         drill: {
           drillName: "Transition Drill",
@@ -2027,7 +2062,7 @@ export const THEMES: Theme[] = [
         }
       },
       { 
-        name: '切角搜索', 
+        name: '切角搜索 (Pieing)', 
         details: '战术过角技术', 
         drill: {
           drillName: "Pieing the Corner",
@@ -2038,62 +2073,18 @@ export const THEMES: Theme[] = [
         }
       },
       { 
-        name: '走廊格斗', 
-        details: '狭长空间限制格斗', 
+        name: '人质解脱夺枪 (Hostage Disarm)', 
+        details: '解救被当作盾牌的人质', 
         drill: {
-          drillName: "Hallway CQB",
-          setup: "狭窄通道。",
-          phase1_technical: "1. 纵深：利用纵深优势。\n2. 腿法：正蹬控制距离。\n3. 墙壁：利用墙壁支撑防摔。",
-          phase2_stress: "狭路相逢：在走廊遭遇多名敌人。",
-          critical_checkpoints: "1. 不要被包围。\n2. 边打边退。"
+          drillName: "Human Shield Disarm",
+          setup: "蓝枪，三人组。",
+          phase1_technical: "1. 攻击：攻击持有者腹股沟或咬合手臂。\n2. 旋转：猛烈旋转身体，剥离枪口指向。\n3. 夺取：控制武器并夺取。",
+          phase2_stress: "高压人质：在歹徒情绪激动时寻找反击机会。",
+          critical_checkpoints: "1. 确保枪口移开。\n2. 利用身体旋转。"
         }
       },
       { 
-        name: '全装具格斗', 
-        details: '负重状态下的地面技', 
-        drill: {
-          drillName: "Full Kit Grappling",
-          setup: "战术背心，头盔。",
-          phase1_technical: "1. 适应：适应装备的限制。\n2. 翻滚：避免装备卡住。\n3. 武器：保护装备上的武器不被抢。",
-          phase2_stress: "负重起立：全装具倒地后快速起立。",
-          critical_checkpoints: "1. 体能消耗极大。\n2. 避免装备挂钩。"
-        }
-      },
-      { 
-        name: '背心拔刀', 
-        details: '从战术背心快速出刀', 
-        drill: {
-          drillName: "Kit Knife Draw",
-          setup: "训练刀，背心。",
-          phase1_technical: "1. 位置：熟悉刀在背心上的位置（通常颈部或腰部）。\n2. 拔刀：弱手推开敌人，强手拔刀。\n3. 划割：拔刀即攻击（Get off me cut）。",
-          phase2_stress: "缠抱拔刀：被敌人抱住时拔刀反击。",
-          critical_checkpoints: "1. 盲操熟练度。\n2. 防止割断装备带。"
-        }
-      },
-      { 
-        name: '单手换弹', 
-        details: '受伤后的战术动作', 
-        drill: {
-          drillName: "One-Handed Reload",
-          setup: "蓝枪。",
-          phase1_technical: "1. 固定：将枪夹在膝盖或利用枪套固定。\n2. 换弹：单手取出弹匣插入。\n3. 上膛：利用鞋底、腰带挂蹭照门上膛。",
-          phase2_stress: "受伤模拟：一只手完全不能用，完成换弹射击。",
-          critical_checkpoints: "1. 寻找固定点。\n2. 保持冷静。"
-        }
-      },
-      { 
-        name: '盲射防御', 
-        details: '应对墙角盲目射击', 
-        drill: {
-          drillName: "Blind Fire Counter",
-          setup: "墙角。",
-          phase1_technical: "1. 识别：识别对方盲目伸出的枪管。\n2. 控制：抓住枪管向下拉或推。\n3. 射击：向墙壁穿透射击或绕过射击。",
-          phase2_stress: "转角遭遇盲射：快速处理转角威胁。",
-          critical_checkpoints: "1. 避开枪口。\n2. 控制枪管。"
-        }
-      },
-      { 
-        name: '突入技术', 
+        name: '突入技术 (Room Entry)', 
         details: '双人/四人小组突入', 
         drill: {
           drillName: "Room Entry",
@@ -2121,15 +2112,15 @@ export const THEMES: Theme[] = [
     ],
     scenarios: [
       { danger: '敌方正手持刀大开大合劈砍', response: '菲律宾 Kali 格挡切入 (Gunting) + 割断二头肌/腋下' },
-      { danger: '敌方反手持刀 (Ice Pick) 连续捅刺', response: '双手X型格挡 + 夺刀 + 反刺颈部/锁骨窝' },
-      { danger: '敌方持枪近身，我方仅有匕首', response: '拍开枪口重定向 + 匕首刺入腋下/腹股沟防弹衣缝隙' },
-      { danger: '地面缠斗中我方被压制', response: '利用腿部控制 + 快速隐蔽拔刀 + 划割股动脉/跟腱' },
+      { danger: '敌方反手持刀连续左右下刺', response: '双手X型格挡 + 夺刀 + 古流柔术小手返 (Kote Gaeshi)' },
+      { danger: '双方持刀对峙+攻击对方持刀手腕假动作诱杀', response: '攻击对方持刀手腕 (Defanging the Snake) + 假动作诱杀' },
+      { danger: '敌方持刀捅刺', response: '拍开刀口重定向 + 匕首刺入腋下/腹股沟防弹衣缝隙' },
+      { danger: '面对敌方持刀直刺', response: '360度防御 (360 Defense) + 侧闪 (Slip) + 手臂锁拿 (Arm Bar)' },
+      { danger: '敌方持刀近身-抓住手腕折腕夺刀', response: '合气道二教 (Nikkyo) 折腕 + 夺刀反杀' },
+      { danger: '地面缠斗中我方被压制刀抵脖', response: '利用腿部控制 + 快速隐蔽拔刀 + 划割股动脉/跟腱' },
       { danger: '暗哨摸排时需无声解决', response: '捂嘴 + 肾击 (Kidney Stab) + 颈动脉切割' },
-      { danger: '双方持刀对峙 (Knife on Knife)', response: '攻击对方持刀手腕 (Defanging the Snake) + 假动作诱杀' },
-      { danger: '在极近距离缠抱 (Clinch) 状态', response: '缝纫机式高频短刺 (Sewing Machine) 攻击侧腹' },
       { danger: '敌方试图抓住我方持刀手', response: '手腕旋转划割对方手指 + 转换持刀手 (Hand Switch)' },
-      { danger: '利用衣物/外套辅助格斗', response: '弱手缠绕外套做盾牌 + 强手持刀突刺' },
-      { danger: '在光线不足环境遭遇袭击', response: '利用听觉/触觉感知 + 快速连续切割防御圈' }
+      { danger: '双方持刀对峙闪避反击-防守反击', response: '菲律宾 Kali 流动练习 (Hubud Lubud) + 借力打力 + 致命反击' }
     ],
     techniques: [
       { 
@@ -2199,14 +2190,14 @@ export const THEMES: Theme[] = [
         }
       },
       { 
-        name: '近身缠斗刀术', 
-        details: 'Clinch 状态下的短刀应用', 
+        name: '二教折腕 (Nikkyo)', 
+        details: '合气道/古流柔术手腕控制', 
         drill: {
-          drillName: "Clinch Knife",
-          setup: "白T恤，记号笔（模拟刀）。",
-          phase1_technical: "1. 制造空间：用头撞或推。\n2. 缝纫机：像缝纫机一样高频短刺。\n3. 部位：侧腹、大腿内侧。",
-          phase2_stress: "墨水测试：看谁在白T恤上留下的痕迹多且致命。",
-          critical_checkpoints: "1. 不要停止攻击。\n2. 另一只手控制对方。"
+          drillName: "Knife Hand Control",
+          setup: "橡胶刀。",
+          phase1_technical: "1. 抓握：双手控制对方持刀手手背。\n2. 切割：利用身体下压，切折对方手腕。\n3. 夺刀：在对方跪地瞬间夺刀。",
+          phase2_stress: "近身夺刀：在极近距离利用二教控制持刀手。",
+          critical_checkpoints: "1. 始终避开刀刃。\n2. 利用身体重量。"
         }
       },
       { 
@@ -2281,16 +2272,16 @@ export const THEMES: Theme[] = [
       '投掷突进 (Distract & Enter): 投掷物品迫使对方眨眼或躲避，利用这0.5秒瞬间近身终结。'
     ],
     scenarios: [
-      { danger: '被对方双手抓住衣领', response: '战术笔/钥匙 猛刺手背 + 戳击面部/太阳穴' },
-      { danger: '对方持刀逼近，手边只有外套', response: '迅速脱下外套缠绕弱手 (Jacket Shield) + 踢裆 + 强手突袭' },
-      { danger: '坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具/热饮 (Distraction) + 寻找出口' },
-      { danger: '夜路遇袭，手持强光手电', response: '手电筒频闪致盲 (Strobe) + 攻击头边缘砸击面部 (Hammer Strike)' },
-      { danger: '手里拿着手机被抓头发', response: '紧握手机用边角 (Phone Hammer) 猛砸太阳穴/鼻梁' },
-      { danger: '被逼入死角，手边有灭火器', response: '喷射干粉致盲 + 钢瓶底部撞击 + 制造混乱逃生' },
-      { danger: '对方冲过来，手中只有一瓶水', response: '向对方面部投掷水瓶/泼水 (Distraction) + 抱腿摔' },
-      { danger: '利用皮带应对持刀者', response: '抽出皮带挥舞扣头 (Belt Whip) 控制距离 + 威慑' },
-      { danger: '在书店/办公室遭遇袭击', response: '厚书本/杂志卷起护臂 + 笔戳击 (Stab)' },
-      { danger: '被按在地上，手边有沙土/石块', response: '抓沙扬撒眼睛 (Sand Throw) + 石块砸击面部' }
+      { danger: '被对方双手抓住衣领+被抓住衣领', response: '战术笔/钥匙 刺击手背 + 戳击面部 + 摆脱纠缠' },
+      { danger: '对方持刀逼近，手边只有外套+对方持刀逼近', response: '脱下外套缠绕手臂 (Shield) + 踢裆 (Groin Kick) + 夺刀' },
+      { danger: '坐在餐厅被攻击+坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具 (Distraction) + 寻找出口' },
+      { danger: '夜路遇袭，手持强光手电+夜路遇袭', response: '手电筒强光致盲 (Strobe) + 边缘砸击面部 (Hammer Strike)' },
+      { danger: '手里拿着手机被抓头发+手里拿着手机被抓', response: '手机角砸击太阳穴/鼻梁 + 泰拳膝撞 + 摆脱' },
+      { danger: '被逼入死角，手边有灭火器', response: '喷射干粉致盲 + 钢瓶底部撞击 (Bash) + 制造混乱逃生' },
+      { danger: '对方冲过来，手中只有一瓶水', response: '向对方面部投掷水瓶/泼水 (Distraction) + 抱腿摔 (Double Leg)' },
+      { danger: '利用皮带应对持刀者', response: '抽出皮带挥舞扣头 (Belt Whip) + 控制距离 + 威慑' },
+      { danger: '在书店/办公室遭遇袭击', response: '厚书本/杂志卷起护臂 (Book Shield) + 笔戳击 (Stab) + 推开逃离' },
+      { danger: '被按在地上，手边有沙土/石块', response: '抓沙扬撒眼睛 (Sand Throw) + 石块砸击面部 + 战术起立' }
     ],
     techniques: [
       { 
@@ -3381,21 +3372,10 @@ export const THEMES: Theme[] = [
           setup: "问答。",
           phase1_technical: "1. 正当防卫：正在进行、不法侵害。\n2. 特殊防卫：行凶、杀人、抢劫、强奸、绑架。\n3. 互殴：双方都有加害意图。",
           phase2_stress: "情境判断：快速判断案例是否属于正当防卫。",
-          critical_checkpoints: "1. 清晰界限。\n2. 宁愿坐牢也不进坟墓（但在法律允许范围内）。"
-        }
-      },
-      { 
-        name: '案例分析', 
-        details: '真实案件的法律复盘', 
-        drill: {
-          drillName: "Case Study",
-          setup: "视频/新闻。",
-          phase1_technical: "1. 还原：发生了什么。\n2. 分析：哪里做对了，哪里做错了。\n3. 改进：如果是我，我会怎么做。",
-          phase2_stress: "模拟重演：重演经典防卫案件。",
-          critical_checkpoints: "1. 吸取教训。\n2. 举一反三。"
+          critical_checkpoints: "1. 法律知识必须准确。\n2. 结合实际情况灵活运用。"
         }
       }
     ],
-    tags: ['法律', '心理学', '正当防卫']
+    tags: ['法律', '正当防卫', '犯罪心理']
   }
 ];
