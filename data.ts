@@ -503,17 +503,16 @@ export const THEMES: Theme[] = [
       '疯狂侵略 (Aggression): 在死角无路可退时，恐惧会让你冻结。必须用压倒性的进攻欲望（疯狗模式）打破对方的心理防线。'
     ],
     scenarios: [
-      { danger: '电梯内陌生人突然逼近企图施暴', response: '泰拳箍颈肘击 (Clinch Elbow) + 头槌 (Headbutt) + 猛推至角落' },
-      { danger: '车门被拉开，遭强行拖拽出车外', response: '勾住方向盘固定 (Anchor) + 蹬踹面部 + 柔术十字固 (Armbar)' },
-      { danger: '后座乘客突然使用绳索/手臂勒颈抢劫', response: '双手下拉创造空隙 (Pluck) + 转身肘击/咬合 + 柔道背负投 (Seoi Nage) 意念动作' },
-      { danger: '副驾驶歹徒持刀威胁颈部/腰部', response: '控制持刀手腕 (2-on-1) + 肘击面部 + 指关节钻压 (Pressure Point)' },
       { danger: '【电梯】对方强势正面双手掐脖', response: '合气道二教 (Nikkyo) 折腕 + 泰拳膝撞腹股沟 + 旋转换位逃离' },
-      { danger: '小空间内敌人抓住自己的手腕限制行动并试图控制', response: '针对虎口弱点螺旋解脱 + 泰拳短肘击 (Short Elbow) + 膝撞' },
+      { danger: '小空间内敌人抓住自己的手腕试图控制', response: '针对虎口弱点螺旋解脱 + 泰拳短肘击 (Short Elbow) + 膝撞' },
       { danger: '【电梯】角落被壁咚/搂抱强吻', response: '掌根推击下巴 (Palm Strike) + 膝撞腹股沟 + 旋转换位 (Pivot)' },
-      { danger: '狭小空间内被敌人从背后袭击进行抱摔', response: '降低重心 (Base) + 肘击脊柱/后脑 (Elbow Strike) + 转身面对' },
-      { danger: '车内或走廊中遭遇持刀攻击者刺击或划伤', response: '利用座椅/背包阻挡 + 泰拳正蹬 (Teep) 阻击 + 寻找掩体' },
+      { danger: '狭小空间内被人从背后勒脖子', response: '下巴内收保护气管 + 转身进入对方怀中 + 泰拳肘击肋部 + 柔术大外刈 (Osoto Gari)' },
+      { danger: '车内或走廊中遭遇持刀攻击者刺击', response: '利用座椅/背包阻挡 + 泰拳正蹬 (Teep) 阻击 + 寻找掩体' },
       { danger: '面对对方死死搂抱', response: '咬合颈部/耳朵 (Biting) + 拇指压迫眼球 (Gouge) + 膝撞' },
-      { danger: '持械歹徒左右挥砍', response: '冲刺近身 (Burst in) + 360度防御 + 泰拳内围膝撞 + 夺械' }
+      { danger: '持械歹徒左右挥砍', response: '冲刺近身 (Burst in) + 360度防御 + 泰拳内围膝撞 + 夺械' },
+      { danger: '面对刁钻角度的直拳进攻', response: '头部侧闪 (Slip) + 内围拍挡 (Parry) + 同时迎击直拳 + 泰拳内围肘击' },
+      { danger: '被人蓄力蹬踹-避开中线+拍档', response: '侧闪避开中线 (Slip) + 手臂拍挡 (Parry) + 上步扫踢支撑腿' },
+      { danger: '电梯内陌生人突然逼近企图施暴', response: '泰拳箍颈肘击 (Clinch Elbow) + 头槌 (Headbutt) + 猛推至角落' }
     ],
     techniques: [
       { 
@@ -880,7 +879,7 @@ export const THEMES: Theme[] = [
           drillName: "虾行逃脱 (Hip Escape)",
           setup: "柔道垫。",
           phase1_technical: "1. 支点：一脚蹬地，肩膀着地。\n2. 折叠：臀部向后上方顶出，身体成虾状。\n3. 恢复：利用空间将膝盖插入对方身体之间，恢复防守。",
-          phase2_stress: "侧压逃脱：在对方体重完全压制下，利用虾行创造空间。",
+          phase2_stress: "被侧压(Side Control)时的恢复：在对方体重压制下，利用虾行创造空间。",
           critical_checkpoints: "1. 不要平躺。\n2. 动作幅度要大。"
         }
       },
@@ -1150,16 +1149,16 @@ export const THEMES: Theme[] = [
       '疯狂反击 (Aggressive Counter): 在退无可退的死角，防守就是等死。必须像疯狗一样爆发，利用咬合、插眼等手段争取一线生机。'
     ],
     scenarios: [
-      { danger: '卧室惊醒发现歹徒逼近床边', response: '投掷枕头干扰 + 蹬踹保持距离 (Front Kick) + 寻找台灯/书本作为武器' },
-      { danger: '被堵在狭窄浴室无路可逃', response: '利用毛巾绞杀/鞭打 + 湿滑地面扫腿 + 攻击要害' },
-      { danger: '在厨房遭遇持刀歹徒', response: '利用椅子阻挡 + 投掷热汤/调料 + 寻找刀具/平底锅反击' },
-      { danger: '歹徒试图强行撞开卧室门', response: '身体重心顶门 + 猛踹膝盖 (Stop Kick) + 准备伏击' },
-      { danger: '被按在沙发上掐脖子', response: '合气道二教折腕 (Nikkyo) + 咬合手臂 + 膝撞顶出空间' },
-      { danger: '在楼梯口遭遇多人入侵', response: '居高临下蹬踹 (Teep) + 推人制造多米诺效应 + 撤回高处' },
-      { danger: '歹徒抓住家人作为人质', response: '伪装妥协靠近 + 突袭持械手 (Disarm) + 猛烈攻击面部' },
-      { danger: '被逼入墙角遭遇棍棒殴打', response: '龟缩防守护头 + 突进抱腰摔 (Takedown) + 地面锤击' },
-      { danger: '夜间黑暗中遭遇突袭', response: '战术手电致盲/砸击 + 听声辨位 + 连续肘击' },
-      { danger: '歹徒试图从窗户/阳台爬入', response: '关窗夹击手指 + 攻击抓握手 + 利用重力推落' }
+      { danger: '开门瞬间被歹徒遭遇前方掐颈', response: '双手除指解脱 (Pluck) + 泰拳箍颈膝撞 (Clinch Knee) + 合气道二教折腕 (Nikkyo)' },
+      { danger: '遭遇背后熊抱且无后退空间', response: '重心下沉 (Base) + 泰拳肘击肋部/面部 + 攻击手指/裆部 + 转身控制' },
+      { danger: '歹徒全力抓腕拉扯', response: '针对虎口弱点螺旋解脱 + 古流柔术小手返 (Kote Gaeshi) + 泰拳正蹬 (Teep)' },
+      { danger: '在狭窄走廊与持刀歹徒遭遇', response: '泰拳正蹬 (Teep) 控制距离 + 利用椅子/扫把阻挡 + 寻找掩体/逃离' },
+      { danger: '面对刁钻角度的直拳进攻', response: '头部侧闪 (Slip) + 内围拍挡 (Parry) + 同时迎击直拳 + 泰拳内围肘击' },
+      { danger: '电梯内陌生人突然逼近企图施暴', response: '头槌攻击 (Headbutt) + 泰拳短肘击 (Short Elbow) + 膝撞腹股沟 + 猛推至角落' },
+      { danger: '被按在沙发上掐脖子', response: '拇指压迫眼球 (Eye Gouge) + 合气道二教折腕 (Nikkyo) + 膝盖顶出空间逃离' },
+      { danger: '在楼道转角突然遭遇棍棒袭击', response: '爆发突进近身 (Burst) + 360度格挡 + 缠抱控制持械手 + 柔道大外刈 (Osoto Gari)' },
+      { danger: '歹徒抓住家人作为人质持械威胁', response: '伪装妥协靠近 + 投掷物品干扰 (Distraction) + 突袭持械手 (Disarm) + 猛烈攻击要害' },
+      { danger: '狭窄走廊遭遇持刀歹徒堵截', response: '利用墙壁支撑蹬踹 + 脱衣/背包做盾牌 (Shield) + 舍身反击 (Aggressive Counter)' }
     ],
     techniques: [
       { 
@@ -1312,16 +1311,16 @@ export const THEMES: Theme[] = [
     ],
     scenarios: [
       { danger: '对方持木棍/铁管从上向下劈击', response: '菲律宾魔杖屋顶式格挡 (Roof Block) + 进身蛇形缠绕 (Snake) + 夺棍反击' },
-      { danger: '对方试图抓住你手中的棍子', response: '棍尾 (Punyo) 螺旋解脱 + 刺击面部 + 泰拳低扫 (Low Kick)' },
-      { danger: '遭遇持刀歹徒挥舞攻击-击打持刀手', response: '肢体破坏 (Defanging the Snake) + 距离控制 + 连续抽击手腕' },
-      { danger: '面对持棍袭击歹徒-各种防御方式', response: '360度棍身格挡 + 进身入位 + 泰拳内围膝撞 (Clinch Knee)' },
+      { danger: '遭遇持刀歹徒挥舞攻击-用棍防御击打持刀手', response: '肢体破坏 (Defanging the Snake) + 距离控制 + 连续抽击手腕' },
+      { danger: '面对持棍袭击歹徒-各种棍棒防御方式', response: '360度棍身格挡 + 进身入位 + 泰拳内围膝撞 (Clinch Knee)' },
       { danger: '对方持棍横扫腰部+竖棍格挡', response: '竖棍格挡 (Wing Block) + 顺势滑棍击打手指 + 棍尾砸击' },
       { danger: '被多名歹徒围攻+X型连续劈砍', response: '8字形连续打击 (Figure 8) + 移动步法 (Triangle Footwork) + 寻找出口' },
-      { danger: '对方冲撞试图夺取武器+双手持棍推击胸口', response: '双手持棍猛力推击 (Power Push) + 后撤步 + 棍头扫击' },
-      { danger: '对方持棍左右挥砍+近身+大外刈', response: '进身格挡 (Crash) + 缠抱控制手臂 + 柔道大外刈 (Osoto Gari) 摔倒' },
+      { danger: '对方冲撞试图夺取武器+双手持棍猛力推击胸口', response: '双手持棍猛力推击 (Power Push) + 后撤步 + 棍头扫击' },
+      { danger: '对方持棍左右挥砍+近身格挡+大外刈', response: '进身格挡 (Crash) + 缠抱控制手臂 + 柔道大外刈 (Osoto Gari) 摔倒' },
       { danger: '持棍歹徒自上而下全力一击', response: '侧闪 (Slip) + 合气道入身投 (Irimi Nage) 借力打力 + 夺棍' },
-      { danger: '公园夜间发现嫌疑人-从背后控制', response: '静步接近 + 短棍锁喉 (Choke) + 古流柔术关节控制 (Joint Lock)' },
-      { danger: '被人持械戳击腹部-闪身体做杠杆夺棍', response: '侧身闪避 + 腋下夹棍 (Trap) + 身体旋转杠杆夺棍 (Leverage Disarm)' }
+      { danger: '公园夜间发现嫌疑人-从背后控制歹徒（控制技）', response: '静步接近 + 短棍锁喉 (Choke) + 古流柔术关节控制 (Joint Lock)' },
+      { danger: '被人持械戳击腹部-闪身用身体做杠杆夺棍', response: '侧身闪避 + 腋下夹棍 (Trap) + 身体旋转杠杆夺棍 (Leverage Disarm)' },
+      { danger: '短兵对抗-持棍做防守反击技术！', response: '菲律宾魔杖格挡反击流 (Hubud Lubud) + 棍尾勾挂 + 连续打击' }
     ],
     techniques: [
       { 
