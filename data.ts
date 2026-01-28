@@ -2272,11 +2272,11 @@ export const THEMES: Theme[] = [
       '投掷突进 (Distract & Enter): 投掷物品迫使对方眨眼或躲避，利用这0.5秒瞬间近身终结。'
     ],
     scenarios: [
-      { danger: '被对方双手抓住衣领+被抓住衣领', response: '战术笔/钥匙 刺击手背 + 戳击面部 + 摆脱纠缠' },
-      { danger: '对方持刀逼近，手边只有外套+对方持刀逼近', response: '脱下外套缠绕手臂 (Shield) + 踢裆 (Groin Kick) + 夺刀' },
-      { danger: '坐在餐厅被攻击+坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具 (Distraction) + 寻找出口' },
-      { danger: '夜路遇袭，手持强光手电+夜路遇袭', response: '手电筒强光致盲 (Strobe) + 边缘砸击面部 (Hammer Strike)' },
-      { danger: '手里拿着手机被抓头发+手里拿着手机被抓', response: '手机角砸击太阳穴/鼻梁 + 泰拳膝撞 + 摆脱' },
+      { danger: '被对方双手抓住衣领', response: '战术笔/钥匙 刺击手背 + 戳击面部 + 摆脱纠缠' },
+      { danger: '对方持刀逼近，手边只有外套', response: '脱下外套缠绕手臂 (Shield) + 踢裆 (Groin Kick) + 夺刀' },
+      { danger: '坐在餐厅被攻击', response: '推起椅子阻挡 (Barrier) + 投掷餐具 (Distraction) + 寻找出口' },
+      { danger: '夜路遇袭，手持强光手电', response: '手电筒强光致盲 (Strobe) + 边缘砸击面部 (Hammer Strike)' },
+      { danger: '手里拿着手机被抓头发', response: '手机角砸击太阳穴/鼻梁 + 泰拳膝撞 + 摆脱' },
       { danger: '被逼入死角，手边有灭火器', response: '喷射干粉致盲 + 钢瓶底部撞击 (Bash) + 制造混乱逃生' },
       { danger: '对方冲过来，手中只有一瓶水', response: '向对方面部投掷水瓶/泼水 (Distraction) + 抱腿摔 (Double Leg)' },
       { danger: '利用皮带应对持刀者', response: '抽出皮带挥舞扣头 (Belt Whip) + 控制距离 + 威慑' },
@@ -2285,135 +2285,113 @@ export const THEMES: Theme[] = [
     ],
     techniques: [
       { 
-        name: '战术笔应用', 
-        details: '攻击穴位与软组织', 
+        name: '战术笔/库波顿 (Kubotan)', 
+        details: '马伽术/古流柔术点穴与刺击', 
         drill: {
-          drillName: "Kubotan Strike",
-          setup: "战术笔。",
-          phase1_technical: "1. 握法：冰锥握法，拇指顶住笔尾。\n2. 目标：锁骨、肋骨、手背、太阳穴。\n3. 动作：连续锤击。",
-          phase2_stress: "解脱控制：被抓手腕时，用战术笔钻压骨头解脱。",
-          critical_checkpoints: "1. 握紧防止滑落。\n2. 力量集中于一点。"
+          drillName: "Kubotan Pressure Points",
+          setup: "战术笔/酷棍。",
+          phase1_technical: "1. 握法：冰锥握法 (Ice Pick Grip)，拇指顶住笔尾。\n2. 目标：手背骨缝、锁骨、肋骨、太阳穴。\n3. 动作：利用尖端进行钻压或啄击。",
+          phase2_stress: "解脱控制：被抓手腕时，用战术笔强力钻压对方手背骨头解脱。",
+          critical_checkpoints: "1. 握紧防止滑落。\n2. 力量集中于一点。\n3. 不要刺入软组织过深（训练注意安全）。"
         }
       },
       { 
-        name: '外套缠绕术', 
-        details: '防御利刃切割', 
+        name: '外套缠绕术 (Clothing Shield)', 
+        details: '防刀割的临时护具', 
         drill: {
-          drillName: "Jacket Shield",
-          setup: "外套。",
-          phase1_technical: "1. 缠绕：迅速将外套缠绕在弱手小臂。\n2. 阻挡：用缠绕的手臂格挡刀刃。\n3. 掩盖：或将外套罩住对方头部。",
-          phase2_stress: "刀具防御：仅用外套防御橡胶刀攻击。",
-          critical_checkpoints: "1. 缠绕要厚实。\n2. 不要挡刺（易穿透）。"
+          drillName: "Jacket Defense Drill",
+          setup: "厚外套，橡胶刀。",
+          phase1_technical: "1. 缠绕：迅速将外套紧密缠绕在弱手小臂上，至少两层。\n2. 阻挡：利用缠绕的手臂格挡对方刀刃切割（Slash）。\n3. 掩盖：或将外套直接罩住对方头部致盲。",
+          phase2_stress: "刀具防御实战：仅用缠绕外套的手臂防御橡胶刀的连续攻击，寻找机会反击。",
+          critical_checkpoints: "1. 缠绕要厚实，不能松散。\n2. 不要试图用外套挡刺击（Stab），容易穿透。\n3. 保护好手指。"
         }
       },
       { 
-        name: '椅子防御', 
-        details: '利用椅背与椅腿控制距离', 
+        name: '椅子防御 (Lion Tamer)', 
+        details: '利用长物体控制距离', 
         drill: {
-          drillName: "Chair Defense",
-          setup: "椅子。",
-          phase1_technical: "1. 持椅：抓椅背，椅腿向前。\n2. 戳击：用椅腿戳面部。\n3. 旋压：卡住对方身体并旋压倒地。",
-          phase2_stress: "疯狗防御：对方疯狂进攻，利用椅子保持距离。",
-          critical_checkpoints: "1. 保持结构稳固。\n2. 视线穿过椅子。"
+          drillName: "Chair Tactics",
+          setup: "稳固的椅子。",
+          phase1_technical: "1. 持椅：双手抓椅背，椅腿向前，像驯兽师一样。\n2. 戳击：用椅腿猛力戳击对方面部或喉咙。\n3. 旋压：利用椅子卡住对方身体并旋压倒地。",
+          phase2_stress: "疯狗防御：对方疯狂进攻（持械），利用椅子保持距离并反击。",
+          critical_checkpoints: "1. 保持结构稳固，不要举过头顶暴露腹部。\n2. 视线穿过椅子观察。\n3. 始终保持椅子在两人中间。"
         }
       },
       { 
-        name: '投掷干扰', 
-        details: '利用水瓶/硬币制造瞬间盲区', 
+        name: '强光致盲 (Tactical Flashlight)', 
+        details: '光干扰与边缘打击', 
         drill: {
-          drillName: "Distraction Throw",
-          setup: "网球/水瓶。",
-          phase1_technical: "1. 投掷：向对方面部投掷。\n2. 突进：在对方眨眼/躲避瞬间突进。\n3. 重击：接重拳或抱摔。",
-          phase2_stress: "投掷-突进连贯性：练习投掷与起动的无缝衔接。",
-          critical_checkpoints: "1. 投掷准确度。\n2. 时机把握。"
+          drillName: "Flash and Bash",
+          setup: "高流明战术手电。",
+          phase1_technical: "1. 致盲：强光/爆闪直射对方眼睛，破坏其夜视能力。\n2. 砸击：利用手电筒攻击头（Bezel）猛砸面部。\n3. 组合：光照-砸击-光照-移动（Light-Strike-Move）。",
+          phase2_stress: "夜战模拟：在全黑环境下，应对突发袭击，利用光线创造逃生机会。",
+          critical_checkpoints: "1. 频繁变换位置，不要停留在光源后方。\n2. 凶猛砸击，手电是硬物。\n3. 举手过肩使用手电（FBI式）。"
         }
       },
       { 
-        name: '手机锤击', 
-        details: '硬质边角的打击技术', 
+        name: '手机/硬物锤击', 
+        details: '利用硬角攻击骨骼', 
         drill: {
           drillName: "Phone Hammer",
           setup: "手机模型。",
-          phase1_technical: "1. 握持：紧握手机，露出一角。\n2. 打击：用硬角砸击额头、鼻梁。\n3. 连续：像铁锤一样连续砸。",
-          phase2_stress: "近身反击：被贴身时掏出手机猛砸。",
-          critical_checkpoints: "1. 抓紧手机。\n2. 攻击骨骼。"
+          phase1_technical: "1. 握持：紧握手机，露出一角作为打击点。\n2. 打击：像使用铁锤一样，用硬角砸击额头、鼻梁、太阳穴。\n3. 连续：连续快速砸击，直到对方松手。",
+          phase2_stress: "近身反击：被贴身抓头发时，掏出手机猛砸对方抓握的手背或面部。",
+          critical_checkpoints: "1. 抓紧手机，防止滑落。\n2. 攻击骨骼（痛感强）。\n3. 不要用屏幕面攻击。"
         }
       },
       { 
-        name: '皮带鞭打', 
-        details: '抽出皮带作为软兵器', 
+        name: '皮带鞭打 (Flexible Weapon)', 
+        details: '菲律宾武术软兵器应用', 
         drill: {
-          drillName: "Belt Whip",
+          drillName: "Belt Whip Tactics",
           setup: "皮带。",
-          phase1_technical: "1. 抽出：快速解开抽出皮带，皮带扣折叠。\n2. 抽打：用皮带扣端抽打面部/手部。\n3. 声势：利用破空声威慑。",
-          phase2_stress: "长距离控制：利用皮带长度优势控制持刀者。",
-          critical_checkpoints: "1. 注意皮带扣回弹伤己。\n2. 保持距离。"
+          phase1_technical: "1. 抽出：快速解开抽出皮带，将皮带扣折叠在手中或作为鞭头。\n2. 抽打：利用皮带扣端抽打对方面部或持械手。\n3. 声势：利用破空声威慑对方。",
+          phase2_stress: "长距离控制：利用皮带长度优势控制持刀者，保持安全距离。",
+          critical_checkpoints: "1. 注意皮带扣回弹伤己。\n2. 保持距离，不要被近身。\n3. 抽打要连贯，形成防御网。"
         }
       },
       { 
-        name: '书本盾牌', 
-        details: '厚书本防御刺击', 
+        name: '投掷干扰 (Distraction)', 
+        details: '水瓶/硬币创造进攻时机', 
         drill: {
-          drillName: "Book Armor",
+          drillName: "Distraction Throw",
+          setup: "网球/水瓶/硬币。",
+          phase1_technical: "1. 投掷：向对方面部投掷物品（水瓶、钥匙、硬币）。\n2. 突进：在对方眨眼或躲避的瞬间（0.5秒），迅速突进。\n3. 重击：接重拳、踢裆或抱摔。",
+          phase2_stress: "投掷-突进连贯性：练习投掷与起动的无缝衔接，消除犹豫。",
+          critical_checkpoints: "1. 投掷准确度，必须让对方有反应。\n2. 时机把握，物品离手即突进。\n3. 不要停在原地看结果。"
+        }
+      },
+      { 
+        name: '书本护臂', 
+        details: '防御利刃刺击', 
+        drill: {
+          drillName: "Magazine/Book Armor",
           setup: "硬皮书/杂志。",
-          phase1_technical: "1. 紧贴：将杂志卷起或书本贴在小臂/胸口。\n2. 格挡：用书本格挡刺击。\n3. 攻击：用书脊砸击。",
-          phase2_stress: "杂志防御：卷起杂志防御刀具。",
-          critical_checkpoints: "1. 书本要厚。\n2. 护住动脉。"
+          phase1_technical: "1. 紧贴：将杂志卷起，或将书本紧贴在小臂/胸口。\n2. 格挡：用书本/杂志卷格挡对方的刺击。\n3. 攻击：利用书脊或卷筒末端砸击面部。",
+          phase2_stress: "杂志防御：卷起杂志防御橡胶刀的连续攻击。",
+          critical_checkpoints: "1. 书本要厚，卷得要紧。\n2. 护住动脉血管。\n3. 配合步法移动。"
         }
       },
       { 
-        name: '钥匙指虎', 
-        details: '握持钥匙增加拳头杀伤力', 
+        name: '灭火器战术', 
+        details: '喷射致盲与重物砸击', 
         drill: {
-          drillName: "Key Knuckles",
-          setup: "钥匙。",
-          phase1_technical: "1. 握法：将钥匙夹在指缝中（注意不要伤己）。\n2. 划割：横扫划割面部。\n3. 戳击：直拳戳击。",
-          phase2_stress: "抓脸解脱：被抓脸时用钥匙反击。",
-          critical_checkpoints: "1. 最好握柄在掌心。\n2. 攻击软组织。"
+          drillName: "Fire Extinguisher Combat",
+          setup: "灭火器模型。",
+          phase1_technical: "1. 拔销：快速拔掉保险销。\n2. 喷射：对准面部喷射干粉，造成致盲和呼吸困难。\n3. 砸击：当对方捂眼时，利用钢瓶底部猛烈撞击（Bash）。",
+          phase2_stress: "模拟真实场景操作：在跑动中寻找灭火器并进行反击逃生。",
+          critical_checkpoints: "1. 保持距离喷射。\n2. 喷射要持续。\n3. 砸击要利用全身力量。"
         }
       },
       { 
-        name: '强光致盲', 
-        details: '战术手电的使用', 
+        name: '环境利用 (Environmental)', 
+        details: '利用地形/沙土/墙壁', 
         drill: {
-          drillName: "Flash and Bash",
-          setup: "战术手电。",
-          phase1_technical: "1. 致盲：强光直射眼睛。\n2. 砸击：用手电攻击头攻击圈（Bezel）砸击。\n3. 组合：光照-砸击-光照。",
-          phase2_stress: "夜战模拟：全黑环境下的攻防。",
-          critical_checkpoints: "1. 频繁变换位置。\n2. 凶猛砸击。"
-        }
-      },
-      { 
-        name: '热咖啡泼洒', 
-        details: '高温液体的防御作用', 
-        drill: {
-          drillName: "Hot Liquid Defense",
-          setup: "水杯（冷水模拟）。",
-          phase1_technical: "1. 泼洒：向面部泼洒。\n2. 投杯：将杯子也扔出去。\n3. 逃离：趁乱逃跑。",
-          phase2_stress: "遭遇战反应：手里拿着咖啡时突然遇袭。",
-          critical_checkpoints: "1. 泼准。\n2. 动作连贯。"
-        }
-      },
-      { 
-        name: '环境陷阱', 
-        details: '利用地形绊倒对手', 
-        drill: {
-          drillName: "Terrain Trap",
-          setup: "障碍物。",
-          phase1_technical: "1. 引导：引诱对方跨越障碍。\n2. 攻击：在对方跨越重心不稳时推击。\n3. 绊摔：利用地毯/台阶。",
-          phase2_stress: "障碍区格斗：在满是杂物的房间内格斗。",
-          critical_checkpoints: "1. 熟悉环境。\n2. 借势。"
-        }
-      },
-      { 
-        name: '心理伪装', 
-        details: '假装拿钱包实则取武器', 
-        drill: {
-          drillName: "Feigned Compliance",
-          setup: "钱包/武器。",
-          phase1_technical: "1. 示弱：举手，声称拿钱。\n2. 取械：手伸向口袋取出战术笔/喷雾。\n3. 反击：突然发动攻击。",
-          phase2_stress: "抢劫情景模拟：在压力下完成伪装反击。",
-          critical_checkpoints: "1. 演技逼真。\n2. 降低对方戒心。"
+          drillName: "Dirty Fighting",
+          setup: "沙土/障碍物。",
+          phase1_technical: "1. 抓沙：抓起地上的沙土/石块。\n2. 扬撒：向对方眼睛扬撒。\n3. 攻击：趁对方清理眼睛时进攻或逃跑。",
+          phase2_stress: "地面求生：被按在地上时，寻找身边一切可用之物反击。",
+          critical_checkpoints: "1. 动作隐蔽。\n2. 出其不意。\n3. 生存第一，无规则限制。"
         }
       }
     ],

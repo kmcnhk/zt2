@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Theme, Technique } from '../types';
 import { X, CheckCircle, BrainCircuit, Activity, ShieldAlert, AlertTriangle, Target, Flame, Info, Lock, Key, Zap, Medal, Gift, Play, ChevronRight, List, MonitorPlay, Clock, Layout, BookOpen, Quote, Pause, MousePointer2, Award, CheckSquare, ArrowRight, ShoppingBag, Sword, User } from 'lucide-react';
@@ -567,6 +568,10 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
   // @ts-ignore
   const currentPoster = VIDEO_POSTER_MAP[theme.category] || VIDEO_POSTER_MAP.CIVILIAN;
 
+  // 获取当前主题对应的锁定视频链接 (根据 category)
+  // @ts-ignore
+  const lockedVideoUrl = MAIN_VIDEO_CONFIG[theme.category] || MAIN_VIDEO_CONFIG.CIVILIAN;
+
 
   // ==========================================
   // 💰 Pricing Logic (Updated Requirement)
@@ -1133,7 +1138,7 @@ const DetailView: React.FC<Props> = ({ theme, onClose, isMilitary }) => {
                         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                         poster={currentPoster}
                     >
-                        <source src={MAIN_VIDEO_CONFIG.CIVILIAN} type="video/mp4" />
+                        <source src={lockedVideoUrl} type="video/mp4" />
                     </video>
                 </div>
 
